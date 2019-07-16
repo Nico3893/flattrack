@@ -5,11 +5,17 @@ class TaskPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    record.company == user.company
+  def create?
+    company_check
   end
 
   def update?
+    company_check
+  end
+
+  private
+
+  def company_check
     record.company == user.company
   end
 end
