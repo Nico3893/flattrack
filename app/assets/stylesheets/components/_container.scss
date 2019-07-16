@@ -10,8 +10,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: auto auto 33.33%;
-
-}
+    }
 
 .task-feed-container {
     grid-area: 1 / 1 / last-line / last-line;
