@@ -3,6 +3,7 @@ class Flat < ApplicationRecord
   has_many :contracts
   has_many :flat_photos
   has_many :transactions
+  has_many :tasks
 
   validates :address, presence: true
 

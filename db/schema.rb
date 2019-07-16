@@ -67,8 +67,10 @@ ActiveRecord::Schema.define(version: 2019_07_16_121504) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.integer "urgency", default: 3, null: false
+    t.bigint "flat_id"
     t.index ["category_id"], name: "index_tasks_on_category_id"
     t.index ["company_id"], name: "index_tasks_on_company_id"
+    t.index ["flat_id"], name: "index_tasks_on_flat_id"
   end
 
   create_table "transaction_categories", force: :cascade do |t|
@@ -111,6 +113,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_121504) do
   add_foreign_key "flat_photos", "flats"
   add_foreign_key "flats", "companies"
   add_foreign_key "tasks", "companies"
+  add_foreign_key "tasks", "flats"
   add_foreign_key "tasks", "task_categories", column: "category_id"
   add_foreign_key "transactions", "companies"
   add_foreign_key "transactions", "flats"
