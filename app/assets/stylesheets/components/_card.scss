@@ -1,3 +1,4 @@
+/*small cards for flat-related task-view*/
 .task-card-small{
     border-radius: 2px;
     background-color: $blue;
@@ -25,7 +26,7 @@
     justify-content:space-around;
     align-content: center;
 }
-
+/* task cards to be displayed in the feed */
 .task-card-feed {
     border-radius: 2px;
     background-color: $blue;
@@ -50,4 +51,36 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+/* regular-sized dashboard card suggested height 200px*/
+
+.dashboard-card-regular {
+    display:flex; 
+    width: 350px;
+    flex-direction: column;
+    padding: 4px;
+    background-color: $blue;
+    border-radius: 2px;
+    border: 0.5px solid $gray;
+    margin: 10px;
+    justify-content:center;
+    text-align:center;
+}
+
+
+/* large-sized dashboard card (double height*/
+
+/* big dashboard card (double height double width)*/
+
+.dashboard-card-big {
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+    padding: 4px;
+    background-color: $blue;
+    border-radius: 2px;
+    border: 0.5px solid $gray;
+    margin: 10px;
+    text-align:center;   
 }
