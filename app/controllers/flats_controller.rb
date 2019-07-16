@@ -9,7 +9,7 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @flat = Item.find(params[:id])
+    @flat = Flat.find(params[:id])
     authorize @flat
   end
 
