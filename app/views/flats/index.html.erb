@@ -1,4 +1,10 @@
 <h1>Flats#index</h1>
+
+<p>Monthly rent of flat 1</p>
+<p>Amount: <%= humanized_money_with_symbol(Flat.first.monthly_rent) %></p>
+<p><%= Flat.first.monthly_rent %></p>
+
+
 <div
   id="map"
   style="width: 100%;
