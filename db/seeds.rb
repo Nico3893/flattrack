@@ -1,4 +1,4 @@
-puts 'Destroying everything...'
+puts 'Destroy everything...'
 FlatPhoto.destroy_all
 Contract.destroy_all
 Transaction.destroy_all
@@ -32,7 +32,7 @@ pic3 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/d
 pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
 pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
 
-
+puts "Seeds finished succesfully!!!"
 
 
 
