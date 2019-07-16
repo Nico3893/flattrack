@@ -1,0 +1,32 @@
+.button-dark{
+    padding: 8px 30px;
+    background-color: $dark-blue;
+    height: 2.5rem;
+    color: $light-gray;
+    font-weight: bold;
+    font-family: $headers-font;
+    border-radius: 2px;
+    border: 0.4px solid $light-gray;
+    text-decoration:none;
+    transition: 0.3s;
+    margin: 4px;
+    &:hover{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.button-light{
+    padding: 8px 30px;
+    background-color: $blue-grey;
+    color: black;
+    font-weight: bold;
+    font-family:$headers-font;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 4px;
+    &:hover{
+        text-decoration: none;
+    }
+}
