@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_100350) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
+    t.integer "urgency", default: 3, null: false
     t.index ["category_id"], name: "index_tasks_on_category_id"
     t.index ["company_id"], name: "index_tasks_on_company_id"
   end

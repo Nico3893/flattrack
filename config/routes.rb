@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :flats, only: [:index, :show] do
     resources :transactions, only: [:new, :create]
   end
-  resources :tasks, only: [ :index, :new, :create, :show, :edit, :update]
+  resources :tasks, only: [ :new, :create, :show, :edit, :update]
 
 end
