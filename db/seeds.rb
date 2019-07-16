@@ -14,7 +14,7 @@ Company.create!( name: 'Immostar')
 puts 'Creating user...'
 User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first )
 puts 'Creating flat...'
-Flat.create!( address: "Rudi-Dutschke-Strasse 26, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, company: Company.first )
+Flat.create!( address: "Rudi-Dutschke-Strasse 26, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, monthly_rent: 800, company: Company.first )
 puts 'Creating task category...'
 TaskCategory.create!( name: "Maintenance" )
 puts 'Creating task...'

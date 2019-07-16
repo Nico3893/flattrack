@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_121504) do
+ActiveRecord::Schema.define(version: 2019_07_16_145721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_121504) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "monthly_rent_cents", default: 0, null: false
+    t.string "monthly_rent_currency", default: "EUR", null: false
     t.index ["company_id"], name: "index_flats_on_company_id"
   end
 
@@ -81,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_121504) do
 
   create_table "transactions", force: :cascade do |t|
     t.bigint "flat_id"
-    t.integer "amount", null: false
+    t.integer "amount"
     t.date "date", null: false
     t.string "description"
     t.boolean "is_expense", null: false
@@ -89,6 +91,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_121504) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
     t.index ["category_id"], name: "index_transactions_on_category_id"
     t.index ["company_id"], name: "index_transactions_on_company_id"
     t.index ["flat_id"], name: "index_transactions_on_flat_id"
