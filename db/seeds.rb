@@ -1,3 +1,7 @@
+
+puts "Seeds are being planted...."
+puts 'Delete existing data'
+
 FlatPhoto.destroy_all
 Contract.destroy_all
 Transaction.destroy_all
@@ -7,6 +11,8 @@ TaskCategory.destroy_all
 Flat.destroy_all
 User.destroy_all
 Company.destroy_all
+
+puts "Creating one of each"
 
 Company.create!( name: 'Immostar')
 User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first )
@@ -22,7 +28,7 @@ pic3 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/d
 pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
 pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
 
-
+puts "Seeds finished succesfully!!!"
 
 
 
