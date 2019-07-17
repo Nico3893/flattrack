@@ -1,0 +1,87 @@
+/*small cards for flat-related task-view*/
+.task-card-small{
+    border-radius: 2px;
+    background-color: $blue;
+    width: 320px;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    padding: 4px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.task-card-small p{
+ font-size: 12px;
+}
+
+.task-card-small h3{
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+
+.task-card-small .row{
+    display:flex; 
+    flex-direction:row;
+    justify-content:space-around;
+    align-content: center;
+}
+/* task cards to be displayed in the feed */
+.task-card-feed {
+    border-radius: 2px;
+    background-color: $blue;
+    width:27rem;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    padding:4px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.task-card-feed h3 p{
+    font-size: 16px;
+}
+
+.task-card-feed h3{
+    font-weight:lighter;
+}
+
+.task-card-feed .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* regular-sized dashboard card suggested height 200px*/
+
+.dashboard-card-regular {
+    display:flex; 
+    width: 19rem;
+    flex-direction: column;
+    padding: 4px;
+    background-color: $blue;
+    border-radius: 2px;
+    margin: 10px;
+    justify-content:center;
+    text-align:center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+/* large-sized dashboard card (double height*/
+
+/* big dashboard card (double height double width)*/
+
+.dashboard-card-big {
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+    padding: 4px;
+    background-color: $blue;
+    border-radius: 2px;
+    margin: 10px;
+    text-align:center;   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

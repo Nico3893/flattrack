@@ -1,0 +1,19 @@
+.flatitem {
+    border-radius: 2px;
+    background-color: $blue;
+    width: 500px;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    padding:4px;
+    margin:10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flatitem h3{
+    font-weight: lighter;
+}
+
+.flatitem p {
+    font-size: 12px;
+}
