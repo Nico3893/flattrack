@@ -2,14 +2,12 @@
   Flattrack Flats
 <% end %>
 
-<h1>Flats#index</h1>
-
 <div class="container">
 <h2>Your flats</h2>
   <div class="container-flat-index">
     <div class="item-map">
       <div
-  id="map" style="width: 50%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       </div>
       <div class="item-list">

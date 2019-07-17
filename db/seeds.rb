@@ -33,48 +33,54 @@ Company.destroy_all
 # pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
 # pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
 
-
 # Fancy Seed Company
 puts 'Creating company...'
 company1 = Company.create!( name: 'Wayne Enterprises')
 company1.save
 
 # Fancy Seed User
-puts 'Creating user...'
-User.create!( name: "Bruce Wayne", email: "bruce@wayne.com", password: "123456", company: company1 )
-# User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first )
+puts 'Creating users...'
+u1 = User.create!( name: "Bruce Wayne", email: "bruce@wayne.com", password: "123456", company: company1, photo: "")
+u2 = User.create!( name: "Toni Stark", email: "toni@stark.com", password: "123456", company: company1, photo: "")
+u3 = User.create!( name: "Peter Parker", email: "peter@parker.com", password: "123456", company: company1, photo: "")
+u4 = User.create!( name: "Steve Rogers", email: "steve@rogers.com", password: "123456", company: company1, photo: "")
 
 # Fancy Seed Flat
 # 1 Friends: Monica's flat
 puts 'Creating flat...'
-f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1 )
+f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1, monthly_rent: 800, comment: "many house parties, problems with neighbors in the past", address_specification: "apartment 19, 4th floor" )
+image1 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_ewzure.png" )
+image2 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_digox5.jpg" )
+image3 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_kitchen_hpf0um.jpg" )
+image4 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_floorplan_fvfymm.jpg" )
+
 # 2 How I met your mother: Ted and Marshall's flat
 puts 'Creating flat...'
-f2 = Flat.create!( address: "Rudi-Dutschke-Straße 23, 10969 Berlin", area: 85, rooms: 3, parking_space: 3, company: company1 )
+f2 = Flat.create!( address: "Rudi-Dutschke-Straße 23, 10969 Berlin", area: 85, rooms: 3, parking_space: 3, company: company1, monthly_rent: 800 )
 # 3 How I mt your mother: Barney's flat
 puts 'Creating flat...'
-f3 = Flat.create!( address: "Friedrichstraße 206, 10969 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1 )
+f3 = Flat.create!( address: "Friedrichstraße 206, 10969 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
 # 4 Sex and the City: Carrie's flat
 puts 'Creating flat...'
-f4 = Flat.create!( address: "Rudi-Dutschke-Straße 19-17, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, company: company1 )
+f4 = Flat.create!( address: "Rudi-Dutschke-Straße 19-17, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, company: company1, monthly_rent: 800 )
 # 5 New Girl: Nick, Jess, Schmidt and Winston's flat
 puts 'Creating flat...'
-f5 = Flat.create!( address: "Friedrichstraße 48-49, 10117 Berlin", area: 85, rooms: 3, parking_space: 2, company: company1 )
+f5 = Flat.create!( address: "Friedrichstraße 48-49, 10117 Berlin", area: 85, rooms: 3, parking_space: 2, company: company1, monthly_rent: 800 )
 # 6 Gossip Girl: The Humphrey's loft
 puts 'Creating flat...'
-f6 = Flat.create!( address: "Charlottenstraße 77-80, 10117 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1 )
+f6 = Flat.create!( address: "Charlottenstraße 77-80, 10117 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
 # 7 Gossip Girl: The VanderWoodsen's flat
 puts 'Creating flat...'
-f7 = Flat.create!( address: "Bethlehemkirchplatz, 10117 Berlin", area: 85, rooms: 3, parking_space: 2, company: company1 )
+f7 = Flat.create!( address: "Bethlehemkirchplatz, 10117 Berlin", area: 85, rooms: 3, parking_space: 2, company: company1, monthly_rent: 800 )
 # 8 Gossip Girl: The Waldorf's flat
 puts 'Creating flat...'
-f8 = Flat.create!( address: "Wilhelmstraße 114-117, 10963 Berlin ", area: 85, rooms: 3, parking_space: 3, company: company1 )
+f8 = Flat.create!( address: "Wilhelmstraße 114-117, 10963 Berlin ", area: 85, rooms: 3, parking_space: 3, company: company1, monthly_rent: 800 )
 # 9 The Big Bang Theory: Sheldon and Leonard's flat
 puts 'Creating flat...'
-f9 = Flat.create!( address: "Lindenstraße 34, ", area: 85, rooms: 3, parking_space: 1, company: company1 )
+f9 = Flat.create!( address: "Lindenstraße 34, ", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
 # 10 Sherlock: Sherlock and John's flat 221B Baker Street
 puts 'Creating flat...'
-f10 = Flat.create!( address: "Niederkirchnerstraße 7, 10963 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1 )
+f10 = Flat.create!( address: "Niederkirchnerstraße 7, 10963 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
 # 11 Two Broke Girls: Max and Caroline's flat
 puts 'Creating flat...'
 f11 = Flat.create!( address: "Wilhelmstraße 102, 10963 Berlin", area: 85, rooms: 3, parking_space: 0, company: company1 )
@@ -90,14 +96,7 @@ f14 = Flat.create!( address: "Schützenstraße 51, 10117 Berlin", area: 85, room
 # 15 House of Cards: Adam Galloway's flat
 puts 'Creating flat...'
 f15 = Flat.create!( address: "Kronenstraße 1-61, 10117 Berlin", area: 85, rooms: 3, parking_space: 0, company: company1 )
-# Fancy Photo Seeds
-# for f1
-image1 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_ewzure.png" )
-image2 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_digox5.jpg" )
-image3 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_kitchen_hpf0um.jpg" )
-image4 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_floorplan_fvfymm.jpg" )
 
-#for f2
 
 # Fancy Seed Category
 #1 General
@@ -122,20 +121,31 @@ Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom
 puts 'Creating task...'
 Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment wit tenant", company: company1, flat: f1, status: "resolved", urgency: 2 )
 
-# Fancy Seed Transaction Category
-#1
-# puts 'Creating transaction category...'
-# TransactionCategory.create!( name: "Inventory" )
-
-# Fancy Seed Transaction
-#1
-# puts 'Creating transaction...'
-# Transaction.create!( flat: Flat.first, amount: 1250, date: Date.today, category: TransactionCategory.first, description: "Firefighter operation", is_expense: true, company: Company.first )
-
 # Fancy Seed Contract
 puts 'Creating contract...'
 contract1 = Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
 
+
+# Fancy Seed Transaction Category
+#1
+puts 'Creating transaction categories...'
+furniture = TransactionCategory.create!( name: "furniture cost" )
+onetime = TransactionCategory.create!( name: "onetime expenses" )
+utilities = TransactionCategory.create!( name: "utilities" )
+rent = TransactionCategory.create!( name: "rent" )
+
+# Fancy Seed Transaction
+#1
+puts 'Creating transactions...'
+Transaction.create!( flat: f1, amount: 1250, date: Date.today, category: onetime, description: "Extraordinary Chimney Sweep", is_expense: true, company: company1 )
+Transaction.create!( flat: f1, amount: 100, date: Date.today, category: furniture, description: "Kettle", is_expense: true, company: company1 )
+Transaction.create!( flat: f1, amount: 100, date: Date.today, category: utilities, description: "flat 1, July 2019", is_expense: true, company: company1 )
+Transaction.create!( flat: f1, amount: 800, date: Date.today, category: rent, description: "flat 1, July 2019", is_expense: false, company: company1 )
+Transaction.create!( flat: f1, amount: 800, date: Date.today, category: rent, description: "flat 1, August 2019", is_expense: false, company: company1 )
+
+# Fancy Seed Contract
+puts 'Creating contract...'
+Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 90, monthly_rent: 800 )
 
 
 
