@@ -5,7 +5,6 @@ class Transaction < ApplicationRecord
 
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :date, presence: true
-  # validates :is_expense, presence: true
   validates_inclusion_of :is_expense, in: [true, false]
 
   monetize :amount_cents
