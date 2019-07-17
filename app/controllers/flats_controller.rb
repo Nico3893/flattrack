@@ -17,6 +17,8 @@ class FlatsController < ApplicationController
         image_url: 'home-location-marker.png'
       }
     end
+    @company = current_user.company
+    @tasks =  @company.tasks.where(urgency: 3)
   end
 
   def show

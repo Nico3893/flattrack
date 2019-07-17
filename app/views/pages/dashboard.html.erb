@@ -2,18 +2,21 @@
   Flattrack: Dashboard
 <% end %>
 
+
 <div class="container">
-    <h2>Good Morning, Frank!</h2>
+<h2>Good Morning, Frank!</h2>
         <div class="dashboard-container">
             <div class="task-feed-container">
+            <%@tasks.each do |task|%>
                 <div class="task-card-feed">
                     <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-                    <h3>Task title</h3>
+                    <h3><%=task.title%></h3>
                     <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
                 </div>
-                <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-            </div>
-                <div class="task-card-feed">
+                <p class="content"><%=task.description%></p>
+                </div>
+            <%end%>
+              <!--  <div class="task-card-feed">
                     <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
                     <h3>Task title</h3>
                     <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
@@ -33,7 +36,7 @@
                             <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
                         </div>
                         <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-                    </div>
+                    </div>-->
             </div>
                 <div class="item-a">
                     <div class="dashboard-card-regular">

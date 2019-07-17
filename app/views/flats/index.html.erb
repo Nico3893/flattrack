@@ -2,6 +2,7 @@
   Flattrack Flats
 <% end %>
 
+
 <div class="container">
 <h2>Your flats</h2>
   <div class="container-flat-index">
@@ -11,11 +12,14 @@
       </div>
       </div>
       <div class="item-list">
+      <% @flats_geocoded.each do |flat| %>
         <div class="flatitem">
-        <h3 class="address-header">Zehdenicker Straße 68, 10119 Berlin</h3>
-        <p class="content">Hello I am some content blablablablblablalablalblalb content yeahhhhh!I am a second line of content yeaaah whoohooo</p>
+        <h3 class="address-header"><%=flat.address%></h3>
+        <p class="content"> <%= flat.rooms%> Rooms <%=flat.parking_space%> Parking Spaces <%=flat.area%>m²</p>
       </div>
-      <div class="flatitem">
+    <%end%>
+
+     <!-- <div class="flatitem">
         <h3 class="address-header">Rudi-Dutschke-Straße 29, 10119 Berlin</h3>
         <p class="content">Hello I am some content blablablablblablalablalblalb content yeahhhhh!I am a second line of content yeaaah whoohooo</p>
       </div>
@@ -26,12 +30,22 @@
       <div class="flatitem">
         <h3 class="address-header">Zehdenicker Straße 68, 10119 Berlin</h3>
         <p class="content">Hello I am some content blablablablblablalablalblalb content yeahhhhh!I am a second line of content yeaaah whoohooo</p>
-      </div>
+      </div>-->
     </div>
   </div>
   <h2>What's going on today</h2>
   <div class="container-flat-index-tasks">
-    <div class="item-task-a">
+         <% @tasks.each do |task| %>
+  <div class="task-card-small">
+        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+        <h3><%= task.title %></h3>
+        <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+        </div>
+        <p class="content"><%= task.description %></p>
+      </div>
+      <%end%>
+
+  <!--<div class="item-task-a">
       <div class="task-card-small">
         <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
         <h3>Task title</h3>
@@ -56,11 +70,9 @@
         <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
         </div>
         <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-      </div>  
+      </div>-->
     </div>
   </div>
 </div>
-<p>Monthly rent of flat 1</p>
-<p>Amount: <%= humanized_money_with_symbol(Flat.first.monthly_rent) %></p>
 <%= bar_chart Flat.group(:area).sum(:monthly_rent_cents) %>
 
