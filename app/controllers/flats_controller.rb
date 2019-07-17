@@ -19,6 +19,8 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @task = Task.new
+    @task.company = current_user.company
     authorize @flat
   end
 
