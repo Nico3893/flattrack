@@ -14,7 +14,7 @@ class FlatsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude,
        #  infoWindow: render_to_string(partial: "infoWindow", locals: {flat: flat}),
-        image_url: url('/marker.png')
+        image_url: 'home-location-marker.png'
       }
     end
   end
