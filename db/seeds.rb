@@ -37,3 +37,7 @@ puts "Seeds finished succesfully!!!"
 
 
 
+# 5-6 tasks für dashboard für 1 Wohnung mit allen Status, 6 KPI Boxes, 5 Wohnungen mit Adresse und sonst. Variablen, 1 Wohnung mit add. comment und address-specification, contract for 1 flat, transactions for all categories for 1 flat,
+# transaction_categories: rent, utilities, onetime expenses, furniture cost
+# task-category: general
+# users mit photos
