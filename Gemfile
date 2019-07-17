@@ -21,6 +21,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'pundit'
 gem 'geocoder'
 gem 'money-rails'
+gem "chartkick"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

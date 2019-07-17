@@ -2,7 +2,7 @@
 
 <p>Monthly rent of flat 1</p>
 <p>Amount: <%= humanized_money_with_symbol(Flat.first.monthly_rent) %></p>
-<p><%= Flat.first.monthly_rent %></p>
+<%= bar_chart Flat.group(:area).sum(:monthly_rent_cents) %>
 
 
 <div
