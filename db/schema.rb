@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_145721) do
 
   create_table "transactions", force: :cascade do |t|
     t.bigint "flat_id"
-    t.integer "amount"
+    t.integer "amount", null: false
     t.date "date", null: false
     t.string "description"
     t.boolean "is_expense", null: false
