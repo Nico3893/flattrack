@@ -33,12 +33,7 @@ pic3 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/d
 pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
 pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
 
-<<<<<<< HEAD
-
-# Fancy Seeds
-=======
 puts "Seeds finished succesfully!!!"
->>>>>>> master
 
 # Fancy Seed Company
 puts 'Creating company...'
