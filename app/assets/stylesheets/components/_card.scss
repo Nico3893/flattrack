@@ -9,6 +9,7 @@
     text-align:center;
     padding: 4px;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .task-card-small p{
@@ -38,6 +39,7 @@
     text-align:center;
     padding:4px;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .task-card-feed h3 p{
@@ -67,6 +69,7 @@
     margin: 10px;
     justify-content:center;
     text-align:center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 
@@ -84,4 +87,5 @@
     border: 0.5px solid $gray;
     margin: 10px;
     text-align:center;   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
