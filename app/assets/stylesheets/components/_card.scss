@@ -3,12 +3,12 @@
     border-radius: 2px;
     background-color: $blue;
     width: 320px;
-    border: 0.5px solid $gray;
     display:flex;
     flex-direction: column;
     text-align:center;
     padding: 4px;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .task-card-small p{
@@ -32,12 +32,12 @@
     border-radius: 2px;
     background-color: $blue;
     width:27rem;
-    border: 0.5px solid $gray;
     display: flex;
     flex-direction: column;
     text-align:center;
     padding:4px;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .task-card-feed h3 p{
@@ -63,10 +63,10 @@
     padding: 4px;
     background-color: $blue;
     border-radius: 2px;
-    border: 0.5px solid $gray;
     margin: 10px;
     justify-content:center;
     text-align:center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 
@@ -81,7 +81,7 @@
     padding: 4px;
     background-color: $blue;
     border-radius: 2px;
-    border: 0.5px solid $gray;
     margin: 10px;
     text-align:center;   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
