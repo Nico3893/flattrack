@@ -19,7 +19,7 @@ Flat.create!( address: "Rudi-Dutschke-Strasse 26, 10969 Berlin", area: 85, rooms
 puts 'Creating task category...'
 TaskCategory.create!( name: "Maintenance" )
 puts 'Creating task...'
-Task.create!( category: TaskCategory.first, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: Flat.first )
+Task.create!( category: TaskCategory.first, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: Flat.first, user: User.first )
 puts 'Creating transaction category...'
 TransactionCategory.create!( name: "Inventory" )
 puts 'Creating transaction...'
@@ -41,10 +41,10 @@ company1 = Company.create!( name: 'Wayne Enterprises')
 
 # Fancy Seed User
 puts 'Creating users...'
-u1 = User.create!( name: "Bruce Wayne", email: "bruce@wayne.com", password: "123456", company: company1, photo: "")
-u2 = User.create!( name: "Toni Stark", email: "toni@stark.com", password: "123456", company: company1, photo: "")
-u3 = User.create!( name: "Peter Parker", email: "peter@parker.com", password: "123456", company: company1, photo: "")
-u4 = User.create!( name: "Steve Rogers", email: "steve@rogers.com", password: "123456", company: company1, photo: "")
+u1 = User.create!( name: "Bruce Wayne", email: "bruce@wayne.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375046/flattrack/user_photos/user_photo_bruce_wayne_sotz0m.jpg")
+u2 = User.create!( name: "Tony Stark", email: "tony@stark.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375132/flattrack/user_photos/user_photo_tony_stark_rolgho.jpg")
+u3 = User.create!( name: "Peter Parker", email: "peter@parker.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375196/flattrack/user_photos/user_photo_peter_parker_xy8gq6.jpg")
+u4 = User.create!( name: "Steve Rogers", email: "steve@rogers.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375379/flattrack/user_photos/user_photo_steve_rogers_fjkl89.jpg")
 
 # Fancy Seed Flat
 # 1 Friends: Monica's flat
@@ -111,19 +111,19 @@ general = TaskCategory.create!( name: "general" )
 #Fancy Seed Task
 #1
 puts 'Creating task...'
-Task.create!( category: general, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3 )
+Task.create!( category: general, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
 #2
 puts 'Creating task...'
-Task.create!( category: general, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1 )
+Task.create!( category: general, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
 #3
 puts 'Creating task...'
-Task.create!( category: general, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1 )
+Task.create!( category: general, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
 #4
 puts 'Creating task...'
-Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2 )
+Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2, user: u4 )
 #5
 puts 'Creating task...'
-Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment wit tenant", company: company1, flat: f1, status: "open", urgency: 2 )
+Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment wit tenant", company: company1, flat: f1, status: "open", urgency: 2, user: u2 )
 
 # Fancy Seed Transaction Category
 #1

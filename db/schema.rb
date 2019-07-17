@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_131817) do
+ActiveRecord::Schema.define(version: 2019_07_17_154734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,9 +72,11 @@ ActiveRecord::Schema.define(version: 2019_07_17_131817) do
     t.bigint "category_id"
     t.integer "urgency", default: 3, null: false
     t.bigint "flat_id"
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_tasks_on_category_id"
     t.index ["company_id"], name: "index_tasks_on_company_id"
     t.index ["flat_id"], name: "index_tasks_on_flat_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "transaction_categories", force: :cascade do |t|
@@ -122,6 +124,7 @@ ActiveRecord::Schema.define(version: 2019_07_17_131817) do
   add_foreign_key "tasks", "companies"
   add_foreign_key "tasks", "flats"
   add_foreign_key "tasks", "task_categories", column: "category_id"
+  add_foreign_key "tasks", "users"
   add_foreign_key "transactions", "companies"
   add_foreign_key "transactions", "flats"
   add_foreign_key "transactions", "transaction_categories", column: "category_id"
