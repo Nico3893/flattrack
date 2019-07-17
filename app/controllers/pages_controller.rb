@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
 
   def dashboard
+    @tasks = Task.where(company: current_user.company)
   end
 end

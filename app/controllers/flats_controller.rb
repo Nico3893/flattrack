@@ -16,6 +16,9 @@ class FlatsController < ApplicationController
        #  infoWindow: render_to_string(partial: "infoWindow", locals: {flat: flat}),
         image_url: 'home-location-marker.png'
       }
+
+    @company = current_user.company
+    @tasks =  @company.tasks.where(urgency: 3)
     end
   end
 
