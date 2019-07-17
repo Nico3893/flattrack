@@ -2,12 +2,12 @@
     border-radius: 2px;
     background-color: $blue;
     width: 500px;
-    border: 0.5px solid $gray;
     display:flex;
     flex-direction:column;
     text-align:center;
     padding:4px;
     margin:10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .flatitem h3{
