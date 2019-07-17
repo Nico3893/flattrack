@@ -85,3 +85,16 @@
     text-align:center;   
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
+/* cards for flat show (no fixed width)*/
+
+.task-card-flat-show{
+    border-radius: 2px;
+    background-color: $blue;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    padding:4px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
