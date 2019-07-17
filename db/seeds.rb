@@ -74,7 +74,7 @@ puts 'Creating flat...'
 f8 = Flat.create!( address: "Wilhelmstraße 114-117, 10963 Berlin ", area: 85, rooms: 3, parking_space: 3, company: company1, monthly_rent: 800 )
 # 9 The Big Bang Theory: Sheldon and Leonard's flat
 puts 'Creating flat...'
-f9 = Flat.create!( address: "Lindenstraße 34, ", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
+f9 = Flat.create!( address: "Ritterstraße 61-65, 10969 Berlin ", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
 # 10 Sherlock: Sherlock and John's flat 221B Baker Street
 puts 'Creating flat...'
 f10 = Flat.create!( address: "Niederkirchnerstraße 7, 10963 Berlin", area: 85, rooms: 3, parking_space: 1, company: company1, monthly_rent: 800 )
