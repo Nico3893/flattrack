@@ -10,39 +10,34 @@ User.destroy_all
 Company.destroy_all
 
 # Original Seeds
-puts 'Creating company...'
-Company.create!( name: 'Immostar')
-puts 'Creating user...'
-User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first )
-puts 'Creating flat...'
-Flat.create!( address: "Rudi-Dutschke-Strasse 26, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, monthly_rent: 800, company: Company.first )
-puts 'Creating task category...'
-TaskCategory.create!( name: "Maintenance" )
-puts 'Creating task...'
-Task.create!( category: TaskCategory.first, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: Flat.first )
-puts 'Creating transaction category...'
-TransactionCategory.create!( name: "Inventory" )
-puts 'Creating transaction...'
-Transaction.create!( flat: Flat.first, amount: 1250, date: Date.today, category: TransactionCategory.first, description: "Firefighter operation", is_expense: true, company: Company.first )
-puts 'Creating contract...'
-Contract.create!( flat: Flat.first, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
-puts 'Creating 5 flat photos...'
-pic1 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi2_qfdzxv.jpg" )
-pic2 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi3_jjbrvm.jpg" )
-pic3 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi4_pv12ye.jpg" )
-pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
-pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
+# puts 'Creating company...'
+# Company.create!( name: 'Immostar')
+# puts 'Creating user...'
+# User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first )
+# puts 'Creating flat...'
+# Flat.create!( address: "Rudi-Dutschke-Strasse 26, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, monthly_rent: 800, company: Company.first )
+# puts 'Creating task category...'
+# TaskCategory.create!( name: "Maintenance" )
+# puts 'Creating task...'
+# Task.create!( category: TaskCategory.first, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: Flat.first )
+# puts 'Creating transaction category...'
+# TransactionCategory.create!( name: "Inventory" )
+# puts 'Creating transaction...'
+# Transaction.create!( flat: Flat.first, amount: 1250, date: Date.today, category: TransactionCategory.first, description: "Firefighter operation", is_expense: true, company: Company.first )
+# puts 'Creating contract...'
+# Contract.create!( flat: Flat.first, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
+# puts 'Creating 5 flat photos...'
+# pic1 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi2_qfdzxv.jpg" )
+# pic2 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi3_jjbrvm.jpg" )
+# pic3 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi4_pv12ye.jpg" )
+# pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
+# pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
 
-<<<<<<< HEAD
-
-# Fancy Seeds
-=======
-puts "Seeds finished succesfully!!!"
->>>>>>> master
 
 # Fancy Seed Company
 puts 'Creating company...'
 company1 = Company.create!( name: 'Wayne Enterprises')
+company1.save
 
 # Fancy Seed User
 puts 'Creating user...'
@@ -53,7 +48,6 @@ User.create!( name: "Bruce Wayne", email: "bruce@wayne.com", password: "123456",
 # 1 Friends: Monica's flat
 puts 'Creating flat...'
 f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1 )
-
 # 2 How I met your mother: Ted and Marshall's flat
 puts 'Creating flat...'
 f2 = Flat.create!( address: "Rudi-Dutschke-Straße 23, 10969 Berlin", area: 85, rooms: 3, parking_space: 3, company: company1 )
@@ -96,39 +90,52 @@ f14 = Flat.create!( address: "Schützenstraße 51, 10117 Berlin", area: 85, room
 # 15 House of Cards: Adam Galloway's flat
 puts 'Creating flat...'
 f15 = Flat.create!( address: "Kronenstraße 1-61, 10117 Berlin", area: 85, rooms: 3, parking_space: 0, company: company1 )
-
 # Fancy Photo Seeds
 # for f1
-pic1 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_ewzure.png" )
-pic2 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_digox5.jpg" )
-pic3 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_kitchen_hpf0um.jpg" )
-pic4 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_floorplan_fvfymm.jpg" )
+image1 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_ewzure.png" )
+image2 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_digox5.jpg" )
+image3 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_kitchen_hpf0um.jpg" )
+image4 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_floorplan_fvfymm.jpg" )
+
 #for f2
 
 # Fancy Seed Category
-#1
+#1 General
 puts 'Creating task category...'
-maintenance = TaskCategory.create!( name: "Maintenance" )
+#maintenance = TaskCategory.create!( name: "Maintenance" )
+general = TaskCategory.create!( name: "General" )
 
 #Fancy Seed Task
 #1
 puts 'Creating task...'
-Task.create!( category: maintenance, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: f1 )
+Task.create!( category: general, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3 )
+#2
+puts 'Creating task...'
+Task.create!( category: general, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1 )
+#3
+puts 'Creating task...'
+Task.create!( category: general, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1 )
+#4
+puts 'Creating task...'
+Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2 )
+#5
+puts 'Creating task...'
+Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment wit tenant", company: company1, flat: f1, status: "resolved", urgency: 2 )
 
 # Fancy Seed Transaction Category
 #1
-puts 'Creating transaction category...'
-TransactionCategory.create!( name: "Inventory" )
+# puts 'Creating transaction category...'
+# TransactionCategory.create!( name: "Inventory" )
 
 # Fancy Seed Transaction
 #1
-puts 'Creating transaction...'
-Transaction.create!( flat: Flat.first, amount: 1250, date: Date.today, category: TransactionCategory.first, description: "Firefighter operation", is_expense: true, company: Company.first )
+# puts 'Creating transaction...'
+# Transaction.create!( flat: Flat.first, amount: 1250, date: Date.today, category: TransactionCategory.first, description: "Firefighter operation", is_expense: true, company: Company.first )
 
 # Fancy Seed Contract
 puts 'Creating contract...'
-Contract.create!( flat: Flat.first, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
-puts 'Creating 5 flat photos...'
+contract1 = Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
+
 
 
 
