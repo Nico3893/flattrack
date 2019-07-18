@@ -15,8 +15,8 @@
     grid-template-rows: auto auto 33.33%;
     border-radius: 2px;
     padding: 4px;
-    background-color: #e8e8e8;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, rgba(244,244,244,1) 0%, rgba(232,232,232,0.5) 30%, rgba(232,232,232,1) 50%);
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
 
     }
 /*container for task feed items inside the dashboard container*/
@@ -166,7 +166,7 @@
 .flat-info-foto-display{
     grid-area: 1 / 1;
     width: 600px;
-    margin-left: 3rem;
+    margin-left: 7rem;
     height:100%;
 }
 
