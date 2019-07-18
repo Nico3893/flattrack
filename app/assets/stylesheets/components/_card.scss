@@ -21,37 +21,47 @@
 }
 
 
+
 .task-card-small .row{
     display:flex; 
     flex-direction:row;
     justify-content:space-around;
     align-content: center;
 }
+
 /* task cards to be displayed in the feed */
 .task-card-feed {
     border-radius: 2px;
     background-color: $blue;
-    width:27rem;
+    width:40%;
     display: flex;
     flex-direction: column;
     text-align:center;
     padding:4px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    justify-self: stretch;
 }
 
-.task-card-feed h3 p{
-    font-size: 16px;
+.task-card-feed p{
+    font-size: 12px;
+    align-self: start;
+    padding-left: 10px;
 }
 
 .task-card-feed h3{
     font-weight:lighter;
+    font-size: 16px;
+    padding-left: 2vw;
 }
 
-.task-card-feed .row{
+
+.task-card-feed > .row{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between !important;
+    padding-right: 2vw;
+/*  grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1;*/
 }
 
 /* regular-sized dashboard card suggested height 200px*/

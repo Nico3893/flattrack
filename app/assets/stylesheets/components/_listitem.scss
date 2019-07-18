@@ -8,6 +8,15 @@
     padding:4px;
     margin:10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: black;
+    text-decoration:none;
+    &:hover{
+        color:black;
+    }
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 .flatitem h3{
