@@ -141,7 +141,7 @@
 .flat-info-column-a{
     grid-area: 1 / 1;
     display:grid;
-    grid-template-rows: 4fr 1fr 2fr;
+    grid-template-rows: auto auto auto;
     grid-template-columns: 1fr;
     justify-content:center;
 }
