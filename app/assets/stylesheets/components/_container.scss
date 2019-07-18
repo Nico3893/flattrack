@@ -58,6 +58,20 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.container-flat-index-tasks-a{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items:center;
+}
+
+.container-flat-index-tasks-b{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    justify-items:center;
+}
+
 /*following item creation in top grid on flat-index-page*/
 
 .item-map {
