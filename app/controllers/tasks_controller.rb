@@ -19,6 +19,7 @@ class TasksController < ApplicationController
       redirect_to flat_path(@flat)
     else
       render :new
+      # render errors instead
     end
   end
 
