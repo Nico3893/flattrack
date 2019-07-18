@@ -28,11 +28,13 @@
 
 .task-card-small p{
  font-size: 12px;
+ align-self: start;
 }
 
 .task-card-small h3{
     font-size: 12px;
     font-weight: lighter;
+    padding-top: 8px;
 }
 
 
@@ -40,8 +42,11 @@
 .task-card-small .row{
     display:flex; 
     flex-direction:row;
-    justify-content:space-around;
+    justify-content:space-between;
     align-content: center;
+    padding-right: 1.5vw;
+    padding-left: 1.5vw;
+    padding-top: 4px;
 }
 
 /* task cards to be displayed in the feed */
@@ -88,17 +93,17 @@
     width: 19rem;
     flex-direction: column;
     padding: 4px;
-    background-color:#f9fbfc;
-    border-right: thin double $dark-blue;
+    background-color:#e8e8e8;
+   /* border-right: thin double $dark-blue;
     border-left: thin double $dark-blue;
-    border-bottom: thin double $dark-blue;
+    border-bottom: thin double $dark-blue;*/
     margin: 10px;
     justify-content:center;
     text-align:center;
 }
 
 .dashboard-card-regular > .title {
-    text-decoration: underline;
+    text-decoration: underline overline #183661;
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 
@@ -130,7 +135,7 @@
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     color: white;
-    width: 100%;
+    width: 24rem;
     justify-self: center;
     align-self: center;
     }

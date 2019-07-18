@@ -15,7 +15,7 @@
     grid-template-rows: auto auto 33.33%;
     border-radius: 2px;
     padding: 4px;
-    background-color: #f9fbfc;
+    background-color: #e8e8e8;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
 
     }
@@ -57,7 +57,7 @@
 
 .item-e {
     grid-area: 2 / 2 ;
-    background-color: #f9fbfc;
+    background-color: #e8e8e8;
 }
 
 .item-f {
@@ -127,23 +127,31 @@
 
 .kpi-container-item-a{
     grid-area: 1 / 1;
+    border-right: thin double $dark-blue;
+    border-left: thin double $dark-blue;
 }
 
 .kpi-container-item-b{
     grid-area: 1 / 2;
+    border-right: thin double $dark-blue;
+    border-left: thin double $dark-blue;
 }
 .kpi-container-item-c{
     grid-area: 1 / 3;
+    border-right: thin double $dark-blue;
+    border-left: thin double $dark-blue;
 }
 .kpi-container-item-d{
     grid-area: 1 / 4;
+    border-right: thin double $dark-blue;
+    border-left: thin double $dark-blue;
 }
 
 /*container for bottom half of page*/
 .flat-info-container{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 2;
+    grid-template-columns: 3fr 1fr;
     margin-top: 16px;
 }
 /*left side column in flat-info-container*/
@@ -157,6 +165,9 @@
 
 .flat-info-foto-display{
     grid-area: 1 / 1;
+    width: 600px;
+    margin-left: 3rem;
+    height:100%;
 }
 
 .flat-info-button{
