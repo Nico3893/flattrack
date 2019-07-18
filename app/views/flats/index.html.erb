@@ -37,11 +37,11 @@
   </div>
   <h2>What's going on today</h2>
   <div class="container-flat-index-tasks">
-         <% @tasks.each do |task| %>
+    <% @tasks.each do |task| %>
   <div class="task-card-small">
         <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-        <h3><%= task.title %></h3>
-        <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+          <h3><%= task.title %></h3>
+          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
         </div>
         <p class="content"><%= task.description %></p>
       </div>
