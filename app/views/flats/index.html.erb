@@ -45,7 +45,7 @@
     <%end%>
     <% @tasks.each do |task| %>
   <div class="task-card-small">
-        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+        <div class="row">
           <h3><%= task.title %></h3>
           <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
         </div>

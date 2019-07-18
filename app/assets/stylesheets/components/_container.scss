@@ -151,7 +151,7 @@
 .flat-info-container{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 2;
+    grid-template-columns: 3fr 1fr;
     margin-top: 16px;
 }
 /*left side column in flat-info-container*/
@@ -166,7 +166,7 @@
 .flat-info-foto-display{
     grid-area: 1 / 1;
     width: 600px;
-    margin-left: 120px;
+    margin-left: 3rem;
     height:100%;
 }
 
