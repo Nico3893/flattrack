@@ -2,6 +2,19 @@
 .task-card-small{
     border-radius: 2px;
     background-color: $blue;
+    min-width: 320px;
+    max-width: 500px;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    padding: 4px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.task-card-small-a{
+    border-radius: 2px;
+    background-color: $blue;
     min-width: 400px;
     width:100%;
     display:flex;
@@ -11,6 +24,7 @@
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 
 .task-card-small p{
  font-size: 12px;
