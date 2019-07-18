@@ -94,16 +94,16 @@
     flex-direction: column;
     padding: 4px;
     background-color:#e8e8e8;
-   /* border-right: thin double $dark-blue;
+   border-right: thin double $dark-blue;
     border-left: thin double $dark-blue;
-    border-bottom: thin double $dark-blue;*/
+    /* border-bottom: thin double $dark-blue;*/
     margin: 10px;
     justify-content:center;
     text-align:center;
 }
 
 .dashboard-card-regular > .title {
-    text-decoration: underline overline #183661;
+    /*text-decoration: underline overline #183661;*/
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 
