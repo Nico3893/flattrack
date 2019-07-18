@@ -47,7 +47,7 @@
   <div class="task-card-small">
         <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
           <h3><%= task.title %></h3>
-          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+          <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
         </div>
         <p class="content"><%= task.description %></p>
       </div>
