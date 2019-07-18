@@ -99,6 +99,7 @@
 
 .dashboard-card-regular > .title {
     text-decoration: underline;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
 
 /* large-sized dashboard card (double height*/
@@ -132,7 +133,7 @@
     width: 100%;
     justify-self: center;
     align-self: center;
-}
+    }
 .task-card-flat-show h3 {
     font-weight:lighter;
     font-size: 16px;

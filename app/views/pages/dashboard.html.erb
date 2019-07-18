@@ -57,7 +57,7 @@
     </div>
     <div class="item-e">
       <div class="dashboard-card-regular">
-        <h3 class="title">Urgency of tasks</h3>
+        <h3 class="title">Employee statistics</h3>
         <%= pie_chart Task.group(:user).count, messages: {empty: "No data"} %>
       </div>
     </div>

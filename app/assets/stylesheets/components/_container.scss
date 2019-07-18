@@ -23,25 +23,23 @@
 .task-feed-container {
     grid-area: 1 / 1 / last-line / 1;
     justify-items:center;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    padding: 2px
+    padding: 2px;
 }
 
 /*start card items dashboard*/
 .item-a {
-    grid-area: 1 / 2;
-    background-color: white;
+    grid-area: 3 / 3;
+ /*   background-color: white;*/
 }
 
 .item-b {
-    grid-area: 1 / 3;
-    background-color: white;
+    grid-area: 3 / 2;
+   /* background-color: white;*/
 }
 
 .item-c {
-    grid-area: 2 / 3;
-    background-color: white;
+    grid-area: 1 / 3;
+   /* background-color: white;*/
 }
 
 .utilities{
@@ -49,8 +47,8 @@
 }
 
 .item-d {
-    grid-area: 3 / 3;
-    background-color: white;
+    grid-area: 1 / 2;
+    /*background-color: white;*/
     }
 
 .cashflow{
@@ -58,8 +56,13 @@
         }
 
 .item-e {
-    grid-area: 2 / 2 / row3-start / 2;
+    grid-area: 2 / 2 ;
     background-color: white;
+}
+
+.item-f {
+    grid-area: 2 / 3;
+    /*background-color: white;*/
 }
 
 /*end card items dashboard*/
