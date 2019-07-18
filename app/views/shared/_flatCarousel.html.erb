@@ -3,17 +3,26 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= cl_image_tag @flat.flat_photos[1].photo, height: 300, width: 400, crop: :fill %>
-    </div>
-    <div class="carousel-item">
-      <%= cl_image_tag @flat.flat_photos[1].photo, height: 300, width: 400, crop: :fill %>
-    </div>
-    <div class="carousel-item">
-      <%= cl_image_tag @flat.flat_photos[1].photo, height: 300, width: 400, crop: :fill %>
-    </div>
+    <% if @flat.flat_photos.empty? %>
+      <div class="carousel-item active">
+        <img src="http://artmusings.net/wp-content/uploads/2017/07/600px-No_image_available.svg_.png" alt="no picture" style="height: 300px">
+      </div>
+    <% else %>
+      <% @flat.flat_photos.each_with_index do |flatphoto, index| %>
+        <% if index == 0 %>
+          <div class="carousel-item active">
+            <%= cl_image_tag flatphoto.photo, height: 300, width: 400, crop: :fill %>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag flatphoto.photo, height: 300, width: 400, crop: :fill %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

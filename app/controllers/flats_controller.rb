@@ -7,7 +7,7 @@ class FlatsController < ApplicationController
       @flats = policy_scope(Flat)
     end
 
-    @flats_geocoded = Flat.where.not(latitude: nil, longitude: nil)
+    @flats_geocoded = Flat.where.not(latitude: nil, longitude: nil).where(company: current_user.company)
 
     @markers = @flats_geocoded.map do |flat|
       {
@@ -17,13 +17,15 @@ class FlatsController < ApplicationController
         image_url: 'home-location-marker.png'
       }
     end
+    @company = current_user.company
+    @tasks =  @company.tasks.where(urgency: 3)
   end
 
   def show
     @flat = Flat.find(params[:id])
+    authorize @flat
     @task = Task.new
     @task.company = current_user.company
-    authorize @flat
   end
 
   private

@@ -9,17 +9,17 @@ Flat.destroy_all
 User.destroy_all
 Company.destroy_all
 
-# Original Seeds
+# Original Test Seeds
 # puts 'Creating company...'
 # Company.create!( name: 'Immostar')
 # puts 'Creating user...'
-# User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first )
+# User.create!( name: "Frank Goldberg", email: "Frank@gmail.com", password: "123456", company: Company.first, photo: "" )
 # puts 'Creating flat...'
 # Flat.create!( address: "Rudi-Dutschke-Strasse 26, 10969 Berlin", area: 85, rooms: 3, parking_space: 2, monthly_rent: 800, company: Company.first )
 # puts 'Creating task category...'
 # TaskCategory.create!( name: "Maintenance" )
 # puts 'Creating task...'
-# Task.create!( category: TaskCategory.first, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: Flat.first )
+# Task.create!( category: TaskCategory.first, title: "Send Plumber", description: "Appointment needs to be coordinated with tenant", company: Company.first, flat: Flat.first, user: User.first )
 # puts 'Creating transaction category...'
 # TransactionCategory.create!( name: "Inventory" )
 # puts 'Creating transaction...'
@@ -33,9 +33,12 @@ Company.destroy_all
 # pic4 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270687/flattrack/Rudi5_itk8ae.jpg" )
 # pic5 = FlatPhoto.create!( flat: Flat.first, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563270685/flattrack/Rudi1_rolnk1.jpg" )
 
+# puts "Test Seeds finished succesfully!!!"
+
+
 # Fancy Seed Company
 puts 'Creating company...'
-company1 = Company.create!( name: 'Wayne Enterprises')
+company1 = Company.create!( name: 'Wayne Enterprises') # does it need a created_at date
 company1.save
 
 # Fancy Seed User
@@ -48,7 +51,7 @@ u4 = User.create!( name: "Steve Rogers", email: "steve@rogers.com", password: "1
 # Fancy Seed Flat
 # 1 Friends: Monica's flat
 puts 'Creating flat...'
-f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1, monthly_rent: 2000, comment: "many house parties, problems with neighbors in the past", address_specification: "apartment 19, 4th floor" )
+f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 120, rooms: 3, parking_space: 0, company: company1, monthly_rent: 1750, comment: "Flatshare Young Professionals")
 image1 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_ewzure.png" )
 image2 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_digox5.jpg" )
 image3 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_kitchen_hpf0um.jpg" )
@@ -56,15 +59,16 @@ image4 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khf
 
 # 2 How I met your mother: Ted and Marshall's flat
 puts 'Creating flat...'
+f2 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1, monthly_rent: 2000, comment: "Flatshare Young Professionals", address_specification: "apartment 19, 4th floor" )
 image5 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_livingroom_empty_rngnmy.jpg" )
 image6 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_livingroom_hs7zvn.jpg" )
-image7 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_floorplan_lmh2cx.jpg" )image5 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_livingroom_empty_rngnmy.jpg" )
+image7 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_floorplan_lmh2cx.jpg" )
 image6 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_livingroom_hs7zvn.jpg" )
 image7 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_floorplan_lmh2cx.jpg" )
 
 # 3 Sex and the City: Carrie's flat
 puts 'Creating flat...'
-f3 = Flat.create!( address: "Friedrichstraße 206, 10969 Berlin", area: 50, rooms: 1, parking_space: 0, company: company1, monthly_rent: 800, comment: "Stores shoes in the oven")
+f3 = Flat.create!( address: "Friedrichstraße 206, 10969 Berlin", area: 50, rooms: 1, parking_space: 0, company: company1, monthly_rent: 800, comment: "Shoe storage in the oven")
 image8 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377984/flattrack/f3_satc_bedroom_stkhao.jpg" )
 image9 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377984/flattrack/f3_satc_entrance_a9ous4.jpg" )
 image10 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377983/flattrack/f3_satc_hallway_liu9bh.jpg" )
@@ -73,7 +77,7 @@ image12 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5kh
 
 # 4 How I met your mother: Barney's flat
 puts 'Creating flat...'
-f4 = Flat.create!( address: "Rudi-Dutschke-Straße 19-17, 10969 Berlin", area: 80, rooms: 2, parking_space: 2, company: company1, monthly_rent: 1200, comment: "Bro Special Edition, including Storm Trooper", address_specification: "" )
+f4 = Flat.create!( address: "Rudi-Dutschke-Straße 19-17, 10969 Berlin", area: 80, rooms: 2, parking_space: 2, company: company1, monthly_rent: 1200, comment: "Bro Special Edition, including Storm Trooper" )
 image13 = FlatPhoto.create!( flat: f4, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563379087/flattrack/f4_himym_livingroom_close_oqrr2n.jpg" )
 image14 = FlatPhoto.create!( flat: f4, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563379087/flattrack/f4_himym_livingroom_so2jyv.jpg" )
 image15 = FlatPhoto.create!( flat: f4, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563379087/flattrack/f4_himym_bedroom_vib9wq.jpg" )
@@ -172,26 +176,52 @@ general = TaskCategory.create!( name: "General" )
 #Fancy Seed Task
 #1
 puts 'Creating task...'
-Task.create!( category: general, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3 )
+Task.create!( category: general, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
 #2
 puts 'Creating task...'
-Task.create!( category: general, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1 )
+Task.create!( category: general, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
 #3
 puts 'Creating task...'
-Task.create!( category: general, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1 )
+Task.create!( category: general, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
 #4
 puts 'Creating task...'
-Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2 )
+Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2, user: u4 )
 #5
 puts 'Creating task...'
-Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment wit tenant", company: company1, flat: f1, status: "resolved", urgency: 2 )
+Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u2)
 
 puts 'Creating task...'
-Task.create!( category: general, title: "Elevator out of order", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2 )
+Task.create!( category: general, title: "Elevator out of order", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Blackout", description: "Look into the matter and fix it.", company: company1, flat: f9, status: "open", urgency: 3, user: u3 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Bullet holes in livingroom wall", description: "coordinate painter and tannant", company: company1, flat: f10, status: "open", urgency: 2, user: u2 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u2)
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u3 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Heating broken", description: "send caretaker to inspect, if serious problem coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "High heel marks in parquet floor", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
+
+puts 'Creating task...'
+Task.create!( category: general, title: "Door bell broken", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+
 
 # Fancy Seed Contract
 puts 'Creating contract...'
 contract1 = Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
+
 
 
 # Fancy Seed Transaction Category
@@ -205,11 +235,18 @@ rent = TransactionCategory.create!( name: "rent" )
 # Fancy Seed Transaction
 #1
 puts 'Creating transactions...'
-Transaction.create!( flat: f1, amount: 1250, date: Date.today, category: onetime, description: "Extraordinary Chimney Sweep", is_expense: true, company: company1 )
-Transaction.create!( flat: f1, amount: 100, date: Date.today, category: furniture, description: "Kettle", is_expense: true, company: company1 )
-Transaction.create!( flat: f1, amount: 100, date: Date.today, category: utilities, description: "flat 1, July 2019", is_expense: true, company: company1 )
-Transaction.create!( flat: f1, amount: 800, date: Date.today, category: rent, description: "flat 1, July 2019", is_expense: false, company: company1 )
-Transaction.create!( flat: f1, amount: 800, date: Date.today, category: rent, description: "flat 1, August 2019", is_expense: false, company: company1 )
+Transaction.create!( flat: f1, amount_cents: 7000, date: Date.today, category: onetime, description: "Extraordinary Heating Maintenance", is_expense: true, company: company1 )
+Transaction.create!( flat: f1, amount_cents: 350, date: Date.today, category: furniture, description: "Kettle", is_expense: true, company: company1 )
+Transaction.create!( flat: f1, amount_cents: 5405, date: Date.today, category: utilities, description: "flat 1, July 2019", is_expense: true, company: company1 )
+Transaction.create!( flat: f1, amount_cents: 20000, date: Date.today, category: rent, description: "flat 1, July 2019", is_expense: false, company: company1 )
+Transaction.create!( flat: f1, amount_cents: 20000, date: Date.today, category: rent, description: "flat 1, August 2019", is_expense: false, company: company1 )
+
+Transaction.create!( flat: f2, amount_cents: 12050, date: Date.today, category: onetime, description: "Adding blue horn to interior", is_expense: true, company: company1 )
+Transaction.create!( flat: f3, amount_cents: 1000, date: Date.today, category: furniture, description: "Sidetable", is_expense: true, company: company1 )
+Transaction.create!( flat: f10, amount_cents: 1800, date: Date.today, category: utilities, description: "flat 10, July 2019", is_expense: true, company: company1 )
+Transaction.create!( flat: f7, amount_cents: 27000, date: Date.today, category: rent, description: "flat 7, July 2019", is_expense: false, company: company1 )
+Transaction.create!( flat: f9, amount_cents: 8500, date: Date.today, category: rent, description: "flat 9, August 2019", is_expense: false, company: company1 )
+
 
 # Fancy Seed Contract
 puts 'Creating contract...'

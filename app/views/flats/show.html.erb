@@ -5,16 +5,16 @@
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <h2>Zehdenicker Straße 69</h2>
+  <h2><%= @flat.address %></h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
     <h2>100.000€</h2>
     </div>
     <div class="kpi-container-item-b">
-      <h2>200m²</h2>
+      <h2><%= @flat.area %>m²</h2>
     </div>
     <div class="kpi-container-item-c">
-      <h2>30€/m²</h2>
+      <h2><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
     </div>
     <div class="kpi-container-item-d">
       <h2>10000€</h2>
@@ -27,56 +27,60 @@
     <div class="flat-info-column-a">
       <div class="flat-info-foto-display">
         <%= render 'shared/flatCarousel' %>
+
       <!-- Button trigger modal -->
       <div>
-        <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
+        <button  type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
           New Task
         </button>
       </div>
+
       <div class="flat-info-important">
         <div class="task-card-small">
-          <h3>Hello I am a title</h3>
-          <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eaque quaerat exercitationem distinctio recusandae, nihil quam, sequi placeat quos, velit asperiores sit corrupti dicta. </p>
+          <h3>Special comments</h3>
+          <p><%= @flat.comment %></p>
         </div>
       </div>
     </div>
     <!-- right-side-container in flat-info-->
     <div class="flat-info-column-b">
       <!--<div class="flat-info-column-b-item-a">-->
-        <div class="task-card-flat-show">
-          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-          <h3>Task title</h3>
-          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+        <% @flat.tasks.each do |task| %>
+          <div class="task-card-flat-show">
+            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <h3><%= task.title %></h3>
+            <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
+            </div>
+            <p class="content"><%= task.description %></p>
           </div>
-          <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div>
+        <% end %>
       <!--</div>-->
       <!--<div class="flat-info-column-b-item-b">-->
-        <div class="task-card-flat-show">
-            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-            <h3>Task title</h3>
-            <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-            </div>
-            <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div>
-      <!--</div>-->
-      <!--<div class="flat-info-column-b-item-c">-->
-        <div class="task-card-flat-show">
-            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-            <h3>Task title</h3>
-            <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-            </div>
-            <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div>
-      <!--</div>-->
-      <!--<div class="flat-info-column-b-item-d">-->
-        <div class="task-card-flat-show">
+      <!--   <div class="task-card-flat-show">
           <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
           <h3>Task title</h3>
           <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
           </div>
           <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div>
+        </div> -->
+      <!--</div>-->
+      <!--<div class="flat-info-column-b-item-c">-->
+     <!--    <div class="task-card-flat-show">
+          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+          <h3>Task title</h3>
+          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+          </div>
+          <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
+        </div> -->
+      <!--</div>-->
+      <!--<div class="flat-info-column-b-item-d">-->
+     <!--    <div class="task-card-flat-show">
+          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+          <h3>Task title</h3>
+          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+          </div>
+          <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
+        </div> -->
       <!--</div>-->
     </div>
   </div>
