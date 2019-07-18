@@ -139,7 +139,8 @@
 }
 .flat-info-important{
     grid-area: 3 / 1;
-    justify-self: center;
+    display:grid;
+    justify-items: center;
     justify-content:center;
 }
 /*right side column in flat-info-container*/
