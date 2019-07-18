@@ -7,7 +7,7 @@ class FlatsController < ApplicationController
       @flats = policy_scope(Flat)
     end
 
-    @flats_geocoded = Flat.where.not(latitude: nil, longitude: nil)
+    @flats_geocoded = Flat.where.not(latitude: nil, longitude: nil).where(company: current_user.company)
 
     @markers = @flats_geocoded.map do |flat|
       {

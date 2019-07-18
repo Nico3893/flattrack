@@ -13,10 +13,12 @@
       </div>
       <div class="item-list">
       <% @flats_geocoded.each do |flat| %>
+      <%= link_to flat_path(flat) do%>
         <div class="flatitem">
         <h3 class="address-header"><%=flat.address%></h3>
         <p class="content"> <%= flat.rooms%> Rooms <%=flat.parking_space%> Parking Spaces <%=flat.area%>m²</p>
       </div>
+    <%end%>
     <%end%>
 
      <!-- <div class="flatitem">
