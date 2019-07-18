@@ -5,7 +5,7 @@
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <h2><%= @flat.address %></h2>
+  <h2 class="header"><%= @flat.address %></h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
     <h2><%= @flat.area %>m²</h2>
@@ -45,7 +45,7 @@
     <!-- right-side-container in flat-info-->
     <div class="flat-info-column-b">
       <!--<div class="flat-info-column-b-item-a">-->
-        <% @flat.tasks.each do |task| %>
+        <% @tasks.each do |task| %>
           <div class="task-card-flat-show">
             <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
             <h3><%= task.title %></h3>

@@ -4,74 +4,70 @@
 
 
 <div class="container">
-<h2>Good Morning, Frank!</h2>
-        <div class="dashboard-container">
-            <div class="task-feed-container">
-            <%@tasks.each do |task|%>
-                <div class="task-card-feed">
-                    <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-                    <h3><%=task.title%></h3>
-                    <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
-                </div>
-                <p class="content"><%=task.description%></p>
-                </div>
-            <%end%>
-              <!--  <div class="task-card-feed">
-                    <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+  <h2 class="header">Good Morning, <%= current_user.name %>!</h2>
+  <div class="dashboard-container">
+    <div class="task-feed-container">
+      <%@tasks.each do |task|%>
+        <div class="task-card-feed">
+          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <h3><%=task.title%></h3>
+            <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
+          </div>
+          <p class="content"><%=task.description%></p>
+        </div>
+      <%end%>
+      <!--  <div class="task-card-feed">
+            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <h3>Task title</h3>
+            <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+            </div>
+            <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
+        </div>
+            <div class="task-card-feed">
+                <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
                     <h3>Task title</h3>
                     <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-                    </div>
-                    <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
                 </div>
-                    <div class="task-card-feed">
-                        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-                            <h3>Task title</h3>
-                            <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-                        </div>
-                        <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-                    </div>
-                     <div class="task-card-feed">
-                        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-                            <h3>Task title</h3>
-                            <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-                        </div>
-                        <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-                    </div>-->
+                <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
             </div>
-                <div class="item-a">
-                    <div class="dashboard-card-regular">
-                    <h3 class="title">Item A</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.</p>
-                    </div>
+             <div class="task-card-feed">
+                <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+                    <h3>Task title</h3>
+                    <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
                 </div>
-
-                    <div class="item-b">
-                        <div class="dashboard-card-regular">
-                            <h3 class="title">Item B</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.</p>
-                        </div>
-                    </div>
-                        <div class="item-c">
-                            <div class="dashboard-card-regular">
-                            <h3 class="title">Item C</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.</p>
-                            </div>
-                        </div>
-                            <div class="item-d">
-                                <div class="dashboard-card-regular">
-                                    <h3 class="title">Item D</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.</p>
-                                </div>
-                            </div>
-                                <div class="item-e">
-                                    <div class="dashboard-card-regular">
-                                        <h3 class="title">Item E</h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.</p>
-                                    </div>
-                                </div>
-
-
-
-
+                <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
+            </div>-->
     </div>
+    <div class="item-a">
+      <div class="dashboard-card-regular">
+        <h3 class="title">Area</h3>
+        <h3><%= @area %>m²</h3>
+      </div>
+    </div>
+
+    <div class="item-b">
+      <div class="dashboard-card-regular">
+        <h3 class="title">Rent per m²</h3>
+        <h3><%= @rent / @area %>€/m²</h3>
+      </div>
+    </div>
+    <div class="item-c">
+      <div class="dashboard-card-regular">
+        <h3 class="title">Utilities</h3>
+        <h3><%= @utilities %>€</h3>
+      </div>
+    </div>
+    <div class="item-d">
+      <div class="dashboard-card-regular">
+        <h3 class="title">Cash Flow</h3>
+        <h3><%= @cashflow %>€</h3>
+      </div>
+    </div>
+    <div class="item-e">
+      <div class="dashboard-card-regular">
+        <h3 class="title">Item E</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iure consequatur consequuntur a recusandae. Soluta praesentium, perspiciatis debitis consequatur dolores sunt magni doloribus itaque optio, expedita repellat exercitationem alias ratione.</p>
+      </div>
+    </div>
+  </div>
 </div>
