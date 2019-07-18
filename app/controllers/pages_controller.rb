@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
 
   def dashboard
-    @tasks = Task.where(company: current_user.company)
+    @tasks = Task.where(company: current_user.company).where(status: 'open').limit(7)
     @utilities = utilities
     @cashflow = cash_flow
     @area = area
