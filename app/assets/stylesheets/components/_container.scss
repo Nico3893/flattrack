@@ -41,14 +41,22 @@
 .item-c {
     grid-area: 2 / 3;
     background-color: white;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);   
+}
+
+.item-c .utilities{
+    color: $red; 
 }
 
 .item-d {
     grid-area: 3 / 3;
     background-color: white;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
-}
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);   
+    }
+
+.item-d .cashflow{ 
+        color: $green;
+        }
 
 .item-e {
     grid-area: 2 / 2 / row3-start / 2;

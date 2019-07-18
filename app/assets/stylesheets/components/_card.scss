@@ -88,12 +88,13 @@
     width: 19rem;
     flex-direction: column;
     padding: 4px;
-    background-color: $blue;
+    background-color:white;
     border-radius: 2px;
+    border-right: thin double $dark-blue;
+    border-left: thin double $dark-blue;
     margin: 10px;
     justify-content:center;
     text-align:center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 
