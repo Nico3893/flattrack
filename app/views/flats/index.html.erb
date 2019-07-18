@@ -36,7 +36,13 @@
     </div>
   </div>
   <h2>What's going on today</h2>
-  <div class="container-flat-index-tasks">
+  <% if @tasks.count==1%>
+  <div class="container-flat-index-tasks-b">
+  <% elsif @tasks.count==2%>
+    <div class="container-flat-index-tasks-a">
+    <%else%>
+    <div class="container-flat-index-tasks">
+    <%end%>
     <% @tasks.each do |task| %>
   <div class="task-card-small">
         <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
@@ -76,5 +82,5 @@
     </div>
   </div>
 </div>
-<%= bar_chart Flat.group(:area).sum(:monthly_rent_cents) %>
+<!--<%= bar_chart Flat.group(:area).sum(:monthly_rent_cents) %>-->
 
