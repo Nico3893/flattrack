@@ -147,7 +147,7 @@
 .flat-info-column-a{
     grid-area: 1 / 1;
     display:grid;
-    grid-template-rows: 5fr 1fr 3fr;
+    grid-template-rows: 2fr 1fr;
     grid-template-columns: 1fr;
     justify-content:center;
 }
@@ -160,7 +160,7 @@
     grid-area: 2 / 1;
 }
 .flat-info-important{
-    grid-area: 3 / 1;
+    grid-area: 2 / 1;
     display:grid;
     justify-items: center;
     justify-content:center;
