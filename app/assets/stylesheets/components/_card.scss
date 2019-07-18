@@ -57,7 +57,6 @@
 
 
 .task-card-feed > .row{
-    display: flex;
     justify-content: space-between !important;
     padding-right: 1.5vw;
 /*  grid-template-columns: 3fr 1fr;
@@ -113,8 +112,16 @@
 .task-card-flat-show h3 {
     font-weight:lighter;
     font-size: 16px;
+    padding-left: 2vw;
+}
+
+.task-card-flat-show > .row{
+    padding-right: 1.5vw;
+    justify-content:space-between !important;
 }
 
 .task-card-flat-show p {
     font-size: 12px;
+    align-self: start;
+    padding-left: 10px;
 }
