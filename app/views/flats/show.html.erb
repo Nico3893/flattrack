@@ -28,13 +28,6 @@
       <div class="flat-info-foto-display">
         <%= render 'shared/flatCarousel' %>
       </div>
-      <!-- Button trigger modal -->
-      <div style="align-self:center">
-        <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
-          New Task
-        </button>
-      </div>
-
       <div class="flat-info-important">
         <div class="task-card-small-a">
           <h3>Special comments</h3>
@@ -44,7 +37,13 @@
     </div>
     <!-- right-side-container in flat-info-->
     <div class="flat-info-column-b">
-      <div class="flat-info-column-b-item-a">
+      <!--<div class="flat-info-column-b-item-a">-->
+        <!-- Button trigger modal -->
+      <div style="align-self:center">
+        <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
+          New Task
+        </button>
+      </div>
         <% @tasks.each do |task| %>
           <div class="task-card-flat-show">
             <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
@@ -54,7 +53,7 @@
             <p class="content"><%= task.description %></p>
           </div>
         <% end %>
-      </div>
+     <!-- </div>-->
       <!--<div class="flat-info-column-b-item-b">-->
       <!--   <div class="task-card-flat-show">
           <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
