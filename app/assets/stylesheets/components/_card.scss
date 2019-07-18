@@ -89,14 +89,17 @@
     flex-direction: column;
     padding: 4px;
     background-color:white;
-    border-radius: 2px;
     border-right: thin double $dark-blue;
     border-left: thin double $dark-blue;
+    border-bottom: thin double $dark-blue;
     margin: 10px;
     justify-content:center;
     text-align:center;
 }
 
+.dashboard-card-regular > .title {
+    text-decoration: underline;
+}
 
 /* large-sized dashboard card (double height*/
 

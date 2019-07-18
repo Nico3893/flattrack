@@ -14,10 +14,10 @@
       <h2><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
     </div>
     <div class="kpi-container-item-c">
-      <h2><%= @utilities %>€<br>utilities</h2>
+      <h2 class="utilities"><%= @utilities %>€</h2><h2>utilities</h2>
     </div>
     <div class="kpi-container-item-d">
-      <h2><%= @cashflow %>€<br>cashflow</h2>
+      <h2 class="cashflow"><%= @cashflow %>€</h2><h2>cashflow</h2>
     </div>
   </div>
   <!-- end of kpi-container-->
@@ -29,7 +29,7 @@
         <%= render 'shared/flatCarousel' %>
       </div>
       <!-- Button trigger modal -->
-      <div>
+      <div style="align-self:center">
         <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
           New Task
         </button>
