@@ -25,11 +25,11 @@
     font-family:$headers-font;
     border-radius: 4px;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s;
     margin: 4px;
     &:hover{
         text-decoration: none;
-        color: $blue-grey;
         background-color:#afc3d3;
+        color: black; 
     }
 }
