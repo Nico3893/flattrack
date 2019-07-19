@@ -16,10 +16,10 @@ company1.save
 
 # Fancy Seed User
 puts 'Creating users...'
-u1 = User.create!( name: "Diana Prince", email: "diana@prince.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563471879/flattrack/user_photos/user_diana_prince_ohyod8.png")
-u2 = User.create!( name: "Tony Stark", email: "tony@stark.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375132/flattrack/user_photos/user_photo_tony_stark_rolgho.jpg")
-u3 = User.create!( name: "Peter Parker", email: "peter@parker.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375196/flattrack/user_photos/user_photo_peter_parker_xy8gq6.jpg")
-u4 = User.create!( name: "Steve Rogers", email: "steve@rogers.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563375379/flattrack/user_photos/user_photo_steve_rogers_fjkl89.jpg")
+u1 = User.create!( name: "Christina Gudat", email: "christina@gudat.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_christina_gudat_cx8ndp.jpg")
+u2 = User.create!( name: "Christoph Busse", email: "christoph@busse.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533412/flattrack/user_photos/Busse_gro%C3%9F_twetuw.jpg")
+u3 = User.create!( name: "Chris Hägner", email: "chris@hägner.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_chis_h%C3%A4gner_ocfdcu.jpg")
+u4 = User.create!( name: "Nicolas Eberhardt", email: "nicolas@eberhardt.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_nicolas_erberhardt_k2tode.jpg")
 
 # Fancy Seed Flat
 # 1 Friends: Monica's flat
@@ -143,50 +143,57 @@ image57 = FlatPhoto.create!( flat: f14, photo: "https://res.cloudinary.com/djn5k
 puts 'Creating task category...'
 #maintenance = TaskCategory.create!( name: "Maintenance" )
 general = TaskCategory.create!( name: "General" )
+maintenance = TaskCategory.create!( name: "Maintenance" )
+restocking = TaskCategory.create!( name: "Restocking" )
+furnishing = TaskCategory.create!( name: "Furnishing" )
+repair = TaskCategory.create!( name: "Repair" )
 
-#Fancy Seed Task
+#Fancy Seed Task  # add restocking task and more furnishing tasks
 #1
 puts 'Creating task...'
-t1 = Task.create!( category: general, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
+t1 = Task.create!( category: repair, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
 #2
 puts 'Creating task...'
-t2 = Task.create!( category: general, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
+t2 = Task.create!( category: furnishing, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
 #3
 puts 'Creating task...'
-t3 = Task.create!( category: general, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
+t3 = Task.create!( category: maintenance, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
 #4
 puts 'Creating task...'
 t4 = Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2, user: u4 )
 #5
 puts 'Creating task...'
-t5 = Task.create!( category: general, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u2)
+t5 = Task.create!( category: repair, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u2)
 
 puts 'Creating task...'
-t6 = Task.create!( category: general, title: "Elevator out of order", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+t6 = Task.create!( category: repair, title: "Elevator out of order", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
 t7 = Task.create!( category: general, title: "Blackout", description: "Look into the matter and fix it.", company: company1, flat: f9, status: "open", urgency: 3, user: u3 )
 
 puts 'Creating task...'
-t8 = Task.create!( category: general, title: "Bullet holes in livingroom wall", description: "coordinate painter and tannant", company: company1, flat: f10, status: "open", urgency: 2, user: u2 )
+t8 = Task.create!( category: maintenance, title: "Bullet holes in livingroom wall", description: "coordinate painter and tannant", company: company1, flat: f10, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
 t9 = Task.create!( category: general, title: "Whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u2)
 
 puts 'Creating task...'
-t10 = Task.create!( category: general, title: "Burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u3 )
+t10 = Task.create!( category: maintenance, title: "Burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u3 )
 
 puts 'Creating task...'
-t11 = Task.create!( category: general, title: "Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+t11 = Task.create!( category: maintenance, title: "Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
-t12 = Task.create!( category: general, title: "Heating broken", description: "send caretaker to inspect, if serious problem coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
+t12 = Task.create!( category: repair, title: "Heating broken", description: "send caretaker to inspect, if serious problem coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
 
 puts 'Creating task...'
-t12 = Task.create!( category: general, title: "High heel marks in parquet floor", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
+t12 = Task.create!( category: maintenance, title: "High heel marks in parquet floor", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
 
 puts 'Creating task...'
-t13 = Task.create!( category: general, title: "Door bell broken", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+t13 = Task.create!( category: repair, title: "Door bell broken", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+
+puts 'Creating task...'
+t14 = Task.create!( category: restocking, title: "Replace Bath Towel", description: "Towel looks iffy", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
 
 # Fancy Seed Contract
 puts 'Creating contract...'
@@ -200,7 +207,7 @@ onetime = TransactionCategory.create!( name: "onetime expenses" )
 utilities = TransactionCategory.create!( name: "utilities" )
 rent = TransactionCategory.create!( name: "rent" )
 
-# Fancy Seed Transaction
+# Fancy Seed Transaction # add more transactions with different flats and categories
 #1
 puts 'Creating transactions...'
 Transaction.create!( flat: f1, amount_cents: 7000, date: Date.today, category: onetime, description: "Extraordinary Heating Maintenance", is_expense: true, company: company1 )
@@ -233,31 +240,28 @@ Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 
 # Comment.create!( task: t, owner: u, description: "")
 
 # # Fancy Seeds Inventory Caregories
-# bedroom = InventoryCategory.create!(name: "Bedroom")
-# kitchen = InventoryCategory.create!(name: "Kitchen")
-# livingroom = InventoryCategory.create!(name: "Living Room")
-# bathroom = InventoryCategory.create!(name:"Bathroom")
+bedroom = InventoryCategory.create!(name: "Bedroom")
+kitchen = InventoryCategory.create!(name: "Kitchen")
+livingroom = InventoryCategory.create!(name: "Living Room")
+bathroom = InventoryCategory.create!(name:"Bathroom")
 
-# # Fancy Seeds Inventory
+# Fancy Seeds Inventory
 
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
-# Inventory.create! (name: , historic_value:, book_value: , description: ; condition: ; flat: ;)
+Inventory.create! (inventory_category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66 , description: "flat iron"; condition: "used"; flat: f1;)
+Inventory.create! (inventory_category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer" ; condition: used ; flat: f1;)
+Inventory.create! (inventory_category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Machine"; condition: "new"; flat: f1;)
+Inventory.create! (inventory_category: bathroom, name: "VILEDA 09470 VIVA EXPRESS ECO BLAU Bügelbrett", historic_value: 39.99, book_value: 29.99 , description: "Ironing Board"; condition: "used"; flat: f1;)
+Inventory.create! (inventory_category: bedroom, name: "SONGESAND", historic_value: 179.00, book_value: 119.00 , description: "white wardrobe"; condition: "scratces at the feet from vacuum cleaning"; flat: f1;)
+Inventory.create! (inventory_category: livingroom, name: "NOT", historic_value: 13.99, book_value: 13.99 , description: "uplight"; condition: "new"; flat: f1;)
+Inventory.create! (inventory_category: bathroom, name: "VÅGSJÖN", historic_value: 6.99, book_value: 0.00, description: "Bath Towel"; condition: "replace"; flat: f1;)
+Inventory.create! (inventory_category: bedroom, name: "DVALA", historic_value: 24.99, book_value: 24.99 , description: "bedclothes 3 pieces"; condition: "new"; flat: f1;)
+Inventory.create! (inventory_category: kitchen, name: "MARTIN", historic_value: 21.99, book_value: 16.74, description: "chair"; condition: "used"; flat: f1;)
+Inventory.create! (inventory_category: kitchen, name: "MARTORP", historic_value: 29.99, book_value: 29.99, description: "cutlery 30 pieces"; condition: "used"; flat: f1;)
+Inventory.create! (inventory_category: kitchen, name: "KARCHER 125440 Jana 4-tlg. Kochgeschirr-Set (Edelstahl 18/8)", historic_value: 74,99, book_value: 59,99 , description: "cookware"; condition: "used"; flat: f1;)
+Inventory.create! (inventory_category: bathroom, name: "SHARP ES-GFB7164W3-DE Waschmaschine (7 kg, 1600 U/Min., A+++)", historic_value: 268, book_value: 238, description: "washing machine"; condition: "used"; flat: f3;)
+Inventory.create! (inventory_category: livingroom, name: "FORSÅ", historic_value: 12,99, book_value: 7.49, description: "lamp"; condition: "used"; flat: f2;)
+Inventory.create! (inventory_category: bathroom, name: "BLANKSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath mat"; condition: "replace"; flat: f2;)
+Inventory.create! (inventory_category: livingroom, name: "KNIPPE", historic_value: 17,99, book_value: 11,99, description: "coat rack"; condition: "used"; flat: f2;)
+Inventory.create! (inventory_category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "White wine glass"; condition: "used"; flat: f9;)
+Inventory.create! (inventory_category: livingroom, name: "DYNAN", historic_value: 59,80, book_value: 47,60, description: "white wardrobe with door"; condition: "used"; flat: f9;)
+
