@@ -107,6 +107,8 @@
 
 .item-list {
    grid-area: 1 / 2 / 5 / 2;
+   overflow-y: auto;
+   max-height: 700px;
 }
 
 
