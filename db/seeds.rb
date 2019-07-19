@@ -1,4 +1,6 @@
 puts 'Destroy everything...'
+Inventory.destroy_all
+InventoryCategory.destroy_all
 FlatPhoto.destroy_all
 Contract.destroy_all
 Transaction.destroy_all
@@ -8,6 +10,7 @@ TaskCategory.destroy_all
 Flat.destroy_all
 User.destroy_all
 Company.destroy_all
+
 
 # Fancy Seed Company
 puts 'Creating company...'
@@ -240,28 +243,29 @@ Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 
 # Comment.create!( task: t, owner: u, description: "")
 
 # # Fancy Seeds Inventory Caregories
+puts "creating inventory_categories"
 bedroom = InventoryCategory.create!(name: "Bedroom")
 kitchen = InventoryCategory.create!(name: "Kitchen")
 livingroom = InventoryCategory.create!(name: "Living Room")
 bathroom = InventoryCategory.create!(name:"Bathroom")
 
 # Fancy Seeds Inventory
-
-Inventory.create! (inventory_category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66 , description: "flat iron"; condition: "used"; flat: f1;)
-Inventory.create! (inventory_category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer" ; condition: used ; flat: f1;)
-Inventory.create! (inventory_category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Machine"; condition: "new"; flat: f1;)
-Inventory.create! (inventory_category: bathroom, name: "VILEDA 09470 VIVA EXPRESS ECO BLAU Bügelbrett", historic_value: 39.99, book_value: 29.99 , description: "Ironing Board"; condition: "used"; flat: f1;)
-Inventory.create! (inventory_category: bedroom, name: "SONGESAND", historic_value: 179.00, book_value: 119.00 , description: "white wardrobe"; condition: "scratces at the feet from vacuum cleaning"; flat: f1;)
-Inventory.create! (inventory_category: livingroom, name: "NOT", historic_value: 13.99, book_value: 13.99 , description: "uplight"; condition: "new"; flat: f1;)
-Inventory.create! (inventory_category: bathroom, name: "VÅGSJÖN", historic_value: 6.99, book_value: 0.00, description: "Bath Towel"; condition: "replace"; flat: f1;)
-Inventory.create! (inventory_category: bedroom, name: "DVALA", historic_value: 24.99, book_value: 24.99 , description: "bedclothes 3 pieces"; condition: "new"; flat: f1;)
-Inventory.create! (inventory_category: kitchen, name: "MARTIN", historic_value: 21.99, book_value: 16.74, description: "chair"; condition: "used"; flat: f1;)
-Inventory.create! (inventory_category: kitchen, name: "MARTORP", historic_value: 29.99, book_value: 29.99, description: "cutlery 30 pieces"; condition: "used"; flat: f1;)
-Inventory.create! (inventory_category: kitchen, name: "KARCHER 125440 Jana 4-tlg. Kochgeschirr-Set (Edelstahl 18/8)", historic_value: 74,99, book_value: 59,99 , description: "cookware"; condition: "used"; flat: f1;)
-Inventory.create! (inventory_category: bathroom, name: "SHARP ES-GFB7164W3-DE Waschmaschine (7 kg, 1600 U/Min., A+++)", historic_value: 268, book_value: 238, description: "washing machine"; condition: "used"; flat: f3;)
-Inventory.create! (inventory_category: livingroom, name: "FORSÅ", historic_value: 12,99, book_value: 7.49, description: "lamp"; condition: "used"; flat: f2;)
-Inventory.create! (inventory_category: bathroom, name: "BLANKSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath mat"; condition: "replace"; flat: f2;)
-Inventory.create! (inventory_category: livingroom, name: "KNIPPE", historic_value: 17,99, book_value: 11,99, description: "coat rack"; condition: "used"; flat: f2;)
-Inventory.create! (inventory_category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "White wine glass"; condition: "used"; flat: f9;)
-Inventory.create! (inventory_category: livingroom, name: "DYNAN", historic_value: 59,80, book_value: 47,60, description: "white wardrobe with door"; condition: "used"; flat: f9;)
+puts "creating inventory_categories"
+Inventory.create!(category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66, description: "flat iron", condition: "used", flat: f1)
+Inventory.create!(category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer", condition: "used", flat: f1)
+Inventory.create!(category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Machine", condition: "new", flat: f1)
+Inventory.create!(category: bathroom, name: "VILEDA 09470 VIVA EXPRESS ECO BLAU Bügelbrett", historic_value: 39.99, book_value: 29.99 , description: "Ironing Board", condition: "used", flat: f1)
+Inventory.create!(category: bedroom, name: "SONGESAND", historic_value: 179.00, book_value: 119.00 , description: "white wardrobe", condition: "scratces at the feet from vacuum cleaning", flat: f1)
+Inventory.create!(category: livingroom, name: "NOT", historic_value: 13.99, book_value: 13.99 , description: "uplight", condition: "new", flat: f1)
+Inventory.create!(category: bathroom, name: "VÅGSJÖN", historic_value: 6.99, book_value: 0.00, description: "Bath Towel", condition: "replace", flat: f1)
+Inventory.create!(category: bedroom, name: "DVALA", historic_value: 24.99, book_value: 24.99 , description: "bedclothes 3 pieces", condition: "new", flat: f1)
+Inventory.create!(category: kitchen, name: "MARTIN", historic_value: 21.99, book_value: 16.74, description: "chair", condition: "used", flat: f1)
+Inventory.create!(category: kitchen, name: "MARTORP", historic_value: 29.99, book_value: 29.99, description: "cutlery 30 pieces", condition: "used", flat: f1)
+Inventory.create!(category: kitchen, name: "KARCHER 125440 Jana 4-tlg. Kochgeschirr-Set (Edelstahl 18/8)", historic_value: 74.99, book_value: 59.99 , description: "cookware", condition: "used", flat: f1)
+Inventory.create!(category: bathroom, name: "SHARP ES-GFB7164W3-DE Waschmaschine (7 kg, 1600 U/Min., A+++)", historic_value: 268, book_value: 238, description: "washing machine", condition: "used", flat: f3)
+Inventory.create!(category: livingroom, name: "FORSÅ", historic_value: 12.99, book_value: 7.49, description: "lamp", condition: "used", flat: f2)
+Inventory.create!(category: bathroom, name: "BLANKSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath mat", condition: "replace", flat: f2)
+Inventory.create!(category: livingroom, name: "KNIPPE", historic_value: 17.99, book_value: 11.99, description: "coat rack", condition: "used", flat: f2)
+Inventory.create!(category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "White wine glass", condition: "used", flat: f9)
+Inventory.create!(category: livingroom, name: "DYNAN", historic_value: 59.80, book_value: 47.60, description: "white wardrobe with door", condition: "used", flat: f9)
 
