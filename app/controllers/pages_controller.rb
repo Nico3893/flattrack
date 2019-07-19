@@ -8,9 +8,18 @@ class PagesController < ApplicationController
     @cashflow = cash_flow
     @area = area
     @rent = rent
+    @users = users
   end
 
   private
+
+  def users
+    users = {}
+    User.where(company: current_user.company).each do |user|
+      users[user.name] = user.tasks.length
+    end
+    return users
+  end
 
   def rent
     rent = 0
