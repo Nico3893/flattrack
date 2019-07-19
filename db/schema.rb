@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_154734) do
+ActiveRecord::Schema.define(version: 2019_07_19_094350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,26 @@ ActiveRecord::Schema.define(version: 2019_07_17_154734) do
     t.string "comment"
     t.string "address_specification"
     t.index ["company_id"], name: "index_flats_on_company_id"
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "historic_value", null: false
+    t.integer "book_value"
+    t.string "description"
+    t.string "condition"
+    t.bigint "flat_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_inventories_on_category_id"
+    t.index ["flat_id"], name: "index_inventories_on_flat_id"
+  end
+
+  create_table "inventory_categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "task_categories", force: :cascade do |t|
@@ -121,6 +141,8 @@ ActiveRecord::Schema.define(version: 2019_07_17_154734) do
   add_foreign_key "contracts", "flats"
   add_foreign_key "flat_photos", "flats"
   add_foreign_key "flats", "companies"
+  add_foreign_key "inventories", "flats"
+  add_foreign_key "inventories", "inventory_categories", column: "category_id"
   add_foreign_key "tasks", "companies"
   add_foreign_key "tasks", "flats"
   add_foreign_key "tasks", "task_categories", column: "category_id"
