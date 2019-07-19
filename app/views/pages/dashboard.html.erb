@@ -58,7 +58,7 @@
     <div class="item-e">
       <div class="dashboard-card-regular">
         <h3 class="title">WORKLOAD</h3>
-        <%= pie_chart Task.group(:user).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" %>
+        <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px") %>
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
@@ -66,6 +66,7 @@
       <div class="dashboard-card-regular">
         <h3 class="title">URGENCY OF TASKS</h3>
         <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px"  %>
+          <!-- messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" -->
       </div>
     </div>
   </div>
