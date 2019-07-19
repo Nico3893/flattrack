@@ -29,12 +29,15 @@
 .task-card-small p{
  font-size: 12px;
  align-self: start;
+ padding-left: 1vw;
+ padding-top: 1vh;
 }
 
 .task-card-small h3{
     font-size: 12px;
     font-weight: lighter;
     padding-top: 8px;
+    padding-left: 1vw;
 }
 
 
@@ -135,8 +138,7 @@
     background-color: $blue;
     display: flex;
     flex-direction: column;
-    text-align:center;
-    padding: 16px 12px;
+    padding: 16px 8px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     color: black;
@@ -157,8 +159,8 @@
     padding-bottom: 8px;
 }
 
-.task-card-flat-show p {
+.task-card-flat-show > p {
     font-size: 12px;
     align-self: start;
-    padding-left: 10px;
+    padding-left: 1vw;
 }
