@@ -57,14 +57,15 @@
     </div>
     <div class="item-e">
       <div class="dashboard-card-regular">
-        <h3 class="title">Urgency of tasks</h3>
-        <%= pie_chart Task.group(:user).count, messages: {empty: "No data"} %>
+        <h3 class="title">Employee statistics</h3>
+        <%= pie_chart Task.group(:user).count, messages: {empty: "No data"}, library:{backgroundColor: "#e8e8e8"} %>
+        <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
     <div class="item-f">
       <div class="dashboard-card-regular">
         <h3 class="title">Urgency of tasks</h3>
-        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"} %>
+        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#e8e8e8"} %>
       </div>
     </div>
   </div>
