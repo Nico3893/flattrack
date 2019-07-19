@@ -15,7 +15,7 @@
             </div>
             <%= simple_form_for(@task, as: :task, method: :post, url: flat_tasks_path(@flat)) do |f| %>
               <%= f.input :title %>
-              <%= f.input :description, input_html: { maxlength: 15, size: 40} %>
+              <%= f.input :description, input_html: { size: 40} %>
               <%= f.association :category %>
               <%= f.association :user, as: :radio_buttons %>
               <%= f.submit "Create this task", class: "button-dark", :wrapper_html => { 'data-dismiss' => 'modal' } %>
