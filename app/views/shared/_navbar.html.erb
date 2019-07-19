@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-   <h2 style="font-size:24px;font-weight:bold;color:white">flatTrack</h2>
+   <h2 style="font-size:24px;font-weight:bold;color:white">FlatTrack</h2>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,14 +11,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <%= link_to root_path, class: "nav-link" do %>
+       <!-- <%= link_to root_path, class: "nav-link" do %>
           <li class="button-light">
             Home
           </li>
-        <%end%>
+        <%end%>-->
         <%= link_to flats_path, class: "nav-link" do %>
           <li class="button-light">
-            My flats
+            FLATS
           </li>
         <%end%>
         <li class="nav-item dropdown my-2 ml-2">

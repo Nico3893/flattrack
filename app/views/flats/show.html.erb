@@ -8,18 +8,18 @@
   <h2 class="header"><%= @flat.address %></h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
-    <h2><%= @flat.area %>m²</h2>
-    <h2>Area</h2>
+    <h2 style="font-weight:bolder"><%= @flat.area %>m²</h2>
+    <h3>AREA</h3>
     </div>
     <div class="kpi-container-item-b">
-      <h2><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
-      <h2>Price per m²</h2>
+      <h2 style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
+      <h3>PRICE per m²</h3>
     </div>
     <div class="kpi-container-item-c">
-      <h2 class="utilities"><%= @utilities %>€</h2><h2>Utilities</h2>
+      <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2><h3>UTILITIES</h3>
     </div>
     <div class="kpi-container-item-d">
-      <h2 class="cashflow"><%= @cashflow %>€</h2><h2>Cashflow</h2>
+      <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2><h3 >CASHFLOW</h3>
     </div>
   </div>
   <!-- end of kpi-container-->
@@ -41,9 +41,9 @@
     <div class="flat-info-column-b">
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
-      <div style="align-self:center">
+      <div style="justify-self: center; align-self: end">
         <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
-          New Task
+        NEW TASK
         </button>
       </div>
         <% @tasks.each do |task| %>
