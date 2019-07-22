@@ -157,7 +157,7 @@
 .flat-info-container{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 2fr;
     margin-top: 16px;
 }
 /*left side column in flat-info-container*/
@@ -173,7 +173,7 @@
     grid-area: 1 / 1;
     /*width: 600px;
     margin-left: 7rem;*/
-    height:300px;
+    height:250px;
     background: $gray;
 }
 
