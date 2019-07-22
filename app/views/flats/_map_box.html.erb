@@ -1,4 +1,6 @@
 <% street = flat.address.split(",")[0] %>
 <% city = flat.address.split(",")[1] %>
+<%= cl_image_tag flat.flat_photos[0].photo, height: 120, width: 160, crop: :fill, class: "mb-3" %>
 <h6><%= street %></h6>
 <p><%= city %></p>
+<%= link_to "See flat", flat_path(flat), class: "button-dark"%>
