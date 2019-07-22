@@ -5,7 +5,7 @@
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <h2 class="header"><%= @flat.address %></h2>
+  <h2 class="header" style="display:flex;justify-content:space-between"> <span><%= @flat.address %></span> <%if @tasks.count==0%> <%elsif @tasks.count==1%><span><%=@tasks.count%> Pending Task</span> <%else%> <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks"></i></span>  <%end%></h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
       <i class="fas fa-money-bill-wave" style="font-size:2em"></i>
@@ -73,6 +73,7 @@
             <p class="content"><%= task.description %></p>
           </div>
         <% end %>
+        
       </div>
     </div>
   </div>
