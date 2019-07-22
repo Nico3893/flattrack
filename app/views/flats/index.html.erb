@@ -16,7 +16,7 @@
       <%= link_to flat_path(flat) do%>
         <div class="flatitem">
         <h3 class="address-header"><%=flat.address%></h3>
-        <p class="content"> <%= flat.rooms%> Rooms <%=flat.parking_space%> Parking Spaces <%=flat.area%>m²</p>
+        <div class="row"> <p><%= flat.address_specification%></p><p><%if flat.rooms == 1%> Room <%else%>Rooms <%end%><br><%= flat.rooms%> </p> <p> Size <br> <%=flat.area%>m² </p><p> Rent per month<br><%=flat.monthly_rent%></p> <p> <%if flat.parking_space == 0 %><%else%> <i class="fas fa-parking"></i><br><%=flat.parking_space%><%end%> </p> </div>
       </div>
     <%end%>
     <%end%>
@@ -35,7 +35,7 @@
       </div>-->
     </div>
   </div>
-  <h2>What's going on today</h2>
+  <!--<h2>What's going on today</h2>
   <% if @tasks.count==1%>
   <div class="container-flat-index-tasks-b">
   <% elsif @tasks.count==2%>
@@ -53,7 +53,7 @@
       </div>
       <%end%>
 
-  <!--<div class="item-task-a">
+  <div class="item-task-a">
       <div class="task-card-small">
         <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
         <h3>Task title</h3>

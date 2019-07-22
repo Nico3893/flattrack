@@ -8,18 +8,18 @@
   <h2 class="header"><%= @flat.address %></h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
-    <h2 style="font-weight:bolder"><%= @flat.area %>m²</h2>
-    <h3>AREA</h3>
+      <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2><h3 >CASHFLOW</h3>
     </div>
     <div class="kpi-container-item-b">
+            <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2><h3>UTILITIES</h3>
+    </div>
+    <div class="kpi-container-item-c">
       <h2 style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
       <h3>RENT</h3>
     </div>
-    <div class="kpi-container-item-c">
-      <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2><h3>UTILITIES</h3>
-    </div>
     <div class="kpi-container-item-d">
-      <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2><h3 >CASHFLOW</h3>
+      <h2 style="font-weight:bolder"><%= @flat.area %>m²</h2>
+    <h3>AREA</h3>
     </div>
   </div>
   <!-- end of kpi-container-->
