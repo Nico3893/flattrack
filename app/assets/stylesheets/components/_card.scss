@@ -14,7 +14,7 @@
 
 .task-card-small-a{
     border-radius: 2px;
-    background-color: $blue;
+    background-color: white;
     min-width: 400px;
     width:70%;
     display:flex;
@@ -23,6 +23,11 @@
     padding: 4px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.task-card-small-a > h3 {
+    font-weight:lighter;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 
@@ -62,6 +67,7 @@
     margin: 8px auto;
     background-color: white;
     height: 14vh;
+    min-width: 26vw;
 }
 
 
@@ -89,7 +95,7 @@
 
 .task-card-feed .avatar {
     margin-right: 1.0vw;
-    margin-bottom: .4rem;
+    margin-bottom: 0;
 }
 
 .task-avatar {
@@ -101,7 +107,7 @@
 .task-card-feed > .row{
     justify-content: space-between!important;
     padding-top: 4px;
-    padding-bottom: 8px;
+    padding-bottom: 0;
 /*  grid-template-columns: 3fr 1fr;
     grid-template-rows: 1;*/
 }
@@ -133,6 +139,8 @@
     margin-left: 8px;
     margin-top: 8px;
     letter-spacing: 2px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
 }
 
 /* large-sized dashboard card (double height*/
@@ -155,7 +163,7 @@
 
 .task-card-flat-show{
     border-radius: 4px;
-    background-color: $blue;
+    background-color: white;
     display: flex;
     flex-direction: column;
     padding: 16px 8px;

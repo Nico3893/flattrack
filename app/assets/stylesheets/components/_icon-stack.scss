@@ -1,0 +1,33 @@
+.icon-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 5em;
+    line-height: 4em;
+    vertical-align: middle;
+    bottom: 1.5em;
+}
+  .icon-stack-1x,
+  .icon-stack-2x,
+  .icon-stack-3x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .icon-stack-1x {
+    line-height: inherit;
+    color: green;
+    font-size: 1rem;
+  }
+  .icon-stack-2x {
+    font-size: 1.5em;
+  }
+  .icon-stack-3x {
+    position: absolute;
+    left: 0;
+    bottom: 2rem;
+    width: 100%;
+    text-align: right;
+    font-size: 1.5rem;
+  }
