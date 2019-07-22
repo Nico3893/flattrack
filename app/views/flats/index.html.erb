@@ -16,7 +16,7 @@
       <%= link_to flat_path(flat) do%>
         <div class="flatitem">
         <h3 class="address-header"><%=flat.address%></h3>
-        <div class="row"> <p><%= flat.address_specification%></p><p><%if flat.rooms == 1%> Room <%else%>Rooms <%end%><br><%= flat.rooms%> </p> <p> Size <br> <%=flat.area%>m² </p><p> Rent per month<br><%=flat.monthly_rent%></p> <p> <%if flat.parking_space == 0 %><%else%> <i class="fas fa-parking"></i><br><%=flat.parking_space%><%end%> </p> </div>
+        <div class="row"> <p><%if flat.rooms == 1%> <img src="https://img.icons8.com/material/24/000000/room.png"> <%else%><img src="https://img.icons8.com/material/24/000000/room.png"> <%end%><br><%= flat.rooms%> </p> <p><i class="fas fa-ruler-combined"></i> <br> <%=flat.area%>m² </p><p> <i class="fas fa-euro-sign"></i><br><%=flat.monthly_rent%></p> <p> <%if flat.parking_space == 0 %><%else%> <i class="fas fa-parking"></i><br><%=flat.parking_space%><%end%> </p> <p><%= flat.address_specification%></p></div>
       </div>
     <%end%>
     <%end%>
