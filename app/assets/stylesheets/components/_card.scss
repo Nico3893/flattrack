@@ -43,7 +43,7 @@
 
 
 .task-card-small .row{
-    display:flex; 
+    display:flex;
     flex-direction:row;
     justify-content:space-between;
     align-content: center;
@@ -93,7 +93,7 @@
 /* regular-sized dashboard card suggested height 200px*/
 
 .dashboard-card-regular {
-    display:flex; 
+    display:flex;
     width: 19rem;
     flex-direction: column;
     padding: 4px;
@@ -101,7 +101,7 @@
     /*border-right: thin double $dark-blue;
     border-left: thin double $dark-blue;*/
     /* border-bottom: thin double $dark-blue;*/
-    margin: 20px 10px;
+    margin: 8px 10px;
     justify-content:center;
     text-align:center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -130,7 +130,7 @@
     background-color: $blue;
     border-radius: 2px;
     margin: 10px;
-    text-align:center;   
+    text-align:center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
