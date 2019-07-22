@@ -8,7 +8,7 @@
   <div class="container-flat-index">
     <div class="item-map">
       <div
-  id="map" style="width: 100%; height: 100%; min-height:600px; max-height:700px" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  id="map" style="width: 100%; height: 100%; min-height:500px; max-height:630px" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       </div>
       <div class="item-list">
@@ -16,72 +16,54 @@
       <%= link_to flat_path(flat) do%>
         <div class="flatitem">
         <h3 class="address-header"><%=flat.address%></h3>
-        <div class="row"> <p><%if flat.rooms == 1%> <img src="https://img.icons8.com/material/24/000000/room.png"> <%else%><img src="https://img.icons8.com/material/24/000000/room.png"> <%end%><br><%= flat.rooms%> </p> <p><i class="fas fa-ruler-combined"></i> <br> <%=flat.area%>m² </p><p> <i class="fas fa-euro-sign"></i><br><%=flat.monthly_rent%></p> <p> <%if flat.parking_space == 0 %><%else%> <i class="fas fa-parking"></i><br><%=flat.parking_space%><%end%> </p> <p><%= flat.address_specification%></p></div>
+        <div class="row"> 
+        <p>
+          <%if flat.rooms == 1%> 
+            <img src="https://img.icons8.com/material/24/000000/room.png"> 
+          <%else%>
+            <img src="https://img.icons8.com/material/24/000000/room.png"> 
+          <%end%>
+            <br>
+              <%= flat.rooms%> 
+            </p> 
+            <p>
+              <i class="fas fa-ruler-combined"></i> 
+                <br> 
+                <%=flat.area%>m² 
+            </p>
+            <p> 
+              <i class="fas fa-euro-sign"></i>
+              <br>
+              <%=flat.monthly_rent%>
+              </p> 
+              
+          <%if flat.parking_space == 0 %>
+          <%else%>
+          <p> 
+            <i class="fas fa-parking">
+            </i>
+            <br>
+            <%=flat.parking_space%>
+          </p>
+          <%end%> 
+          <%if flat.address_specification.nil?%>
+          <%else%> 
+            <p>
+            <img src="icon_flat.png" alt="" style="width:20px;length:20px">
+            <br> 
+          <%= flat.address_specification%>
+            </p>
+          <%end%>
+        </div>
       </div>
     <%end%>
     <%end%>
-
-     <!-- <div class="flatitem">
-        <h3 class="address-header">Rudi-Dutschke-Straße 29, 10119 Berlin</h3>
-        <p class="content">Hello I am some content blablablablblablalablalblalb content yeahhhhh!I am a second line of content yeaaah whoohooo</p>
-      </div>
-      <div class="flatitem">
-        <h3 class="address-header">Zehdenicker Straße 68, 10119 Berlin</h3>
-        <p class="content">Hello I am some content blablablablblablalablalblalb content yeahhhhh!I am a second line of content yeaaah whoohooo</p>
-      </div>
-      <div class="flatitem">
-        <h3 class="address-header">Zehdenicker Straße 68, 10119 Berlin</h3>
-        <p class="content">Hello I am some content blablablablblablalablalblalb content yeahhhhh!I am a second line of content yeaaah whoohooo</p>
-      </div>-->
     </div>
   </div>
 
-  <!--<h2>What's going on today</h2>
-  <% if @tasks.count==1%>
-  <div class="container-flat-index-tasks-b">
-  <% elsif @tasks.count==2%>
-    <div class="container-flat-index-tasks-a">
-    <%else%>
-    <div class="container-flat-index-tasks">
-    <%end%>
-    <% @tasks.each do |task| %>
-  <div class="task-card-small">
-        <div class="row">
-          <h3><%= task.title %></h3>
-          <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
-        </div>
-        <p class="content"><%= task.description %></p>
-      </div>
-      <%end%>
 
-  <div class="item-task-a">
-      <div class="task-card-small">
-        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-        <h3>Task title</h3>
-        <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-        </div>
-        <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-      </div>
-    </div>
-    <div class="item-task-b">
-      <div class="task-card-small">
-        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-        <h3>Task title</h3>
-        <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-        </div>
-        <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-      </div>
-    </div>
-    <div class="item-task-c">
-      <div class="task-card-small">
-        <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-        <h3>Task title</h3>
-        <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-        </div>
-        <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-      </div>-->
     </div>
   </div>
 </div>
-<!--<%= bar_chart Flat.group(:area).sum(:monthly_rent_cents) %>-->
+
 

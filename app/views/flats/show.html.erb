@@ -8,18 +8,21 @@
   <h2 class="header"><%= @flat.address %></h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
-      <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2><h3 >CASHFLOW</h3>
+      <i class="fas fa-money-bill-wave" style="font-size:2em"></i>
+      <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2>
     </div>
     <div class="kpi-container-item-b">
-            <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2><h3>UTILITIES</h3>
+      <img src="/icon_transaction _category_utilities.png" style="width:32px;height:32px" alt="" />
+      <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2>
     </div>
     <div class="kpi-container-item-c">
-      <h2 style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
-      <h3>RENT</h3>
+      <span class="icon-stack"><i class="fas fa-ruler-combined icon-stack-3x" style="width:24px;height:24px"></i>
+      <i class="fas fa-euro-sign icon-stack-1x"></i></span>
+      <h2 style="font-weight:bolder;margin-top:0;position:relative;bottom:1em;"><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
     </div>
     <div class="kpi-container-item-d">
-      <h2 style="font-weight:bolder"><%= @flat.area %>m²</h2>
-    <h3>AREA</h3>
+      <i class="fas fa-ruler-combined" style="font-size:1.5rem"></i>
+      <h2 style="font-weight:bolder"><%= @flat.area %>m² </h2>
     </div>
   </div>
   <!-- end of kpi-container-->
@@ -49,39 +52,27 @@
         <% @tasks.each do |task| %>
           <div class="task-card-flat-show">
             <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-            <h3><%= task.title %></h3>
-            <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
+            <h3>
+              <%if task.category.name.downcase =="repair"%> 
+                <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />  
+              <% elsif task.category.name.downcase =="maintenance"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />  
+              <% elsif task.category.name.downcase =="restocking"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />   
+              <% elsif task.category.name.downcase =="furnishing"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />   
+              <%else%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />  
+              <%end%>
+                <%= task.title %>
+              </h3>
+              <div>
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+              </div>          
             </div>
             <p class="content"><%= task.description %></p>
           </div>
         <% end %>
-     <!-- </div>-->
-      <!--<div class="flat-info-column-b-item-b">-->
-      <!--   <div class="task-card-flat-show">
-          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-          <h3>Task title</h3>
-          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-          </div>
-          <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div> -->
-      <!--</div>-->
-      <!--<div class="flat-info-column-b-item-c">-->
-     <!--    <div class="task-card-flat-show">
-          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-          <h3>Task title</h3>
-          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-          </div>
-          <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div> -->
-      <!--</div>-->
-      <!--<div class="flat-info-column-b-item-d">-->
-     <!--    <div class="task-card-flat-show">
-          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-          <h3>Task title</h3>
-          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-          </div>
-          <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-        </div> -->
       </div>
     </div>
   </div>
