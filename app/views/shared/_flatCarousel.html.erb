@@ -8,7 +8,7 @@
   <div class="carousel-inner">
     <% if @flat.flat_photos.empty? %>
       <div class="carousel-item active">
-        <img src="http://artmusings.net/wp-content/uploads/2017/07/600px-No_image_available.svg_.png" alt="no picture" style="height: 300px">
+        <img src="http://artmusings.net/wp-content/uploads/2017/07/600px-No_image_available.svg_.png" alt="no picture" style="height: 300px; width:400px">
       </div>
     <% else %>
       <% @flat.flat_photos.each_with_index do |flatphoto, index| %>

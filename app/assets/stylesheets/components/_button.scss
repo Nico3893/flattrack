@@ -33,3 +33,20 @@
         color: black; 
     }
 }
+
+.button-navbar {
+    padding: 8px 25px; 
+    background-color: transparent; 
+    color:white;
+    text-decoration: none;
+    transition: 0.5s;
+    margin: 5px;
+    font-family:$headers-font;
+    align-self: center;
+    border-radius: 2px;
+    &:hover{
+        text-decoration: none;
+        color: $blue-grey;
+        border: thin solid $blue; 
+    }
+}

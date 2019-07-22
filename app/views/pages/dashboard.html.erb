@@ -4,14 +4,14 @@
 
 
 <div class="container">
-  <h2 class="header">Good Morning, <%= current_user.name %>!</h2>
+  <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
   <div class="dashboard-container">
     <div class="task-feed-container">
       <%@tasks.each do |task|%>
         <div class="task-card-feed">
           <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
             <h3><%=task.title%></h3>
-            <%= cl_image_tag task.user.photo, height: 40, width: 40, crop: :fill, class: "avatar" %>
+            <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
           </div>
           <p class="content"><%=task.description%></p>
         </div>
@@ -33,39 +33,40 @@
     </div>
     <div class="item-a">
       <div class="dashboard-card-regular">
-        <h3 class="title">Area</h3>
-        <h3><%= @area %>m²</h3>
+        <h3 class="title">AREA</h3>
+        <h3 style="font-weight:bolder"><%= @area %>m²</h3>
       </div>
     </div>
     <div class="item-b">
       <div class="dashboard-card-regular">
-        <h3 class="title">Rent per m²</h3>
-        <h3><%= @rent * Flat.count / @area %>€/m²</h3>
+        <h3 class="title">RENT</h3>
+        <h3 style="font-weight:bolder"><%= @rent * Flat.count / @area %>€/m²</h3>
       </div>
     </div>
     <div class="item-c">
       <div class="dashboard-card-regular">
-        <h3 class="title">Utilities</h3>
-        <h3 class="utilities"><%= @utilities %>€</h3>
+        <h3 class="title">UTILITIES</h3>
+        <h3 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h3>
       </div>
     </div>
     <div class="item-d">
       <div class="dashboard-card-regular">
-        <h3 class="title">Cash Flow</h3>
-        <h3 class="cashflow"><%= @cashflow %>€</h3>
+        <h3 class="title">CASH FLOW</h3>
+        <h3 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h3>
       </div>
     </div>
     <div class="item-e">
       <div class="dashboard-card-regular">
-        <h3 class="title">Employee statistics</h3>
-        <%= pie_chart Task.group(:user).count, messages: {empty: "No data"}, library:{backgroundColor: "#e8e8e8"} %>
+        <h3 class="title">WORKLOAD</h3>
+        <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px") %>
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
     <div class="item-f">
       <div class="dashboard-card-regular">
-        <h3 class="title">Urgency of tasks</h3>
-        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#e8e8e8"} %>
+        <h3 class="title">URGENCY OF TASKS</h3>
+        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px"  %>
+          <!-- messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" -->
       </div>
     </div>
   </div>

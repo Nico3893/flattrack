@@ -16,7 +16,7 @@
     border-radius: 2px;
     background-color: $blue;
     min-width: 400px;
-    width:100%;
+    width:70%;
     display:flex;
     flex-direction: column;
     text-align:center;
@@ -29,12 +29,15 @@
 .task-card-small p{
  font-size: 12px;
  align-self: start;
+ padding-left: 1vw;
+ padding-top: 1vh;
 }
 
 .task-card-small h3{
     font-size: 12px;
     font-weight: lighter;
     padding-top: 8px;
+    padding-left: 1vw;
 }
 
 
@@ -67,13 +70,13 @@
 .task-card-feed p{
     font-size: 12px;
     align-self: start;
-    padding-left: 10px;
+    padding-left: 1vw;
 }
 
 .task-card-feed h3{
     font-weight:lighter;
     font-size: 16px;
-    padding-left: 1vw;
+    padding-left: 2vw;
     padding-top: 8px;
 }
 
@@ -82,6 +85,7 @@
     justify-content: space-between !important;
     padding-right: 1.5vw;
     padding-top: 4px;
+    padding-bottom: 8px;
 /*  grid-template-columns: 3fr 1fr;
     grid-template-rows: 1;*/
 }
@@ -93,18 +97,25 @@
     width: 19rem;
     flex-direction: column;
     padding: 4px;
-    background-color:#e8e8e8;
-   border-right: thin double $dark-blue;
-    border-left: thin double $dark-blue;
+    background-color:white;
+    /*border-right: thin double $dark-blue;
+    border-left: thin double $dark-blue;*/
     /* border-bottom: thin double $dark-blue;*/
-    margin: 10px;
+    margin: 20px 10px;
     justify-content:center;
     text-align:center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 4px;
 }
 
 .dashboard-card-regular > .title {
     /*text-decoration: underline overline #183661;*/
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    align-self: center;
+    font-size: 20px;
+    margin-left: 8px;
+    margin-top: 8px;
+    letter-spacing: 2px;
 }
 
 /* large-sized dashboard card (double height*/
@@ -126,18 +137,18 @@
 /* cards for flat show (no fixed width)*/
 
 .task-card-flat-show{
-    border-radius: 2px;
-    background-color: $darker-blue;
+    border-radius: 4px;
+    background-color: $blue;
     display: flex;
     flex-direction: column;
-    text-align:center;
-    padding: 16px 12px;
+    padding: 16px 8px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    color: white;
+    color: black;
     width: 24rem;
     justify-self: center;
     align-self: center;
+   /* border: thin solid $dark-blue;*/
     }
 .task-card-flat-show h3 {
     font-weight:lighter;
@@ -148,10 +159,11 @@
 .task-card-flat-show > .row{
     padding-right: 1.5vw;
     justify-content:space-between !important;
+    padding-bottom: 8px;
 }
 
-.task-card-flat-show p {
+.task-card-flat-show > p {
     font-size: 12px;
     align-self: start;
-    padding-left: 10px;
+    padding-left: 1vw;
 }
