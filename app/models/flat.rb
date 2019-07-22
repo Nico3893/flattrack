@@ -4,6 +4,7 @@ class Flat < ApplicationRecord
   has_many :flat_photos
   has_many :transactions
   has_many :tasks
+  has_many :inventories
 
   validates :address, presence: true
 

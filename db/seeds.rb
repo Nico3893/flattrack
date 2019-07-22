@@ -27,7 +27,7 @@ u4 = User.create!( name: "Nicolas Eberhardt", email: "nicolas@eberhardt.com", pa
 # Fancy Seed Flat
 # 1 Friends: Monica's flat
 puts 'Creating flat...'
-f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 120, rooms: 3, parking_space: 0, company: company1, monthly_rent: 1750, comment: "Flatshare for two Young Professionals. 90's interior concept. Blue accent walls and generous living room and big balcony.")
+f1 = Flat.create!( address: "Stresemannstraße 123, 10117 Berlin", area: 120, rooms: 3, parking_space: 0, company: company1, monthly_rent: 1750, comment: "Flat share for two young professionals, 90's interior concept, blue accent walls and generous living room and big balcony.")
 image1 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_ewzure.png" )
 image2 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359558/flattrack/f1_friends_livingroom_digox5.jpg" )
 image3 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563359557/flattrack/f1_friends_kitchen_hpf0um.jpg" )
@@ -35,7 +35,7 @@ image4 = FlatPhoto.create!( flat: f1, photo: "https://res.cloudinary.com/djn5khf
 
 # 2 How I met your mother: Ted and Marshall's flat
 puts 'Creating flat...'
-f2 = Flat.create!( address: "Stresemannstraße 120, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1, monthly_rent: 2000, comment: "Flatshare for two Young Professionals. Interior concept from the 2000's Open fire place. Step inside apartment, therefore not barrier-free.", address_specification: "apartment 19, 4th floor" )
+f2 = Flat.create!( address: "Stresemannstraße 120, 10117 Berlin", area: 140, rooms: 4, parking_space: 0, company: company1, monthly_rent: 2000, comment: "Flat share for two young professionals, 2000's interior concept, open fire place, not barrier-free.", address_specification: "apartment 19, 4th floor" )
 image5 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_livingroom_empty_rngnmy.jpg" )
 image6 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_livingroom_hs7zvn.jpg" )
 image7 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377238/flattrack/f2_himym_floorplan_lmh2cx.jpg" )
@@ -44,7 +44,7 @@ image7 = FlatPhoto.create!( flat: f2, photo: "https://res.cloudinary.com/djn5khf
 
 # 3 Sex and the City: Carrie's flat
 puts 'Creating flat...'
-f3 = Flat.create!( address: "Friedrichstraße 206, 10969 Berlin", area: 50, rooms: 1, parking_space: 0, company: company1, monthly_rent: 800, comment: "Single apartment. 90's Manhatten interior design. It's not allowed to pierce the walls. Shoe storage in the oven")
+f3 = Flat.create!( address: "Friedrichstraße 206, 10969 Berlin", area: 50, rooms: 1, parking_space: 0, company: company1, monthly_rent: 800, comment: "Single apartment, 90's Manhatten interior design. It's not allowed to pierce the walls. Shoe storage in the oven")
 image8 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377984/flattrack/f3_satc_bedroom_stkhao.jpg" )
 image9 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377984/flattrack/f3_satc_entrance_a9ous4.jpg" )
 image10 = FlatPhoto.create!( flat: f3, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563377983/flattrack/f3_satc_hallway_liu9bh.jpg" )
@@ -68,7 +68,7 @@ image19 = FlatPhoto.create!( flat: f5, photo: "https://res.cloudinary.com/djn5kh
 image20 = FlatPhoto.create!( flat: f5, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563379957/flattrack/f5_newgirl_floorplan_gsk1aq.jpg" )
 # 6 Gossip Girl: The Humphrey's loft
 puts 'Creating flat...'
-f6 = Flat.create!( address: "Charlottenstraße 77-80, 10117 Berlin", area: 120, rooms: 4, parking_space: 1, company: company1, monthly_rent: 1300, comment: "Brooklyn Artsy Loft, brick stone walls, visible steal beams, fire escape stairs, 3 bedrooms flatshare or family home", address_specification: "3rd floor" )
+f6 = Flat.create!( address: "Charlottenstraße 77-80, 10117 Berlin", area: 120, rooms: 4, parking_space: 1, company: company1, monthly_rent: 1300, comment: "Brooklyn Artsy Loft, brick stone walls, visible steal beams, fire escape stairs, 3 bedrooms flat share or family home", address_specification: "3rd floor" )
 image21 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563381855/flattrack/f6_gg_entrance_dmawly.jpg" )
 image22 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563381855/flattrack/f6_gg_hallway_qeb9ku.jpg" )
 image23 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563381855/flattrack/f6_gg_dining_room_wso8vi.jpg" )
@@ -77,7 +77,7 @@ image24 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5kh
 
 # 7 Gossip Girl: The VanderWoodsen's flat
 puts 'Creating flat...'
-f7 = Flat.create!( address: "Bethlehemkirchplatz 3, 10117 Berlin", area: 130, rooms: 3, parking_space: 2, company: company1, monthly_rent: 2700, comment: "Representable Manhattan Moder Art Deleuxe for sophisticated entertainment, maisonette, light colour concept with red as accent colour" )
+f7 = Flat.create!( address: "Bethlehemkirchplatz 3, 10117 Berlin", area: 130, rooms: 3, parking_space: 2, company: company1, monthly_rent: 2700, comment: "Representable Manhattan Modern Art Deluxe for sophisticated entertainment, maisonette, light colour concept with red as accent colour" )
 image25 = FlatPhoto.create!( flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563382707/flattrack/f7_gg_livingroom2_kndbhl.jpg" )
 image26 = FlatPhoto.create!( flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563382707/flattrack/flat7_gg_bedroom_nsxc9b.jpg" )
 image27 = FlatPhoto.create!( flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563382706/flattrack/f7_gg_diningroom_doxfq3.jpg" )
@@ -85,7 +85,7 @@ image28 = FlatPhoto.create!( flat: f7, photo: "https://res.cloudinary.com/djn5kh
 
 # 8 Gossip Girl: The Waldorf's flat
 puts 'Creating flat...'
-f8 = Flat.create!( address: "Wilhelmstraße 114-117, 10963 Berlin ", area: 125, rooms: 3, parking_space: 3, company: company1, monthly_rent: 3700, comment: "French Deluxe with representable staircase, sophisticated entertaining is possible , maisonete penthouse, marble columns", address_specification: "Penthouse" )
+f8 = Flat.create!( address: "Wilhelmstraße 114-117, 10963 Berlin ", area: 125, rooms: 3, parking_space: 3, company: company1, monthly_rent: 3700, comment: "French Deluxe with representable staircase, sophisticated entertaining is possible, maisonete penthouse, marble columns", address_specification: "Penthouse" )
 image29 = FlatPhoto.create!( flat: f8, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563439983/flattrack/f8_gg_staircase_yrbp2j.jpg" )
 image30 = FlatPhoto.create!( flat: f8, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563439983/flattrack/f8_gg_bedroom_sxchw0.jpg" )
 image31 = FlatPhoto.create!( flat: f8, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563439983/flattrack/f8_gg_livingroom_lqrmps.jpg" )
@@ -102,7 +102,7 @@ image37 = FlatPhoto.create!( flat: f9, photo: "https://res.cloudinary.com/djn5kh
 
 # 10 Sherlock: Sherlock and John's flat 221B Baker Street
 puts 'Creating flat...'
-f10 = Flat.create!( address: "Niederkirchnerstraße 7, 10963 Berlin", area: 70, rooms: 2, parking_space: 1, company: company1, monthly_rent: 800, comment: "English shabby chic, for two adults, narrow staircase, cozy (dark), fully equipped tea station, lavish persian rugs ", address_specification: "alternative address 221B Bakerstreet" )
+f10 = Flat.create!( address: "Niederkirchnerstraße 7, 10963 Berlin", area: 70, rooms: 2, parking_space: 1, company: company1, monthly_rent: 800, comment: "English shabby chic, for two adults, narrow staircase, cozy (dark), fully equipped tea station, lavish persian rugs", address_specification: "alternative address 221B Bakerstreet" )
 image38 = FlatPhoto.create!( flat: f10, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563442172/flattrack/f10_sherlock_entrance_hq6yyl.jpg" )
 image39 = FlatPhoto.create!( flat: f10, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563442172/flattrack/f10_sherlock_livingroom2_dpyicf.jpg" )
 image40 = FlatPhoto.create!( flat: f10, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563442172/flattrack/f10_sherlock_staircase_dwipyg.jpg" )
@@ -127,7 +127,7 @@ image50 = FlatPhoto.create!( flat: f12, photo: "https://res.cloudinary.com/djn5k
 
 # 13 Breakfast at Tiffany’s: Holly Golightly’s Apartment
 puts 'Creating flat...'
-f13 = Flat.create!( address: "Leipziger Str. 3-4, 10117 Berlin", area: 45, rooms: 1, parking_space: 1, company: company1, monthly_rent: 770, comment: "Classy 60's, 1 Person, narrow stairs, no elevator, black stone floor, white walls, pink accents, zebra fur, ", address_specification: "1st floor" )
+f13 = Flat.create!( address: "Leipziger Str. 3-4, 10117 Berlin", area: 45, rooms: 1, parking_space: 1, company: company1, monthly_rent: 770, comment: "Classy 60's, 1 Person, narrow staircase, no elevator, black stone floor, white walls, pink accents, zebra fur", address_specification: "1st floor" )
 image51 = FlatPhoto.create!( flat: f13, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563443434/flattrack/f13_breakfast_livingroom_x4kqqq.jpg" )
 image52 = FlatPhoto.create!( flat: f13, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563443434/flattrack/f13_breakfast_entrance_sbajsl.jpg" )
 image53 = FlatPhoto.create!( flat: f13, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563443434/flattrack/f13_breakfast_floorplan_uhw0i6.jpg" )
@@ -154,49 +154,49 @@ repair = TaskCategory.create!( name: "Repair" )
 #Fancy Seed Task  # add restocking task and more furnishing tasks
 #1
 puts 'Creating task...'
-t1 = Task.create!( category: repair, title: "Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
+t1 = Task.create!( category: repair, title: " Send plumber to fix Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
 #2
 puts 'Creating task...'
-t2 = Task.create!( category: furnishing, title: "Replace Sofa", description: "Check necessity, coordinate appointment with tenat ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
+t2 = Task.create!( category: furnishing, title: "Check necessity to replace Sofa", description: "Check necessity, coordinate appointment with tenant ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
 #3
 puts 'Creating task...'
-t3 = Task.create!( category: maintenance, title: "Crack in Bathroom tile", description: "Check necessity, coordinate appointment with tenat", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
+t3 = Task.create!( category: maintenance, title: "Send craftsman to fix crack in bathroom tile", description: "Check necessity, coordinate appointment with tenant", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
 #4
 puts 'Creating task...'
-t4 = Task.create!( category: general, title: "Monkey Poop on the carpet in livingroom", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2, user: u4 )
+t4 = Task.create!( category: general, title: "Send cleaning crew to deal with Monkey Poop on the carpet in living room", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2, user: u4 )
 #5
 puts 'Creating task...'
-t5 = Task.create!( category: repair, title: "Skirting bord lose, Bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u2)
+t5 = Task.create!( category: repair, title: "Send craftsman to fix lose skirting bord in bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u2)
 
 puts 'Creating task...'
-t6 = Task.create!( category: repair, title: "Elevator out of order", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+t6 = Task.create!( category: repair, title: "Elevator out of order, send craftsman", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
-t7 = Task.create!( category: general, title: "Blackout", description: "Look into the matter and fix it.", company: company1, flat: f9, status: "open", urgency: 3, user: u3 )
+t7 = Task.create!( category: general, title: "Blackout - fix ASAP", description: "Look into the matter and fix it.", company: company1, flat: f9, status: "open", urgency: 3, user: u3 )
 
 puts 'Creating task...'
-t8 = Task.create!( category: maintenance, title: "Bullet holes in livingroom wall", description: "coordinate painter and tannant", company: company1, flat: f10, status: "open", urgency: 2, user: u2 )
+t8 = Task.create!( category: maintenance, title: "Send painter to close bullet holes in living room wall", description: "coordinate painter and tenant", company: company1, flat: f10, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
-t9 = Task.create!( category: general, title: "Whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u2)
+t9 = Task.create!( category: general, title: "whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u2)
 
 puts 'Creating task...'
-t10 = Task.create!( category: maintenance, title: "Burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u3 )
+t10 = Task.create!( category: maintenance, title: "Inquire insurance regarding burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u3 )
 
 puts 'Creating task...'
-t11 = Task.create!( category: maintenance, title: "Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+t11 = Task.create!( category: maintenance, title: "Coordinate Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
-t12 = Task.create!( category: repair, title: "Heating broken", description: "send caretaker to inspect, if serious problem coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
+t12 = Task.create!( category: repair, title: "Send care taker to look into broken heating, follow up", description: "send caretaker to inspect, if serious problem, coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
 
 puts 'Creating task...'
-t12 = Task.create!( category: maintenance, title: "High heel marks in parquet floor", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
+t12 = Task.create!( category: maintenance, title: "Educate tenants that high heel marks in parquet floor are to be repaired at their expense", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
 
 puts 'Creating task...'
-t13 = Task.create!( category: repair, title: "Door bell broken", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+t13 = Task.create!( category: repair, title: "Send caretaker to fix door bell", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
 
 puts 'Creating task...'
-t14 = Task.create!( category: restocking, title: "Replace Bath Towel", description: "Towel looks iffy", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+t14 = Task.create!( category: restocking, title: "Replace bath towel", description: "Towel looks iffy", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
 
 # Fancy Seed Contract
 puts 'Creating contract...'
@@ -250,22 +250,22 @@ livingroom = InventoryCategory.create!(name: "Living Room")
 bathroom = InventoryCategory.create!(name:"Bathroom")
 
 # Fancy Seeds Inventory
-puts "creating inventory_categories"
+puts "creating inventories"
 Inventory.create!(category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66, description: "flat iron", condition: "used", flat: f1)
 Inventory.create!(category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer", condition: "used", flat: f1)
-Inventory.create!(category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Machine", condition: "new", flat: f1)
+Inventory.create!(category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Maker", condition: "new", flat: f1)
 Inventory.create!(category: bathroom, name: "VILEDA 09470 VIVA EXPRESS ECO BLAU Bügelbrett", historic_value: 39.99, book_value: 29.99 , description: "Ironing Board", condition: "used", flat: f1)
 Inventory.create!(category: bedroom, name: "SONGESAND", historic_value: 179.00, book_value: 119.00 , description: "white wardrobe", condition: "scratces at the feet from vacuum cleaning", flat: f1)
 Inventory.create!(category: livingroom, name: "NOT", historic_value: 13.99, book_value: 13.99 , description: "uplight", condition: "new", flat: f1)
-Inventory.create!(category: bathroom, name: "VÅGSJÖN", historic_value: 6.99, book_value: 0.00, description: "Bath Towel", condition: "replace", flat: f1)
-Inventory.create!(category: bedroom, name: "DVALA", historic_value: 24.99, book_value: 24.99 , description: "bedclothes 3 pieces", condition: "new", flat: f1)
+Inventory.create!(category: bathroom, name: "VÅGSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath Towel", condition: "replace", flat: f1)
+Inventory.create!(category: bedroom, name: "DVALA", historic_value: 24.99, book_value: 24.99 , description: "bedclothes, 3 pieces", condition: "new", flat: f1)
 Inventory.create!(category: kitchen, name: "MARTIN", historic_value: 21.99, book_value: 16.74, description: "chair", condition: "used", flat: f1)
-Inventory.create!(category: kitchen, name: "MARTORP", historic_value: 29.99, book_value: 29.99, description: "cutlery 30 pieces", condition: "used", flat: f1)
+Inventory.create!(category: kitchen, name: "MARTORP", historic_value: 29.99, book_value: 29.99, description: "cutlery, 30 pieces", condition: "used", flat: f1)
 Inventory.create!(category: kitchen, name: "KARCHER 125440 Jana 4-tlg. Kochgeschirr-Set (Edelstahl 18/8)", historic_value: 74.99, book_value: 59.99 , description: "cookware", condition: "used", flat: f1)
 Inventory.create!(category: bathroom, name: "SHARP ES-GFB7164W3-DE Waschmaschine (7 kg, 1600 U/Min., A+++)", historic_value: 268, book_value: 238, description: "washing machine", condition: "used", flat: f3)
 Inventory.create!(category: livingroom, name: "FORSÅ", historic_value: 12.99, book_value: 7.49, description: "lamp", condition: "used", flat: f2)
 Inventory.create!(category: bathroom, name: "BLANKSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath mat", condition: "replace", flat: f2)
 Inventory.create!(category: livingroom, name: "KNIPPE", historic_value: 17.99, book_value: 11.99, description: "coat rack", condition: "used", flat: f2)
-Inventory.create!(category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "White wine glass", condition: "used", flat: f9)
+Inventory.create!(category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "white wine glass", condition: "used", flat: f9)
 Inventory.create!(category: livingroom, name: "DYNAN", historic_value: 59.80, book_value: 47.60, description: "white wardrobe with door", condition: "used", flat: f9)
 
