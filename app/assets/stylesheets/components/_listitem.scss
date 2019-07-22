@@ -27,3 +27,7 @@ a:hover{
 .flatitem p {
     font-size: 12px;
 }
+
+.flatitem > .row {
+    justify-content: space-evenly;
+}
