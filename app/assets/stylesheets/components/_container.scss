@@ -1,13 +1,20 @@
 /* 95% content container, min-height due to footer positioning*/
 .container {
-    width:95%;
+    width:90%;
     margin-right: auto;
     margin-left: auto;
-    min-height: 77vh;
     text-align:center;
-    min-height: 86vh;
+    height: 93vh;
 }
 
+.task-feed-container {
+    grid-area: 1 / 1 / last-line / 1;
+    justify-items:center;
+    padding: 2px;
+    padding-right: 12px;
+    overflow-y: auto;
+    height: 85vh;
+}
 /*container for dashboard items */
 .dashboard-container {
     display: grid;
@@ -20,14 +27,7 @@
     background: #F4F4F4;
     }
 /*container for task feed items inside the dashboard container*/
-.task-feed-container {
-    grid-area: 1 / 1 / last-line / 1;
-    justify-items:center;
-    padding: 2px;
-    padding-right: 12px;
-    overflow-y: auto;
-    height: 80vh;
-}
+
 
 /*start card items dashboard*/
 .item-a {
