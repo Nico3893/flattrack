@@ -250,7 +250,7 @@ livingroom = InventoryCategory.create!(name: "Living Room")
 bathroom = InventoryCategory.create!(name:"Bathroom")
 
 # Fancy Seeds Inventory
-puts "creating inventory_categories"
+puts "creating inventories"
 Inventory.create!(category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66, description: "flat iron", condition: "used", flat: f1)
 Inventory.create!(category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer", condition: "used", flat: f1)
 Inventory.create!(category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Maker", condition: "new", flat: f1)
