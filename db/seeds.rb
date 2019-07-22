@@ -21,7 +21,7 @@ company1.save
 puts 'Creating users...'
 u1 = User.create!( name: "Christina Gudat", email: "christina@gudat.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_christina_gudat_cx8ndp.jpg")
 u2 = User.create!( name: "Christoph Busse", email: "christoph@busse.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533412/flattrack/user_photos/Busse_gro%C3%9F_twetuw.jpg")
-u3 = User.create!( name: "Chris Hägner", email: "chris@hägner.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_chis_h%C3%A4gner_ocfdcu.jpg")
+u3 = User.create!( name: "Chris Hägner", email: "chris@haegner.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_chis_h%C3%A4gner_ocfdcu.jpg")
 u4 = User.create!( name: "Nicolas Eberhardt", email: "nicolas@eberhardt.com", password: "123456", company: company1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563533337/flattrack/user_photos/user_nicolas_erberhardt_k2tode.jpg")
 
 # Fancy Seed Flat
