@@ -5,15 +5,43 @@
 
 <div class="container">
   <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
-  <div class="dashboard-container">
+    <h2>Tasks for today</h2> 
+  <div class="dashboard-container"> 
     <div class="task-feed-container">
       <%@tasks.each do |task|%>
-        <div class="task-card-feed">
-          <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-            <h3><%=task.title%></h3>
-            <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
-          </div>
-          <p class="content"><%=task.description%></p>
+        <div class="task-card-feed"> 
+                        
+     
+          <div class="row">  
+            <div class="card-top" style="display:grid; flex-direcion:column;"> 
+              <p>  <%if task.category.name =="Repair"%><i class="fas fa-wrench" style="color:rgba(0,0,0,0.7)"></i>
+                <% elsif task.category.name.downcase =="maintenance"%>
+              <i class="fas fa-cogs" style="rgba(0,0,0,0.7)"></i>
+                <%else%>
+                <i class="fas fa-tasks" style="rgba(0,0,0,0.7)"></i>
+               
+                <%end%>
+                 &nbsp; <%=task.category.name%>
+                  </p>
+              <h3>
+                <%if task.urgency == 3%>
+                 <i class="fas fa-arrow-up" style="color:red"></i>
+                <%elsif task.urgency == 2%>
+          <i class="fas fa-long-arrow-alt-right" style="color:#FFC65A"></i>
+                <%else%>
+                   <i class="fas fa-arrow-down" style="color:green"></i>
+                <%end%> &nbsp;  <%=task.title%> 
+               
+                </h3>
+             
+            
+              </div>
+              <div class="task-avatar">
+              <h3><%=task.created_at.strftime("%e %b")%></h3>
+             <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+             
+             </div>
+        </div>
         </div>
       <%end%>
       <!--  <div class="task-card-feed">
