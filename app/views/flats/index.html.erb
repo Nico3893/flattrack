@@ -12,26 +12,26 @@
       </div>
       </div>
       <div class="item-list">
-      <% @flats_geocoded.each do |flat| %>
-      <%= link_to flat_path(flat) do%>
+        <% @flats_geocoded.each do |flat| %>
+        <%= link_to flat_path(flat) do%>
         <div class="flatitem">
-        <h3 class="address-header"><%=flat.address%></h3>
-        <div class="row">
-        <p>
-          <%if flat.rooms == 1%>
-            <img src="https://img.icons8.com/material/24/000000/room.png">
-          <%else%>
-            <img src="https://img.icons8.com/material/24/000000/room.png">
-          <%end%>
-            <br>
+          <h3 class="address-header"><%=flat.address%></h3>
+            <div class="row">
+              <p>
+                <%if flat.rooms == 1%>
+                  <img src="https://img.icons8.com/material/24/000000/room.png">
+                <%else%>
+                  <img src="https://img.icons8.com/material/24/000000/room.png">
+                <%end%>
+              <br>
               <%= flat.rooms%>
-            </p>
-            <p>
-              <i class="fas fa-ruler-combined"></i>
+              </p>
+              <p>
+                <i class="fas fa-ruler-combined"></i>
                 <br>
                 <%=flat.area%>m²
-            </p>
-            <p>
+              </p>
+              <p>
               <i class="fas fa-euro-sign"></i>
               <br>
               <%=flat.monthly_rent%>

@@ -37,7 +37,7 @@
   <!-- left-side-container in flat-info -->
  
     <div class="flat-info-column-a">
-      <div class="flat-info-foto-display">
+      <div class="flat-info-foto-display" style="margin-top:14px;">
         <%= render 'shared/flatCarousel' %>
       </div>
       <div class="flat-info-important">
@@ -53,7 +53,16 @@
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
       <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:start; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
-        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS</h3>
+        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS
+        <%if @tasks.count==0%>
+        <%elsif @tasks.count==1%>
+          (<%=@tasks.count%>)
+        <%else%>
+          (<%=@tasks.count%>)  
+          </i>
+          </span>
+        <%end%>
+        </h3>
         <%=link_to new_flat_task_path(@flat) do%>
         <button style="justify-self: center; align-self: end" type="button" class="button-dark">
        NEW TASK &nbsp; <i class="fas fa-plus"></i>
@@ -61,16 +70,6 @@
      <%end%>
       </div>
 
-
-  <!--<%if @tasks.count==0%>
-  <%elsif @tasks.count==1%>
-    <span>
-    <%=@tasks.count%> Pending Task</span>
-  <%else%>
-    <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks">
-    </i>
-    </span>
-  <%end%>-->
 
 
         <% @tasks.each do |task| %>

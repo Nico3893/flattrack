@@ -73,7 +73,7 @@
 .container-flat-index {
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
 /* flat index page container for bottom (where tasks are displayed*/
@@ -205,7 +205,8 @@
     display:grid;
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
     grid-template-columns: 2;
-    justify-content:center;
+    justify-content:stretch;
+    margin-left: 50px;
 }
 /*
 .flat-info-column-b-item-a{
