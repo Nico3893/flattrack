@@ -5,14 +5,6 @@
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <div class="row justify-content-between">
-  <h2 class="header">
-    <%= @flat.address %>
-  </h2>
-      <%= link_to flat_inventories_path(@flat) do%>
-      <button class="button-dark" style="display:grid; align-self:center; margin-top:10px;"><i class="fas fa-couch"></i> Inventory</button>
-      <%end%>
-      </div>
  <!-- <div class="kpi-container">
     <div class="kpi-container-item-a">
       <h3 class="grey-out less-top-margin">Cashflow</h3>
@@ -43,6 +35,17 @@
         <%= render 'shared/flatCarousel' %>
       </div>
       <div class="flat-info-important">
+        <p>
+          <%= @flat.address %>
+        </p>
+        <div class="d-flex justify-content-between">
+          <%= link_to :back, class: "button-dark" do %>
+            <span class="my-3"><i class="fas fa-arrow-left"></i> &nbsp; Back</span>
+          <% end %>
+          <%= link_to flat_inventories_path(@flat), class: "button-dark" do%>
+            <i class="fas fa-couch"></i> &nbsp; Inventory
+          <%end%>
+        </div>
       <br>
         <div class="task-card-small-a">
           <h3 class="lighter grey-out">Special comments</h3>
@@ -77,7 +80,7 @@
         <!-- Button trigger modal -->
       <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:start; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
 
-        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS
+        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">Tasks
         <%if @tasks.count==0%>
         <%elsif @tasks.count==1%>
           (<%=@tasks.count%>)
@@ -88,7 +91,7 @@
         </h3>
         <%=link_to new_flat_task_path(@flat) do%>
         <button style="justify-self: center; align-self: end" type="button" class="button-dark">
-       NEW TASK &nbsp; <i class="fas fa-plus"></i>
+       New Task &nbsp; <i class="fas fa-plus"></i>
         </button>
      <%end%>
       </div>
