@@ -8,7 +8,7 @@
   // box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 }
 
-.task-form-description {
+.task-form {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 100px auto;
@@ -54,15 +54,21 @@
 }
 
 .participant-box {
-margin: 1vh;
-filter: opacity(20%);
+  margin: 1vh;
+  filter: opacity(20%);
   &:hover{
     cursor:pointer;
-    opacity: 1;
-    filter: opacity(100%) drop-shadow(3px 3px 10px gray);
+    filter: opacity(60%);
   }
   &.active {
     filter: none;
+    // border: 1px solid $dark-blue;
+    // border-radius: 50%;
+    filter: drop-shadow(0px 0px 5px $dark-blue);
+    &:hover{
+      cursor:pointer;
+      filter: drop-shadow(0px 0px 7px $dark-blue);
+    }
   }
 }
 
