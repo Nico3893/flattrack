@@ -13,31 +13,33 @@
       <button class="button-dark" style="display:grid; align-self:center; margin-top:10px;"><i class="fas fa-couch"></i> INVENTORY</button>
       <%end%>
       </div>
-  <div class="kpi-container">
+ <!-- <div class="kpi-container">
     <div class="kpi-container-item-a">
+      <h3 class="grey-out less-top-margin">Cashflow</h3>
       <h2 class="cashflow less-bottom-margin" style="font-weight:bolder"><%= @cashflow %>€</h2>
-      <h2 class="subheader">CASHFLOW</h2>
       </div>
     <div class="kpi-container-item-b">
+      <h3 class="grey-out less-top-margin">Utilities</h3>
       <h2 class="utilities less-bottom-margin" style="font-weight:bolder"><%= @utilities %>€</h2>
-      <h2 class="subheader">UTILITIES</h2>
     </div>
     <div class="kpi-container-item-c">
+      <h3 class="grey-out less-top-margin">Rent / m²</h3>
       <h2 class="less-bottom-margin" style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€</h2>
-      <h2 class="subheader">RENT / m²</h2>
+
     </div>
     <div class="kpi-container-item-d">
+      <h3 class="grey-out less-top-margin">Area</h3>
       <h2 class="less-bottom-margin" style="font-weight:bolder"><%= @flat.area %>m² </h2>
-      <h2 class="subheader">AREA</h2>
+      
     </div>
-  </div>
+  </div>-->
   <!-- end of kpi-container-->
   <!-- start of flat-info-->
   <div class="flat-info-container">
   <!-- left-side-container in flat-info -->
 
     <div class="flat-info-column-a">
-      <div class="flat-info-foto-display">
+      <div class="flat-info-foto-display" style="margin-top:14px;">
         <%= render 'shared/flatCarousel' %>
       </div>
       <div class="flat-info-important">
@@ -45,6 +47,27 @@
         <div class="task-card-small-a">
           <h3 class="lighter grey-out">Special comments</h3>
           <p><%= @flat.comment %></p>
+          <div class="row">
+              <p>
+                <%if @flat.rooms == 1%>
+                  <img src="https://img.icons8.com/material/24/000000/room.png">
+                <%else%>
+                  <img src="https://img.icons8.com/material/24/000000/room.png">
+                <%end%>
+              <br>
+              <%= @flat.rooms%>
+              </p>
+              <p>
+                <i class="fas fa-ruler-combined"></i>
+                <br>
+                <%=@flat.area%>m²
+              </p>
+              <p>
+              <i class="fas fa-euro-sign"></i>
+              <br>
+              <%=@flat.monthly_rent%>
+              </p>
+            </div>
         </div>
       </div>
     </div>
@@ -53,25 +76,22 @@
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
       <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:start; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
-        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS (<%= @tasks.count %>)</h3>
+
+        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS
+        <%if @tasks.count==0%>
+        <%elsif @tasks.count==1%>
+          (<%=@tasks.count%>)
+        <%else%>
+          (<%=@tasks.count%>)
+          </span>
+        <%end%>
+        </h3>
         <%=link_to new_flat_task_path(@flat) do%>
         <button style="justify-self: center; align-self: end" type="button" class="button-dark">
        NEW TASK &nbsp; <i class="fas fa-plus"></i>
         </button>
      <%end%>
       </div>
-
-
-  <!--<%if @tasks.count==0%>
-  <%elsif @tasks.count==1%>
-    <span>
-    <%=@tasks.count%> Pending Task</span>
-  <%else%>
-    <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks">
-    </i>
-    </span>
-  <%end%>-->
-
 
         <% @tasks.each do |task| %>
           <div class="task-card-flat-show">
