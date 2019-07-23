@@ -6,6 +6,7 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @task.company = current_user.company
+    @categories = TaskCategory.all
     authorize @task
   end
 
@@ -13,6 +14,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.company = current_user.company
     @flat = Flat.find(params[:flat_id])
+    @categories = TaskCategory.all
     @task.flat = @flat
     @task.user = current_user
 
@@ -24,6 +26,7 @@ class TasksController < ApplicationController
       @comment.user = @task.user
       authorize @comment
       if @comment.save
+        raise
         # create participations
         @user_ids = participation_params[:user_ids]
         @user_ids.each do |id|
