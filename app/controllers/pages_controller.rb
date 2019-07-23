@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     @area = area
     @rent = rent
     @users = users
+    @task = Task.new
+    @flat = Flat.first
   end
 
   private
