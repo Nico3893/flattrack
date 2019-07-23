@@ -131,12 +131,15 @@
     align-items: flex-start;
 }
 
-.kpi-container
-
 .subheader {
-    margin-top:0px;
-    letter-spacing: 0.1em;
-    color: rgba(56,56,56, 0.5)
+  margin-top:0px;
+  color: rgb(72,72,72);
+  font-size: 16px;
+
+}
+
+.dashboard-kpis {
+  font-size: 40px;
 }
 .card-head{
     width: 20rem;
