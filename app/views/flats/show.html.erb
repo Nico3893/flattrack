@@ -1,12 +1,12 @@
 <% content_for(:title) do %>
-  Flattrack <%= @flat.address %>
+  Flattrack | <%= @flat.address %>
 <% end %>
 
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <h2 class="header"> 
-  
+  <h2 class="header">
+
     <%= @flat.address %>
   </h2>
   <div class="kpi-container">
@@ -59,41 +59,41 @@
      <%end%>
       </div>
 
- 
-  <!--<%if @tasks.count==0%> 
+
+  <!--<%if @tasks.count==0%>
   <%elsif @tasks.count==1%>
     <span>
-    <%=@tasks.count%> Pending Task</span> 
-  <%else%> 
-    <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks">  
+    <%=@tasks.count%> Pending Task</span>
+  <%else%>
+    <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks">
     </i>
-    </span>  
+    </span>
   <%end%>-->
-  
+
 
         <% @tasks.each do |task| %>
           <div class="task-card-flat-show">
             <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
             <div class="card-head">
             <h3>
-              <%if task.category.name.downcase =="repair"%> 
-                <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />  
+              <%if task.category.name.downcase =="repair"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />
               <% elsif task.category.name.downcase =="maintenance"%>
-                <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />  
+                <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />
               <% elsif task.category.name.downcase =="restocking"%>
-                <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />   
+                <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />
               <% elsif task.category.name.downcase =="furnishing"%>
-                <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />   
+                <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />
               <%else%>
-                <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />  
+                <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
               <%end%>
                 <%= task.title %>
-              
+
               </h3>
               </div>
               <div>
                 <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
-              </div>          
+              </div>
             </div>
             <p class="content"> <%if task.urgency == 3%>
                  <i class="fas fa-exclamation-triangle" style="color:red"></i>
@@ -106,7 +106,7 @@
              </p>
           </div>
         <% end %>
-        
+
       </div>
     </div>
   </div>

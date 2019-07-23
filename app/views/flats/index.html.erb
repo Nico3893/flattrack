@@ -1,5 +1,5 @@
 <% content_for(:title) do %>
-  Flattrack Flats
+  Flattrack | Flats
 <% end %>
 
 
@@ -16,41 +16,41 @@
       <%= link_to flat_path(flat) do%>
         <div class="flatitem">
         <h3 class="address-header"><%=flat.address%></h3>
-        <div class="row"> 
+        <div class="row">
         <p>
-          <%if flat.rooms == 1%> 
-            <img src="https://img.icons8.com/material/24/000000/room.png"> 
+          <%if flat.rooms == 1%>
+            <img src="https://img.icons8.com/material/24/000000/room.png">
           <%else%>
-            <img src="https://img.icons8.com/material/24/000000/room.png"> 
+            <img src="https://img.icons8.com/material/24/000000/room.png">
           <%end%>
             <br>
-              <%= flat.rooms%> 
-            </p> 
-            <p>
-              <i class="fas fa-ruler-combined"></i> 
-                <br> 
-                <%=flat.area%>m² 
+              <%= flat.rooms%>
             </p>
-            <p> 
+            <p>
+              <i class="fas fa-ruler-combined"></i>
+                <br>
+                <%=flat.area%>m²
+            </p>
+            <p>
               <i class="fas fa-euro-sign"></i>
               <br>
               <%=flat.monthly_rent%>
-              </p> 
-              
+              </p>
+
           <%if flat.parking_space == 0 %>
           <%else%>
-          <p> 
+          <p>
             <i class="fas fa-parking">
             </i>
             <br>
             <%=flat.parking_space%>
           </p>
-          <%end%> 
+          <%end%>
           <%if flat.address_specification.nil?%>
-          <%else%> 
+          <%else%>
             <p>
             <img src="icon_flat.png" alt="" style="width:20px;length:20px">
-            <br> 
+            <br>
           <%= flat.address_specification%>
             </p>
           <%end%>
