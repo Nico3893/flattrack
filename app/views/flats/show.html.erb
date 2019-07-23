@@ -5,25 +5,29 @@
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <h2 class="header">
-
+  <div class="row justify-content-between">
+  <h2 class="header"> 
     <%= @flat.address %>
   </h2>
+      <%= link_to flat_inventories_path(@flat) do%>
+      <button class="button-dark" style="display:grid; align-self:center; margin-top:10px;"><i class="fas fa-couch"></i> INVENTORY</button>
+      <%end%>
+      </div>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
-      <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2>
+      <h2 class="cashflow less-bottom-margin" style="font-weight:bolder"><%= @cashflow %>€</h2>
       <h2 class="subheader">CASHFLOW</h2>
       </div>
     <div class="kpi-container-item-b">
-      <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2>
+      <h2 class="utilities less-bottom-margin" style="font-weight:bolder"><%= @utilities %>€</h2>
       <h2 class="subheader">UTILITIES</h2>
     </div>
     <div class="kpi-container-item-c">
-      <h2 style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€</h2>
+      <h2 class="less-bottom-margin" style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€</h2>
       <h2 class="subheader">RENT / m²</h2>
     </div>
     <div class="kpi-container-item-d">
-      <h2 style="font-weight:bolder"><%= @flat.area %>m² </h2>
+      <h2 class="less-bottom-margin" style="font-weight:bolder"><%= @flat.area %>m² </h2>
       <h2 class="subheader">AREA</h2>
     </div>
   </div>
@@ -31,15 +35,13 @@
   <!-- start of flat-info-->
   <div class="flat-info-container">
   <!-- left-side-container in flat-info -->
+ 
     <div class="flat-info-column-a">
       <div class="flat-info-foto-display">
         <%= render 'shared/flatCarousel' %>
       </div>
       <div class="flat-info-important">
       <br>
-      <%= link_to flat_inventories_path(@flat) do%>
-      <button class="button-dark"><i class="fas fa-couch"></i> INVENTORY</button>
-      <%end%>
         <div class="task-card-small-a">
           <h3 class="lighter grey-out">Special comments</h3>
           <p><%= @flat.comment %></p>
@@ -50,7 +52,7 @@
     <div class="flat-info-column-b">
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
-      <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:end; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
+      <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:start; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
         <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS</h3>
         <%=link_to new_flat_task_path(@flat) do%>
         <button style="justify-self: center; align-self: end" type="button" class="button-dark">
