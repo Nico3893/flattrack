@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_171127) do
+ActiveRecord::Schema.define(version: 2019_07_23_082510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string "text"
+    t.string "text", null: false
     t.bigint "user_id"
     t.bigint "task_id"
     t.datetime "created_at", null: false
@@ -76,6 +76,9 @@ ActiveRecord::Schema.define(version: 2019_07_22_171127) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "replaced", default: false, null: false
+    t.boolean "deleted", default: false, null: false
+    t.string "photo"
     t.index ["category_id"], name: "index_inventories_on_category_id"
     t.index ["flat_id"], name: "index_inventories_on_flat_id"
   end
