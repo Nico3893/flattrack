@@ -1,10 +1,10 @@
 <div class="container">
-  <h2 class="header">Inventories for <%= @flat.address %></h2>
+  <h2 class="header">Inventory for <%= @flat.address %></h2>
   <h3>Bedroom</h3>
   <div class="row">
     <% @bedroom.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
-        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url(https://picsum.photos/id/167/400/150)">
+        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url('<%= cl_image_path inventory.photo, height: 150, width: 400, crop: :fill %>')">
           <div class="d-flex flex-grow-1 justify-content-between">
             <span class="flex-grow-1">
               <h3 class=""><%= inventory.description.upcase %></h3>
@@ -29,7 +29,7 @@
   <div class="row">
     <% @living.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
-        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url(https://picsum.photos/id/167/400/150)">
+        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url('<%= cl_image_path inventory.photo, height: 150, width: 400, crop: :fill %>')">
           <div class="d-flex flex-grow-1 justify-content-between">
             <span class="flex-grow-1">
               <h3 class=""><%= inventory.description.upcase %></h3>
@@ -54,7 +54,7 @@
   <div class="row">
     <% @kitchen.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
-        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url(https://picsum.photos/id/167/400/150)">
+        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url('<%= cl_image_path inventory.photo, height: 150, width: 400, crop: :fill %>')">
           <div class="d-flex flex-grow-1 justify-content-between">
             <span class="flex-grow-1">
               <h3 class=""><%= inventory.description.upcase %></h3>
@@ -79,7 +79,7 @@
   <div class="row">
     <% @bathroom.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
-        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url(https://picsum.photos/id/167/400/150)">
+        <div class="card-inventory" style="background-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.9) 100%), url('<%= cl_image_path inventory.photo, height: 150, width: 400, crop: :fill %>')">
           <div class="d-flex flex-grow-1 justify-content-between">
             <span class="flex-grow-1">
               <h3 class=""><%= inventory.description.upcase %></h3>
