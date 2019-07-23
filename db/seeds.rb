@@ -252,6 +252,7 @@ bathroom = InventoryCategory.create!(name:"Bathroom")
 # Fancy Seeds Inventory
 puts "creating inventories"
 Inventory.create!(category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66, description: "flat iron", condition: "used", flat: f1)
+puts "creating inventories"
 Inventory.create!(category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer", condition: "used", flat: f1)
 Inventory.create!(category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Maker", condition: "new", flat: f1)
 Inventory.create!(category: bathroom, name: "VILEDA 09470 VIVA EXPRESS ECO BLAU Bügelbrett", historic_value: 39.99, book_value: 29.99 , description: "Ironing Board", condition: "used", flat: f1)
@@ -268,4 +269,4 @@ Inventory.create!(category: bathroom, name: "BLANKSJÖN", historic_value: 6.99, 
 Inventory.create!(category: livingroom, name: "KNIPPE", historic_value: 17.99, book_value: 11.99, description: "coat rack", condition: "used", flat: f2)
 Inventory.create!(category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "white wine glass", condition: "used", flat: f9)
 Inventory.create!(category: livingroom, name: "DYNAN", historic_value: 59.80, book_value: 47.60, description: "white wardrobe with door", condition: "used", flat: f9)
-
+puts "creating inventories"
