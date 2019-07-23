@@ -260,17 +260,17 @@ Transaction.create!( flat: f9, amount_cents: 8500, date: Date.today, category: r
 puts 'Creating contract...'
 Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 90, monthly_rent: 800 )
 
-# # Fancy Seed task Comments
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
-# Comment.create!( task: t, owner: u, description: "")
+# Fancy Seed task Comments
+Comment.create!( task: t2, user: u1, text: "Check possibilities to remedy the damage, cost effective solution preferabel. Must be done when tenants change.")
+Comment.create!( task: t1, user: u1, text: "Emergency fix was done yesterday. Find out, whether further repairs are necessary, what is will cost and by when it can be done.")
+Comment.create!( task: t3, user: u1, text: "Must be fixed before new tenant moves in.")
+Comment.create!( task: t4, user: u2, text: "Isn't that the tenants problem?.")
+Comment.create!( task: t4, user: u1, text: "Make sure you tell the tenants, that they will receive an invoice.")
+Comment.create!( task: t5, user: u1, text: "Also, look into why it is lose.")
+# Comment.create!( task: t, user: u, text: "")
+# Comment.create!( task: t, user: u, text: "")
+# Comment.create!( task: t, user: u, text: "")
+# Comment.create!( task: t, user: u, text: "")
 
 # # Fancy Seeds Inventory Caregories
 puts "creating inventory_categories"
