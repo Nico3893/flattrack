@@ -37,7 +37,7 @@
       </div>
       <div class="flat-info-important">
         <div class="task-card-small-a">
-          <h3>Special comments</h3>
+          <h3 class="lighter grey-out">Special comments</h3>
           <p><%= @flat.comment %></p>
         </div>
       </div>
@@ -47,7 +47,7 @@
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
       <div style="display:grid">
-                <h3 class="lighter"style="align-self:start; justify-self: start">Connected tasks</h3>
+                <h3 class="lighter grey-out"style="align-self:end; justify-self: start">URGENT</h3>
 
         <button style="justify-self: center; align-self: end" type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
         NEW TASK
@@ -83,13 +83,21 @@
                 <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />  
               <%end%>
                 <%= task.title %>
+              
               </h3>
               </div>
               <div>
                 <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
               </div>          
             </div>
-            <p class="content"><%= task.description %></p>
+            <p class="content"> <%if task.urgency == 3%>
+                 <i class="fas fa-exclamation-triangle" style="color:red"></i>
+                <%elsif task.urgency == 2%>
+          <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
+                <%else%>
+                   <i class="fas fa-arrow-down" style="color:green"></i>
+                <%end%><%= task.description %>
+             </p>
           </div>
         <% end %>
         

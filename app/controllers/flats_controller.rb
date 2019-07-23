@@ -26,7 +26,7 @@ class FlatsController < ApplicationController
     authorize @flat
     @task = Task.new
     @task.company = current_user.company
-    @tasks = @flat.tasks.where(status: "open").sort_by { |task| task.urgency }
+    @tasks = @flat.tasks.where(status: "open").sort_by { |task| task.urgency }.reverse
     @utilities = utilities
     @cashflow = cash_flow
   end
