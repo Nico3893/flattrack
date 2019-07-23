@@ -9,10 +9,12 @@
 .task-feed-container {
     grid-area: 1 / 1 / last-line / 1;
     justify-items:center;
-    padding: 2px;
+    padding: 4px;
     padding-right: 12px;
     overflow-y: auto;
-    height: 85vh;
+    height: auto;
+    background:$background-kpis-dashboard;
+    margin-right: 8px;
 }
 
 .task-feed-container > h3 {
@@ -26,13 +28,14 @@
     grid-template-rows: auto auto 33.33%;
     border-radius: 2px;
     padding: 4px;
+    height: 85vh;
     /*background: linear-gradient(90deg, rgba(244,244,244,1) 0%, rgba(232,232,232,0.5) 32%, rgba(232,232,232,1) 40%), ;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
     }
 /*container for task feed items inside the dashboard container*/
 
 .item-padding{
-    padding: 4px;
+    padding: 4px;   
 }
 /*start card items dashboard*/
 .item-a {
