@@ -75,6 +75,7 @@
     font-size: 14px;
     display: flex;
     font-weight: lighter;
+    margin-bottom: 0 !important;
 }
 
 .task-card-feed h3{
@@ -103,6 +104,7 @@
 .task-avatar {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -118,7 +120,7 @@
 
 .dashboard-card-regular {
     display:flex;
-    width: 19rem;
+    width: 18rem;
     min-height: 14vh;
     flex-direction: column;
     padding: 4px;
@@ -142,7 +144,6 @@
     margin-top: 8px;
     letter-spacing: 2px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-
 }
 
 /* large-sized dashboard card (double height*/

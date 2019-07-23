@@ -15,10 +15,9 @@
   </div>
   <div class="dashboard-container">
     <div class="task-feed-container">
-      <%@tasks.each do |task|%>
+      <h3 style="border-bottom: thin solid red;">High Priority</h3>
+      <%@top_prio.each do |task|%>
         <div class="task-card-feed">
-
-
           <div class="row">
             <div class="card-top" style="display:grid; flex-direction:column;">
             <p class="lighter grey-out">
@@ -35,13 +34,7 @@
               <%end%>
                  &nbsp; <%=task.category.name%></p>
               <h3>
-                <%if task.urgency == 3%>
-                 <i class="fas fa-exclamation-triangle" style="color:red"></i>
-                <%elsif task.urgency == 2%>
-          <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
-                <%else%>
-                   <i class="fas fa-arrow-down" style="color:green"></i>
-                <%end%> &nbsp;  <%=task.title%>
+                <%=task.title%>
 
                 </h3>
 
@@ -49,61 +42,107 @@
               </div>
               <div class="task-avatar">
                 <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
-                <h3><%=task.created_at.strftime("%e %b")%></h3>
+                <p><%=task.created_at.strftime("%e %b")%></p>
            </div>
         </div>
         </div>
       <%end%>
-      <!--  <div class="task-card-feed">
-            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-                    <h3>Task title</h3>
-                    <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-                </div>
-                <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-            </div>
-             <div class="task-card-feed">
-                <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-                    <h3>Task title</h3>
-                    <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-                </div>
-                <p class="content">The woods are lovely dark and deep but I've got promises to keep and miles to go before I sleep and miles to go before I sleep</p>
-            </div>-->
+      <h3 style="border-bottom: thin solid orange;">Medium Priority</h3>
+            <%@med_prio.each do |task|%>
+        <div class="task-card-feed">
+          <div class="row">
+            <div class="card-top" style="display:grid; flex-direction:column;">
+            <p class="lighter grey-out">
+              <%if task.category.name.downcase =="repair"%>
+                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
+              <% elsif task.category.name.downcase =="maintenance"%>
+                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <% elsif task.category.name.downcase =="restocking"%>
+                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <% elsif task.category.name.downcase =="furnishing"%>
+                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <%else%>
+                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <%end%>
+                 &nbsp; <%=task.category.name%></p>
+              <h3>
+              <%=task.title%>
+                </h3>
+              </div>
+              <div class="task-avatar">
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                <p><%=task.created_at.strftime("%e %b")%></p>
+           </div>
+        </div>
+        </div>
+      <%end%>
+      <h3 style="border-bottom: thin solid green;">Low Priority</h3>
+      <%@low_prio.each do |task|%>
+        <div class="task-card-feed">
+          <div class="row">
+            <div class="card-top" style="display:grid; flex-direction:column;">
+            <p class="lighter grey-out">
+              <%if task.category.name.downcase =="repair"%>
+                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
+              <% elsif task.category.name.downcase =="maintenance"%>
+                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <% elsif task.category.name.downcase =="restocking"%>
+                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <% elsif task.category.name.downcase =="furnishing"%>
+                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <%else%>
+                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)">
+              <%end%>
+                 &nbsp; <%=task.category.name%></p>
+              <h3>
+                <%=task.title%>
+                </h3>
+              </div>
+              <div class="task-avatar">
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                <p><%=task.created_at.strftime("%e %b")%></p>
+           </div>
+        </div>
+        </div>
+      <%end%>
     </div>
-    <div class="item-a">
+
+
+    <div class="item-a item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">AREA</h3>
         <h3 style="font-weight:bolder"><%= @area %>m²</h3>
       </div>
     </div>
-    <div class="item-b">
+    <div class="item-b item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">RENT</h3>
         <h3 style="font-weight:bolder"><%= @rent * Flat.count / @area %>€/m²</h3>
       </div>
     </div>
-    <div class="item-c">
+    <div class="item-c item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">UTILITIES</h3>
         <h3 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h3>
       </div>
     </div>
-    <div class="item-d">
+    <div class="item-d item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">CASH FLOW</h3>
         <h3 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h3>
       </div>
     </div>
-    <div class="item-e">
+    <div class="item-e item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">WORKLOAD</h3>
-        <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px") %>
+        <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px") %>
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
-    <div class="item-f">
+    <div class="item-f item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">URGENCY OF TASKS</h3>
-        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px"  %>
+        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px"  %>
           <!-- messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" -->
       </div>
     </div>
