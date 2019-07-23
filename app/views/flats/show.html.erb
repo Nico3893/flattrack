@@ -5,24 +5,26 @@
 <%= render 'shared/taskModal' %>
 
 <div class="container">
-  <h2 class="header" style="display:flex;justify-content:space-between"> <span><%= @flat.address %></span> <%if @tasks.count==0%> <%elsif @tasks.count==1%><span><%=@tasks.count%> Pending Task</span> <%else%> <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks"></i></span>  <%end%></h2>
+  <h2 class="header"> 
+  
+    <%= @flat.address %>
+  </h2>
   <div class="kpi-container">
     <div class="kpi-container-item-a">
-      <i class="fas fa-money-bill-wave" style="font-size:2em"></i>
       <h2 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h2>
-    </div>
+      <h2 class="subheader">CASHFLOW</h2>
+      </div>
     <div class="kpi-container-item-b">
-      <img src="/icon_transaction _category_utilities.png" style="width:32px;height:32px" alt="" />
       <h2 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h2>
+      <h2 class="subheader">UTILITIES</h2>
     </div>
     <div class="kpi-container-item-c">
-      <span class="icon-stack"><i class="fas fa-ruler-combined icon-stack-3x" style="width:24px;height:24px"></i>
-      <i class="fas fa-euro-sign icon-stack-1x"></i></span>
-      <h2 style="font-weight:bolder;margin-top:0;position:relative;bottom:1em;"><%= @flat.monthly_rent / @flat.area %>€/m²</h2>
+      <h2 style="font-weight:bolder"><%= @flat.monthly_rent / @flat.area %>€</h2>
+      <h2 class="subheader">RENT / m²</h2>
     </div>
     <div class="kpi-container-item-d">
-      <i class="fas fa-ruler-combined" style="font-size:1.5rem"></i>
       <h2 style="font-weight:bolder"><%= @flat.area %>m² </h2>
+      <h2 class="subheader">AREA</h2>
     </div>
   </div>
   <!-- end of kpi-container-->
@@ -44,14 +46,30 @@
     <div class="flat-info-column-b">
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
-      <div style="justify-self: center; align-self: end">
-        <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
+      <div style="display:grid">
+                <h3 class="lighter"style="align-self:start; justify-self: start">Connected tasks</h3>
+
+        <button style="justify-self: center; align-self: end" type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
         NEW TASK
         </button>
       </div>
+
+ 
+  <!--<%if @tasks.count==0%> 
+  <%elsif @tasks.count==1%>
+    <span>
+    <%=@tasks.count%> Pending Task</span> 
+  <%else%> 
+    <span style="color:red;font-weight:bolder"><%=@tasks.count%>&nbsp;<i class="fas fa-tasks">  
+    </i>
+    </span>  
+  <%end%>-->
+  
+
         <% @tasks.each do |task| %>
           <div class="task-card-flat-show">
             <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <div class="card-head">
             <h3>
               <%if task.category.name.downcase =="repair"%> 
                 <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />  
@@ -66,6 +84,7 @@
               <%end%>
                 <%= task.title %>
               </h3>
+              </div>
               <div>
                 <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
               </div>          

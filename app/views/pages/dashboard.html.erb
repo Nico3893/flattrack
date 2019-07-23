@@ -41,10 +41,9 @@
             
               </div>
               <div class="task-avatar">
-              <h3><%=task.created_at.strftime("%e %b")%></h3>
-             <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
-             
-             </div>
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                <h3><%=task.created_at.strftime("%e %b")%></h3>
+           </div>
         </div>
         </div>
       <%end%>

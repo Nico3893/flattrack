@@ -66,8 +66,8 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 8px auto;
     background-color: white;
-    height: 14vh;
-    min-width: 26vw;
+    height: auto;
+    min-width: 28vw;
 }
 
 
@@ -81,12 +81,14 @@
     font-weight:lighter;
     font-size: 16px;
     align-self: start !important;
+    width: 80%
 }
 
 .task-card-feed .card-top {
     display: grid;
     flex-direction: column;
     padding-left: 1.5vw;
+    width: 22rem;
     & img{
         height: 20px;
         width: 20px;
