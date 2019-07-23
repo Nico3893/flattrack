@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="form-box">
+  <div class="form-task">
     <h1>Create a new task</h1>
     <%= simple_form_for(@task, as: :task, method: :post, url: flat_tasks_path) do |f| %>
       <div class="row">
@@ -15,20 +15,51 @@
           <%= f.input :description, as: :text, placeholder: "This task is about..." %>
         </div>
         <div class="participants">
-          <%= f.association :users, as: :check_boxes, collection: @task.company.users, label: "Add participants..." %>
+          <fieldset class="form-group check_boxes optional task_users">
+            <legend class="col-form-label pt-0">
+              Add participants...
+            </legend>
+            <input type="hidden" name="task[user_ids][]" value="">
+
+            <div class="participant-boxes">
+              <% @task.company.users.each do |user| %>
+                <div class="form-check">
+                  <input class="form-check-input check_boxes optional invisible" type="checkbox" value="<%= "#{user.id}" %>" name="task[user_ids][]" id="<%= "task_user_ids_#{user.id}" %>">
+                  <label class="collection_check_boxes participant-box" for= "<%= "task_user_ids_#{user.id}" %>">
+                    <%= cl_image_tag user.photo, crop: :thumb, class: "avatar" %>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+          </fieldset>
         </div>
         <div class="comment-entry">
           <%= f.simple_fields_for :comment do |c| %>
             <%= c.input :text, label: "Add comment" %>
           <% end %>
         </div>
-        <div class="existing-comments">
-
-        </div>
       </div>
-
-      <%= f.association :category, as: :radio_buttons %>
-      <%= f.submit "Create this task", class: "button-dark" %>
+      <div>
+        <fieldset class="form-group radio_buttons required task_category">
+          <legend class="col-form-label pt-0">
+            Category<abbr title="required">*</abbr>
+          </legend>
+          <input type="hidden" name="task[category_id]" value="">
+            <div class="category-choices">
+              <% @categories.each do |category| %>
+                <div class="form-check">
+                  <input class="form-check-input radio_buttons invisible required" type="radio" value=<%= category.id %>" name="task[category_id]" id="task_category_id_<%= category.id %>">
+                  <label class="collection_radio_buttons category-choice " for="task_category_id_<%= category.id %>">
+                    <%= category.name %>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+        </fieldset>
+      </div>
+      <div class="row justify-content-end">
+        <%= f.submit "Create this task", class: "button-dark mr-5" %>
+      </div>
     <% end %>
   </div>
 </div>
