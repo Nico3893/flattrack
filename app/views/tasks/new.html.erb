@@ -1,14 +1,26 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
-
 <div class="container">
   <div class="form-box">
     <h1>Create a new task</h1>
-    </div>
     <%= simple_form_for(@task, as: :task, method: :post, url: flat_tasks_path) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.association :category %>
+      <div class="row">
+        <div class="col-6">
+            <%= f.input :title %>
+        </div>
+        <div class="col-6">
+            <%= f.input :urgency, prompt: "Indicate priority" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <%= f.input :description, as: :text, placeholder: "This task is about..." %>
+        </div>
+        <div class="col-6">
+        <%= f.association :users, as: :check_boxes %>
+        </div>
+
+      </div>
+
+      <%= f.association :category, as: :radio_buttons %>
       <%= f.submit "Create this task", class: "button-dark" %>
     <% end %>
   </div>
