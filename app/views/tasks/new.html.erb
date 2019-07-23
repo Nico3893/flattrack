@@ -15,9 +15,7 @@
           <%= f.input :description, as: :text, placeholder: "This task is about..." %>
         </div>
         <div class="participants">
-          <%= f.simple_fields_for :participations do |p| %>
-            <%= p.association :users, label: "Add participants..." %>
-          <% end %>
+          <%= f.association :users, as: :check_boxes, collection: @task.company.users, label: "Add participants..." %>
         </div>
         <div class="comment-entry">
           <%= f.simple_fields_for :comment do |c| %>

@@ -25,13 +25,13 @@ class TasksController < ApplicationController
       authorize @comment
       if @comment.save
         # create participations
-        # @user_ids = participation_params[:user_ids]
-        # @user_ids.each do |id|
-        #   if User.exists?(id)
-        #     participation = Participation.new(user_id: id, task: @task)
-        #     participation.save
-        #   end
-        # end
+        @user_ids = participation_params[:user_ids]
+        @user_ids.each do |id|
+          if User.exists?(id)
+            participation = Participation.new(user_id: id, task: @task)
+            participation.save
+          end
+        end
 
       else
         render :new
@@ -70,5 +70,8 @@ class TasksController < ApplicationController
     params.require(:task).require(:comment).permit(:text)
   end
 
+  def participation_params
+    params.require(:task).permit(user_ids: [])
+  end
 
 end
