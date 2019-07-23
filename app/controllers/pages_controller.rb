@@ -9,6 +9,11 @@ class PagesController < ApplicationController
     @area = area
     @rent = rent
     @users = users
+
+    @top_prio = @tasks.where(urgency: 3)
+    @med_prio = @tasks.where(urgency: 2)
+    @low_prio = @tasks.where(urgency: 1)
+
     @task = Task.new
     @flat = Flat.first
   end
