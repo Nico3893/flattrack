@@ -131,7 +131,10 @@
     align-items: flex-start;
 }
 
+.kpi-container
+
 .subheader {
+    margin-top:0px;
     letter-spacing: 0.1em;
     color: rgba(56,56,56, 0.5)
 }
@@ -200,7 +203,7 @@
 .flat-info-column-b{
     grid-area: 1 / 2;
     display:grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
     grid-template-columns: 2;
     justify-content:center;
 }
