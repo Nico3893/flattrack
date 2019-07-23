@@ -1,19 +1,20 @@
 /*dark buttons for light background*/
 .button-dark{
-    padding: 8px 30px;
-    background-color: $dark-blue;
+    padding: 4px 20px;
+    background-color: transparent;
     height: 2.5rem;
-    color: $light-gray;
+    color: #919395;
     font-weight: bold;
+    border:none;
+    font-size: 20px;
     font-family: $headers-font;
-    border-radius: 2px;
-    border: 0.4px solid $gray;
     text-decoration:none;
-    transition: 0.3s;
+    transition: 0.2s;
     margin: 4px;
+    opacity: 1;
     &:hover{
         text-decoration: none;
-        color: black;
+        color: rgba(66, 72, 78, 0.685);
     }
 }
 /*light buttons for dark backgrounds*/

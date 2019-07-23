@@ -36,6 +36,7 @@
         <%= render 'shared/flatCarousel' %>
       </div>
       <div class="flat-info-important">
+         <i class="fas fa-couch"></i>   <%= link_to "INVENTORY", flat_inventories_path(@flat), class: "button-dark"%> 
         <div class="task-card-small-a">
           <h3 class="lighter grey-out">Special comments</h3>
           <p><%= @flat.comment %></p>
@@ -46,11 +47,12 @@
     <div class="flat-info-column-b">
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
-      <div style="display:grid">
-                  <button style="justify-self: center; align-self: end" type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
-        NEW TASK
+      <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:end; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
+        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS</h3>
+        <button style="justify-self: center; align-self: end" type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
+       NEW TASK &nbsp; <i class="fas fa-plus"></i>
         </button>
-                <h3 class="lighter grey-out"style="align-self:end; justify-self: start">TASKS</h3>
+     
       </div>
 
  
