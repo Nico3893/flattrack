@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row justify-content-between">
-  <h2 class="header"> 
+  <h2 class="header">
     <%= @flat.address %>
   </h2>
       <%= link_to flat_inventories_path(@flat) do%>
@@ -35,7 +35,7 @@
   <!-- start of flat-info-->
   <div class="flat-info-container">
   <!-- left-side-container in flat-info -->
- 
+
     <div class="flat-info-column-a">
       <div class="flat-info-foto-display">
         <%= render 'shared/flatCarousel' %>
@@ -53,7 +53,7 @@
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
       <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:start; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
-        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS</h3>
+        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">TASKS (<%= @tasks.count %>)</h3>
         <%=link_to new_flat_task_path(@flat) do%>
         <button style="justify-self: center; align-self: end" type="button" class="button-dark">
        NEW TASK &nbsp; <i class="fas fa-plus"></i>
