@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'participations/index'
+  get 'participations/create'
+  get 'comments/index'
+  get 'comments/create'
   get 'inventories/index'
   get 'inventory/index'
   devise_for :users

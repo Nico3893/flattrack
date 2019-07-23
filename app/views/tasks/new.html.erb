@@ -10,14 +10,23 @@
             <%= f.input :urgency, prompt: "Indicate priority" %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-6">
+      <div class="task-form-description">
+        <div class="description">
           <%= f.input :description, as: :text, placeholder: "This task is about..." %>
         </div>
-        <div class="col-6">
-        <%= f.association :users, as: :check_boxes %>
+        <div class="participants">
+          <%= f.simple_fields_for :participations do |p| %>
+            <%= p.association :users, label: "Add participants..." %>
+          <% end %>
         </div>
+        <div class="comment-entry">
+          <%= f.simple_fields_for :comment do |c| %>
+            <%= c.input :text, label: "Add comment" %>
+          <% end %>
+        </div>
+        <div class="existing-comments">
 
+        </div>
       </div>
 
       <%= f.association :category, as: :radio_buttons %>

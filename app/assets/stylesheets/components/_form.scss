@@ -1,9 +1,25 @@
 .form-box {
   margin: auto;
-  width: 50%;
+  width: 80%;
   // border: 1px solid rgba(0,0,0,0.2);
   border-radius: 4px;
   padding: 32px 48px;
   // background: linear-gradient(to bottom, rgba(200,200,200,0.2), rgba(200,200,200,0.1));
   // box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.task-form-description {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 100px auto;
+}
+
+.participants {
+  grid-area: 1 / 2 / 2 / 2;
+  justify-items:center;
+  margin-left: 4vh;
+}
+
+.comment-entry {
+  grid-area: 2 / 1 / 2 / 1;
 }
