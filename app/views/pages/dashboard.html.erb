@@ -14,7 +14,7 @@
      
           <div class="row">  
             <div class="card-top" style="display:grid; flex-direction:column;"> 
-            <p>   
+            <p class="lighter grey-out">   
               <%if task.category.name.downcase =="repair"%> 
                 <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">  
               <% elsif task.category.name.downcase =="maintenance"%>
@@ -41,10 +41,9 @@
             
               </div>
               <div class="task-avatar">
-              <h3><%=task.created_at.strftime("%e %b")%></h3>
-             <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
-             
-             </div>
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                <h3><%=task.created_at.strftime("%e %b")%></h3>
+           </div>
         </div>
         </div>
       <%end%>
@@ -65,38 +64,38 @@
     </div>
     <div class="item-a">
       <div class="dashboard-card-regular">
-        <h3 class="title">AREA</h3>
+        <h3 class="title subheader">AREA</h3>
         <h3 style="font-weight:bolder"><%= @area %>m²</h3>
       </div>
     </div>
     <div class="item-b">
       <div class="dashboard-card-regular">
-        <h3 class="title">RENT</h3>
+        <h3 class="title subheader">RENT</h3>
         <h3 style="font-weight:bolder"><%= @rent * Flat.count / @area %>€/m²</h3>
       </div>
     </div>
     <div class="item-c">
       <div class="dashboard-card-regular">
-        <h3 class="title">UTILITIES</h3>
+        <h3 class="title subheader">UTILITIES</h3>
         <h3 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h3>
       </div>
     </div>
     <div class="item-d">
       <div class="dashboard-card-regular">
-        <h3 class="title">CASH FLOW</h3>
+        <h3 class="title subheader">CASH FLOW</h3>
         <h3 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h3>
       </div>
     </div>
     <div class="item-e">
       <div class="dashboard-card-regular">
-        <h3 class="title">WORKLOAD</h3>
+        <h3 class="title subheader">WORKLOAD</h3>
         <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px") %>
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
     <div class="item-f">
       <div class="dashboard-card-regular">
-        <h3 class="title">URGENCY OF TASKS</h3>
+        <h3 class="title subheader">URGENCY OF TASKS</h3>
         <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px"  %>
           <!-- messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" -->
       </div>
