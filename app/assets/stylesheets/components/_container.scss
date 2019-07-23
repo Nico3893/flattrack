@@ -86,7 +86,7 @@
 .container-flat-index {
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
 /* flat index page container for bottom (where tasks are displayed*/
@@ -144,12 +144,15 @@
     align-items: flex-start;
 }
 
-.kpi-container
-
 .subheader {
-    margin-top:0px;
-    letter-spacing: 0.1em;
-    color: rgba(56,56,56, 0.5)
+  margin-top:0px;
+  color: rgb(72,72,72);
+  font-size: 16px;
+
+}
+
+.dashboard-kpis {
+  font-size: 40px;
 }
 .card-head{
     width: 20rem;
@@ -218,7 +221,8 @@
     display:grid;
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
     grid-template-columns: 2;
-    justify-content:center;
+    justify-content:stretch;
+    margin-left: 50px;
 }
 /*
 .flat-info-column-b-item-a{

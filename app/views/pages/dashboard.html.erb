@@ -1,7 +1,7 @@
 <% content_for(:title) do %>
   Flattrack | Dashboard
 <% end %>
-
+<%= render 'shared/taskModal' %>
 
 <div class="container">
   <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
@@ -10,7 +10,7 @@
       <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
     </span>
     <button style="margin-top:14px;" type="button" class="button-dark">
-       NEW TASK &nbsp; <i class="fas fa-plus"></i>
+       New Task &nbsp; <i class="fas fa-plus"></i>
         </button>
   </div>
   <div class="dashboard-container">
@@ -110,38 +110,39 @@
 
     <div class="item-a item-padding">
       <div class="dashboard-card-regular">
-        <h3 class="title subheader">AREA</h3>
-        <h3 style="font-weight:bolder"><%= @area %>m²</h3>
+        <h3 class="dashboard-kpis"><%= @area %>m²</h3>
+        <h3 class="title subheader">Area</h3>
       </div>
     </div>
     <div class="item-b item-padding">
       <div class="dashboard-card-regular">
-        <h3 class="title subheader">RENT</h3>
-        <h3 style="font-weight:bolder"><%= @rent * Flat.count / @area %>€/m²</h3>
+        <h3 class="dashboard-kpis"><%= @rent * Flat.count / @area %>€/m²</h3>
+        <h3 class="title subheader">Rent</h3>
       </div>
     </div>
     <div class="item-c item-padding">
       <div class="dashboard-card-regular">
-        <h3 class="title subheader">UTILITIES</h3>
-        <h3 class="utilities" style="font-weight:bolder"><%= @utilities %>€</h3>
+        <h3 class="dashboard-kpis utilities"><%= @utilities %>€</h3>
+        <h3 class="title subheader">Utilities</h3>
       </div>
     </div>
     <div class="item-d item-padding">
       <div class="dashboard-card-regular">
-        <h3 class="title subheader">CASH FLOW</h3>
-        <h3 class="cashflow" style="font-weight:bolder"><%= @cashflow %>€</h3>
+        <h3 class="dashboard-kpis cashflow"><%= @cashflow %>€</h3>
+        <h3 class="title subheader">Cash Flow</h3>
       </div>
     </div>
     <div class="item-e item-padding">
       <div class="dashboard-card-regular">
-        <h3 class="title subheader">WORKLOAD</h3>
+       <h3 class="title subheader">Workload</h3>
         <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px") %>
+
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
     <div class="item-f item-padding">
       <div class="dashboard-card-regular">
-        <h3 class="title subheader">URGENCY OF TASKS</h3>
+        <h3 class="title subheader">Urgency of Tasks</h3>
         <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px"  %>
           <!-- messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" -->
       </div>

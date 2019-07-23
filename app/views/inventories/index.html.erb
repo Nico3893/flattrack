@@ -3,8 +3,11 @@
 <% end %>
 
 <div class="container">
-  <h2 class="header">Inventory for <%= @flat.address %></h2>
-  <h3>Bedroom</h3>
+  <h2 class="header">Inventory</h2>
+  <%= link_to :back, class: "button-dark" do %>
+    <span class="my-3"><i class="fas fa-arrow-left"></i> &nbsp; Back</span>
+  <% end %>
+  <h3>Bedroom (<%= @bedroom.count %>)</h3>
   <div class="row">
     <% @bedroom.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
@@ -29,7 +32,7 @@
       </div>
     <% end %>
   </div>
-  <h3>Living room</h3>
+  <h3>Living room (<%= @living.count %>)</h3>
   <div class="row">
     <% @living.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
@@ -54,7 +57,7 @@
       </div>
     <% end %>
   </div>
-  <h3>Kitchen</h3>
+  <h3>Kitchen (<%= @kitchen.count %>)</h3>
   <div class="row">
     <% @kitchen.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">
@@ -79,7 +82,7 @@
       </div>
     <% end %>
   </div>
-  <h3>Bathroom</h3>
+  <h3>Bathroom (<%= @bathroom.count %>)</h3>
   <div class="row">
     <% @bathroom.each do |inventory| %>
       <div class="col-lg-6 col-sm-12">

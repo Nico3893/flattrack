@@ -157,7 +157,7 @@ puts 'Creating task...'
 t1 = Task.create!( category: repair, title: " Send plumber to fix Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
 #2
 puts 'Creating task...'
-t2 = Task.create!( category: furnishing, title: "Check necessity to replace Sofa", description: "Check necessity, coordinate appointment with tenant ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u2 )
+t2 = Task.create!( category: furnishing, title: "Check necessity to replace Sofa", description: "Check necessity, coordinate appointment with tenant ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u1 )
 #3
 puts 'Creating task...'
 t3 = Task.create!( category: maintenance, title: "Send craftsman to fix crack in bathroom tile", description: "Check necessity, coordinate appointment with tenant", company: company1, flat: f1, status: "open", urgency: 1, user: u3 )
@@ -166,22 +166,22 @@ puts 'Creating task...'
 t4 = Task.create!( category: general, title: "Send cleaning crew to deal with Monkey Poop on the carpet in living room", description: "Send cleaning crew, coordinate appointment with tenant", company: company1, flat: f1, status: "in progress", urgency: 2, user: u4 )
 #5
 puts 'Creating task...'
-t5 = Task.create!( category: repair, title: "Send craftsman to fix lose skirting bord in bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u2)
+t5 = Task.create!( category: repair, title: "Send craftsman to fix lose skirting bord in bedroom 1", description: "Send craftsman, coordinate appointment with tenant", company: company1, flat: f1, status: "resolved", urgency: 2, user: u1)
 
 puts 'Creating task...'
-t6 = Task.create!( category: repair, title: "Elevator out of order, send craftsman", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+t6 = Task.create!( category: repair, title: "Elevator out of order, send craftsman", description: "Send craftsman", company: company1, flat: f9, status: "open", urgency: 2, user: u1)
 
 puts 'Creating task...'
-t7 = Task.create!( category: general, title: "Blackout - fix ASAP", description: "Look into the matter and fix it.", company: company1, flat: f9, status: "open", urgency: 3, user: u3 )
+t7 = Task.create!( category: general, title: "Blackout - fix ASAP", description: "Look into the matter and fix it.", company: company1, flat: f9, status: "open", urgency: 3, user: u1 )
 
 puts 'Creating task...'
-t8 = Task.create!( category: maintenance, title: "Send painter to close bullet holes in living room wall", description: "coordinate painter and tenant", company: company1, flat: f10, status: "open", urgency: 2, user: u2 )
+t8 = Task.create!( category: maintenance, title: "Send painter to close bullet holes in living room wall", description: "coordinate painter and tenant", company: company1, flat: f10, status: "open", urgency: 2, user: u1)
 
 puts 'Creating task...'
-t9 = Task.create!( category: general, title: "whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u2)
+t9 = Task.create!( category: general, title: "whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u1)
 
 puts 'Creating task...'
-t10 = Task.create!( category: maintenance, title: "Inquire insurance regarding burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u3 )
+t10 = Task.create!( category: maintenance, title: "Inquire insurance regarding burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u1 )
 
 puts 'Creating task...'
 t11 = Task.create!( category: maintenance, title: "Coordinate Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
@@ -190,17 +190,47 @@ puts 'Creating task...'
 t12 = Task.create!( category: repair, title: "Send care taker to look into broken heating, follow up", description: "send caretaker to inspect, if serious problem, coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
 
 puts 'Creating task...'
-t12 = Task.create!( category: maintenance, title: "Educate tenants that high heel marks in parquet floor are to be repaired at their expense", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
+t13 = Task.create!( category: maintenance, title: "Educate tenants that high heel marks in parquet floor are to be repaired at their expense", description: "educate tenants, fix at next opportunity", company: company1, flat: f7, status: "in progress", urgency: 1, user: u1 )
 
 puts 'Creating task...'
-t13 = Task.create!( category: repair, title: "Send caretaker to fix door bell", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+t14 = Task.create!( category: repair, title: "Send caretaker to fix door bell", description: "send caretaker to fix", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
 
 puts 'Creating task...'
-t14 = Task.create!( category: restocking, title: "Replace bath towel", description: "Towel looks iffy", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
+t15 = Task.create!( category: restocking, title: "Replace bath towel", description: "Towel looks iffy", company: company1, flat: f3, status: "resolved", urgency: 2, user: u1 )
 
 # Fancy Seed Contract
 puts 'Creating contract...'
 contract1 = Contract.create!( flat: f1, start_date: Date.today - 10, end_date: Date.today + 11, monthly_rent: 800 )
+
+# Fancy Seeds Participations
+puts "creating participation"
+Participation.create!(user: u1, task: t1)
+Participation.create!(user: u1, task: t2)
+Participation.create!(user: u3, task: t3)
+Participation.create!(user: u4, task: t4)
+Participation.create!(user: u1, task: t5)
+Participation.create!(user: u1, task: t6)
+Participation.create!(user: u1, task: t7)
+Participation.create!(user: u1, task: t9)
+Participation.create!(user: u1, task: t10)
+Participation.create!(user: u2, task: t11)
+Participation.create!(user: u1, task: t12)
+Participation.create!(user: u1, task: t13)
+Participation.create!(user: u1, task: t14)
+Participation.create!(user: u1, task: t15)
+Participation.create!(user: u2, task: t1)
+Participation.create!(user: u2, task: t2)
+Participation.create!(user: u3, task: t5)
+Participation.create!(user: u3, task: t6)
+Participation.create!(user: u3, task: t7)
+Participation.create!(user: u3, task: t8)
+Participation.create!(user: u4, task: t9)
+Participation.create!(user: u4, task: t10)
+Participation.create!(user: u2, task: t12)
+Participation.create!(user: u2, task: t13)
+Participation.create!(user: u3, task: t14)
+Participation.create!(user: u3, task: t15)
+puts "participation created"
 
 # Fancy Seed Transaction Category
 #1
@@ -272,4 +302,5 @@ Inventory.create!(category: kitchen, name: "Malise", historic_value: 2300, book_
 Inventory.create!(category: livingroom, name: "KHAMAMA", historic_value: 200, book_value: 180, description: "KHAMAMA box", condition: "used", flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884691/flattrack/inventory_photos/KHAMAMA_box_adbo1m.jpg", replaced: false, deleted: false)
 Inventory.create!(category: kitchen, name: "WEICH Alpaca Kissen", historic_value: 40, book_value: 30, description: "alpaca pillow in apricot colour", condition: "used", flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884690/flattrack/inventory_photos/alpaca_pillow_kzmfeq.jpg", replaced: false, deleted: false)
 Inventory.create!(category: livingroom, name: "WEICH Alpaca Teppich", historic_value: 300, book_value: 200, description: "alpaca rug in apricot colour", condition: "used", flat: f1, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884691/flattrack/inventory_photos/alpaca_rug_ulhtif.jpg", replaced: false, deleted: false)
+
 
