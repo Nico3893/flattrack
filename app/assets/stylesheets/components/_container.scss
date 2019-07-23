@@ -8,13 +8,14 @@
 
 .task-feed-container {
     grid-area: 1 / 1 / last-line / 1;
-    justify-items:center;
     padding: 4px;
-    padding-right: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
     overflow-y: auto;
     height: auto;
     background:$background-kpis-dashboard;
     margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .task-feed-container > h3 {
@@ -25,10 +26,10 @@
 .dashboard-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: auto auto 33.33%;
+    grid-template-rows: 1fr 3fr 1fr;
     border-radius: 2px;
-    padding: 4px;
-    height: 85vh;
+    padding: 0;
+    height: 80vh;
     /*background: linear-gradient(90deg, rgba(244,244,244,1) 0%, rgba(232,232,232,0.5) 32%, rgba(232,232,232,1) 40%), ;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
     }
@@ -47,7 +48,7 @@
 .item-b {
     grid-area: 3 / 2;
     background: $background-kpis-dashboard;
-
+    margin-bottom: 10px;
 }
 
 .item-c {
