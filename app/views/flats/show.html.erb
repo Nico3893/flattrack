@@ -36,6 +36,7 @@
         <%= render 'shared/flatCarousel' %>
       </div>
       <div class="flat-info-important">
+         <i class="fas fa-couch"></i>   <%= link_to "INVENTORY", flat_inventories_path(@flat), class: "button-dark"%> 
         <div class="task-card-small-a">
           <h3 class="lighter grey-out">Special comments</h3>
           <p><%= @flat.comment %></p>
