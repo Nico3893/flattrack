@@ -30,23 +30,24 @@
     &:hover{
         text-decoration: none;
         background-color:#afc3d3;
-        color: black; 
+        color: black;
     }
 }
 
 .button-navbar {
-    padding: 8px 25px; 
-    background-color: transparent; 
+    padding: 8px 16px;
+    background-color: transparent;
     color:white;
     text-decoration: none;
     transition: 0.5s;
-    margin: 5px;
+    margin: 5px 0;
     font-family:$headers-font;
     align-self: center;
     border-radius: 2px;
+    font-weight: bold;
     &:hover{
         text-decoration: none;
-        color: $blue-grey;
-        border: thin solid $blue; 
+        // color: $blue-grey;
+        border-bottom: thin solid $blue;
     }
 }

@@ -5,26 +5,33 @@
 
 <div class="container">
   <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
-    <h2 style="font-weight:lighter;">Tasks for today</h2> 
-  <div class="dashboard-container"> 
+  <div class="d-flex justify-content-between px-3">
+    <span>
+      <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
+    </span>
+    <button type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
+        New Task
+    </button>
+  </div>
+  <div class="dashboard-container">
     <div class="task-feed-container">
       <%@tasks.each do |task|%>
-        <div class="task-card-feed"> 
-                        
-     
-          <div class="row">  
-            <div class="card-top" style="display:grid; flex-direction:column;"> 
-            <p class="lighter grey-out">   
-              <%if task.category.name.downcase =="repair"%> 
-                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">  
+        <div class="task-card-feed">
+
+
+          <div class="row">
+            <div class="card-top" style="display:grid; flex-direction:column;">
+            <p class="lighter grey-out">
+              <%if task.category.name.downcase =="repair"%>
+                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
               <% elsif task.category.name.downcase =="maintenance"%>
-                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)"> 
+                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)">
               <% elsif task.category.name.downcase =="restocking"%>
-                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)"> 
+                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)">
               <% elsif task.category.name.downcase =="furnishing"%>
-                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)"> 
+                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)">
               <%else%>
-                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)"> 
+                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)">
               <%end%>
                  &nbsp; <%=task.category.name%></p>
               <h3>
@@ -34,11 +41,11 @@
           <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
                 <%else%>
                    <i class="fas fa-arrow-down" style="color:green"></i>
-                <%end%> &nbsp;  <%=task.title%> 
-               
+                <%end%> &nbsp;  <%=task.title%>
+
                 </h3>
-             
-            
+
+
               </div>
               <div class="task-avatar">
                 <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
