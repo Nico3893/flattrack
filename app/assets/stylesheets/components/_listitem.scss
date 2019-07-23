@@ -2,14 +2,15 @@
     border-radius: 2px;
     background-color: white;
     width: 500px;
-    display:flex;
-    flex-direction:column;
-    text-align:center;
+    display: flex;
+    // flex-direction: column;
+    text-align: center;
     padding:4px;
     margin:10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     color: black;
     text-decoration:none;
+    padding: 16px;
     &:hover{
         color:black;
     }
@@ -23,13 +24,50 @@ a:hover{
     font-weight: lighter;
     font-size: 16px;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    // border-bottom: 1px solid rgba(0,0,0,0.1);
+    text-align: left;
 }
 
-.flatitem p {
+.flatitem .icon-pair {
     font-size: 12px;
+    display: flex;
+    // margin: 0 8px;
+    padding: 0 8px;
+    height: 24px;
+    width: 80px;
+    // border-right: 1px solid rgba(0,0,0,0.2);
+    color: rgb(72,72,72);
+    p {
+      margin-left: 8px;
+    }
+}
+
+.icon-pair.address-specification {
+  width: 100%;
+  margin-bottom: 8px;
 }
 
 .flatitem > .row {
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+}
+
+.task-count {
+  color: white;
+  // background: $red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  margin-right: 16px;
+  margin-top: 8px;
+  opacity: 0.5;
+}
+
+.task-count.red {
+  background: $red;
+}
+
+.task-count.green {
+  background: $green;
 }

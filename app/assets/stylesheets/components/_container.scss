@@ -35,7 +35,7 @@
 /*container for task feed items inside the dashboard container*/
 
 .item-padding{
-    padding: 4px;   
+    padding: 4px;
 }
 /*start card items dashboard*/
 .item-a {
@@ -87,6 +87,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4, 1fr);
+    height: calc(100vh - 155px);
 }
 
 /* flat index page container for bottom (where tasks are displayed*/
@@ -119,7 +120,7 @@
 .item-list {
    grid-area: 1 / 2 / 5 / 2;
    overflow-y: auto;
-   max-height: 630px;
+   // max-height: 630px;
 }
 
 

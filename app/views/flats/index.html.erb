@@ -3,65 +3,62 @@
 <% end %>
 
 
-<div class="container">
-<h2 class="header">Your flats (<%= @flats_geocoded.count %>)</h2>
+<div class="container" style="overflow: hidden">
+  <h2 class="header">Your flats (<%= @flats_geocoded.count %>)</h2>
   <div class="container-flat-index">
     <div class="item-map">
-      <div
-  id="map" style="width: 100%; height: 100%; min-height:500px; max-height:630px" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div id="map" style="width: 100%; height: 100%; min-height:500px" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      </div>
-      <div class="item-list">
-        <% @flats_geocoded.each do |flat| %>
-        <%= link_to flat_path(flat) do%>
-        <div class="flatitem">
-          <h3 class="address-header"><%=flat.address%></h3>
-            <div class="row">
-              <p>
-                <%if flat.rooms == 1%>
-                  <img src="https://img.icons8.com/material/24/000000/room.png">
-                <%else%>
-                  <img src="https://img.icons8.com/material/24/000000/room.png">
-                <%end%>
-              <br>
-              <%= flat.rooms%>
-              </p>
-              <p>
-                <i class="fas fa-ruler-combined"></i>
-                <br>
-                <%=flat.area%>m²
-              </p>
-              <p>
-              <i class="fas fa-euro-sign"></i>
-              <br>
-              <%=flat.monthly_rent%>
-              </p>
-
-          <%if flat.parking_space == 0 %>
-          <%else%>
-          <p>
-            <i class="fas fa-parking">
-            </i>
-            <br>
-            <%=flat.parking_space%>
-          </p>
-          <%end%>
-          <%if flat.address_specification.nil?%>
-          <%else%>
-            <p>
-            <img src="icon_flat.png" alt="" style="width:20px;length:20px">
-            <br>
-          <%= flat.address_specification%>
-            </p>
-          <%end%>
-        </div>
-      </div>
-    <%end%>
-    <%end%>
     </div>
-  </div>
-
-
+    <div class="item-list">
+      <% @flats_geocoded.each do |flat| %>
+        <%= link_to flat_path(flat) do%>
+          <div class="flatitem">
+            <% if flat.tasks.where(status: "open").count == 0 %>
+              <div class="task-count green">
+                <p><%= flat.tasks.where(status: "open").count %></p>
+              </div>
+            <% else %>
+              <div class="task-count red">
+                <p><%= flat.tasks.where(status: "open").count %></p>
+              </div>
+            <% end %>
+            <div class="flex-grow-1">
+              <h3 class="address-header"><%=flat.address%></h3>
+              <div>
+                <%if flat.address_specification.nil?%>
+                <%else%>
+                  <div class="icon-pair address-specification">
+                    <i class="far fa-building"></i>
+                    <p><%= flat.address_specification%></p>
+                  </div>
+                <%end%>
+              </div>
+              <div class="d-flex">
+                <div class="icon-pair">
+                  <img src="https://img.icons8.com/material/24/000000/room.png">
+                  <p><%= flat.rooms%></p>
+                </div>
+                <div class="icon-pair">
+                  <i class="fas fa-ruler-combined"></i>
+                  <p><%=flat.area%>m²</p>
+                </div>
+                <div class="icon-pair">
+                  <i class="fas fa-euro-sign"></i>
+                  <p><%=flat.monthly_rent%></p>
+                </div>
+                <%if flat.parking_space == 0 %>
+                <%else%>
+                  <div class="icon-pair">
+                    <i class="fas fa-parking"></i>
+                    <p><%=flat.parking_space%></p>
+                  </div>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
     </div>
   </div>
 </div>
