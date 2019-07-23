@@ -2,16 +2,17 @@
   Flattrack | Dashboard
 <% end %>
 <%= render 'shared/taskModal' %>
-
 <div class="container">
   <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
   <div class="d-flex justify-content-between px-3">
     <span>
-      <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
+
+    <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
+    <button style="position:sticky; bottom:10px; right:80px;" type="button" class="button-dark-dashboard">
+     <i class="fas fa-plus"></i> &nbsp;New Task 
+      </button>
     </span>
-    <button style="margin-top:14px;" type="button" class="button-dark">
-       New Task &nbsp; <i class="fas fa-plus"></i>
-        </button>
+           
   </div>
   <div class="dashboard-container">
     <div class="task-feed-container">
