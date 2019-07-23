@@ -47,11 +47,10 @@
       <!--<div class="flat-info-column-b-item-a">-->
         <!-- Button trigger modal -->
       <div style="display:grid">
-                <h3 class="lighter grey-out"style="align-self:end; justify-self: start">URGENT</h3>
-
-        <button style="justify-self: center; align-self: end" type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                  <button style="justify-self: center; align-self: end" type="button" class="button-dark" data-toggle="modal" data-target="#exampleModalCenter">
         NEW TASK
         </button>
+                <h3 class="lighter grey-out"style="align-self:end; justify-self: start">TASKS</h3>
       </div>
 
  
@@ -96,7 +95,8 @@
           <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
                 <%else%>
                    <i class="fas fa-arrow-down" style="color:green"></i>
-                <%end%><%= task.description %>
+                <%end%>
+                <%= task.description %>
              </p>
           </div>
         <% end %>
