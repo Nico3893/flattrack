@@ -26,7 +26,6 @@ class TasksController < ApplicationController
       @comment.user = @task.user
       authorize @comment
       if @comment.save
-        raise
         # create participations
         @user_ids = participation_params[:user_ids]
         @user_ids.each do |id|
@@ -35,7 +34,6 @@ class TasksController < ApplicationController
             participation.save
           end
         end
-
       else
         render :new
       end
@@ -47,6 +45,8 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @task.company = current_user.company
+    @categories = TaskCategory.all
     authorize @task
   end
 
