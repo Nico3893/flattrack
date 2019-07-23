@@ -10,11 +10,13 @@
     grid-area: 1 / 1 / last-line / 1;
     justify-items:center;
     padding: 4px;
-    padding-right: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
     overflow-y: auto;
     height: auto;
     background:$background-kpis-dashboard;
     margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .task-feed-container > h3 {
@@ -47,7 +49,7 @@
 .item-b {
     grid-area: 3 / 2;
     background: $background-kpis-dashboard;
-
+    margin-bottom: 10px;
 }
 
 .item-c {
