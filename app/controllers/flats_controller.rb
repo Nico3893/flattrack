@@ -29,6 +29,10 @@ class FlatsController < ApplicationController
     @tasks = @flat.tasks.where(status: "open").sort_by { |task| task.urgency }.reverse
     @utilities = utilities
     @cashflow = cash_flow
+    
+    @high_prio = @flat.tasks.where(urgency: 3)
+    @med_prio = @flat.tasks.where(urgency: 2)
+    @low_prio = @flat.tasks.where(urgency: 1)
   end
 
   private

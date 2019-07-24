@@ -27,9 +27,29 @@
   </div>-->
   <!-- end of kpi-container-->
   <!-- start of flat-info-->
+  <div class="show-header">
+  <h2 class="header" style="margin-bottom:0"><%=@flat.address%></h2>
+  <h2 class="header"style="margin-left: 30px; margin-bottom:0">Tasks
+        <%if @tasks.count==0%>
+        <%elsif @tasks.count==1%>
+          (<%=@tasks.count%>)
+        <%else%>
+          (<%=@tasks.count%>)
+          </span>
+        <%end%>
+        </h2>
+  </div>
+    <div class="show-header">
+            <div style="grid-column-start:2;margin-top:16px;justify-self:end;margin-right:32px;">
+            <%=link_to new_flat_task_path(@flat) do%>
+        <button type="button" class="button-dark-dashboard">
+       New Task &nbsp; <i class="fas fa-plus"></i>
+        </button>
+     <%end%>
+     </div>
+    </div>     
   <div class="flat-info-container">
   <!-- left-side-container in flat-info -->
-
     <div class="flat-info-column-a">
       <div class="flat-info-foto-display" style="margin-top:14px;">
         <%= render 'shared/flatCarousel' %>
@@ -80,41 +100,106 @@
         <!-- Button trigger modal -->
       <div style="display:flex; justify-content:space-between; flex-direction:row; align-self:start; border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-bottom: 6px;">
 
-        <h3 class="lighter grey-out"style="align-self:end; justify-self: start;margin-top: 8px; margin-bottom: 4px;">Tasks
-        <%if @tasks.count==0%>
-        <%elsif @tasks.count==1%>
-          (<%=@tasks.count%>)
-        <%else%>
-          (<%=@tasks.count%>)
-          </span>
-        <%end%>
-        </h3>
-        <%=link_to new_flat_task_path(@flat) do%>
-        <button style="justify-self: center; align-self: end" type="button" class="button-dark">
-       New Task &nbsp; <i class="fas fa-plus"></i>
-        </button>
-     <%end%>
+       
       </div>
+        <%if @high_prio.count == 0%>
+        <%else%>
+        <h3 style="border-bottom: thin solid red;">High Priority</h3>
+        <%end%>
+        <% @high_prio.each do |task| %>
+          <div class="task-card-flat-show">
+            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <div class="card-head">
+            <h3>
+              <%if task.category.name.downcase =="repair"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />
+              <% elsif task.category.name.downcase =="maintenance"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />
+              <% elsif task.category.name.downcase =="restocking"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />
+              <% elsif task.category.name.downcase =="furnishing"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />
+              <%else%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
+              <%end%>
+                <%= task.title %>
 
-        <% @tasks.each do |task| %>
-          <%= link_to edit_flat_task_path(task) do%>
-            <div class="task-card-flat-show">
-              <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
-              <div class="card-head">
-              <h3>
-                <%if task.category.name.downcase =="repair"%>
-                  <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />
-                <% elsif task.category.name.downcase =="maintenance"%>
-                  <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />
-                <% elsif task.category.name.downcase =="restocking"%>
-                  <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />
-                <% elsif task.category.name.downcase =="furnishing"%>
-                  <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />
+              </h3>
+              </div>
+              <div>
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+              </div>
+            </div>
+            <p class="content"> <!--<%if task.urgency == 3%>
+                 <i class="fas fa-exclamation-triangle" style="color:red"></i>
+                <%elsif task.urgency == 2%>
+          <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
                 <%else%>
-                  <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
-                <%end%>
-                  <%= task.title %>
-
+                   <i class="fas fa-arrow-down" style="color:green"></i>
+                <%end%>-->
+                <%= task.description %>
+             </p>
+          </div>
+        <% end %>
+  <%if @med_prio.count == 0%>
+        <%else%>
+        <h3 style="border-bottom: thin solid #ffe919;">Medium Priority</h3>
+        <%end%>
+<% @med_prio.each do |task| %>
+          <div class="task-card-flat-show">
+            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <div class="card-head">
+            <h3>
+              <%if task.category.name.downcase =="repair"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />
+              <% elsif task.category.name.downcase =="maintenance"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />
+              <% elsif task.category.name.downcase =="restocking"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />
+              <% elsif task.category.name.downcase =="furnishing"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />
+              <%else%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
+              <%end%>
+                <%= task.title %>
+              </h3>
+              </div>
+              <div>
+                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+              </div>
+            </div>
+            <p class="content"> <!--<%if task.urgency == 3%>
+                 <i class="fas fa-exclamation-triangle" style="color:red"></i>
+                <%elsif task.urgency == 2%>
+          <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
+                <%else%>
+                   <i class="fas fa-arrow-down" style="color:green"></i>
+                <%end%>-->
+                <%= task.description %>
+             </p>
+          </div>
+        <% end %>
+        <%if @low_prio.count == 0%>
+        <%else%>
+        <h3 style="border-bottom: thin solid green;">Low Priority</h3>
+        <%end%>
+        <% @low_prio.each do |task| %>
+          <div class="task-card-flat-show">
+            <div class="row" style="display:flex; flex-direction:row;justify-content:space-around">
+            <div class="card-head">
+            <h3>
+              <%if task.category.name.downcase =="repair"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_repair.png" />
+              <% elsif task.category.name.downcase =="maintenance"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_maintenance.png" />
+              <% elsif task.category.name.downcase =="restocking"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_restocking.png" />
+              <% elsif task.category.name.downcase =="furnishing"%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_furnishing.png" />
+              <%else%>
+                <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
+              <%end%>
+                <%= task.title %>
                 </h3>
                 </div>
                 <div>
