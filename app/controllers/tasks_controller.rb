@@ -35,6 +35,7 @@ class TasksController < ApplicationController
           end
         end
       end
+
       redirect_to flat_path(@flat)
     else
       render :new
@@ -53,12 +54,12 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @original_category = @task.category.id
     @categories = TaskCategory.all
-    if @original_category == task_params[:category_id][0].to_i
+    if task_params[:category_id].to_i == 0
       @task.update(task_params)
       @task.update( category_id: @original_category)
     else
       @task.update(task_params)
-      @task.update( category_id: task_params[:category_id][0].to_i )
+      @task.update( category_id: task_params[:category_id].to_i )
     end
     authorize @task
     if @task.save
