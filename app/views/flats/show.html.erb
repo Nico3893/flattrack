@@ -162,7 +162,6 @@
                 <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
               <%end%>
                 <%= task.title %>
-
               </h3>
               </div>
               <div>
@@ -201,23 +200,23 @@
                 <img style ="height:20px;width:20px;" src="/icon_task_category_general.png" />
               <%end%>
                 <%= task.title %>
-
-              </h3>
+                </h3>
+                </div>
+                <div>
+                  <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                </div>
               </div>
-              <div>
-                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
-              </div>
+              <p class="content"> <%if task.urgency == 3%>
+                   <i class="fas fa-exclamation-triangle" style="color:red"></i>
+                  <%elsif task.urgency == 2%>
+            <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
+                  <%else%>
+                     <i class="fas fa-arrow-down" style="color:green"></i>
+                  <%end%>
+                  <%= task.description %>
+               </p>
             </div>
-            <p class="content"> <!--<%if task.urgency == 3%>
-                 <i class="fas fa-exclamation-triangle" style="color:red"></i>
-                <%elsif task.urgency == 2%>
-          <i class="fas fa-arrow-up" style="color:#FFC65A"></i>
-                <%else%>
-                   <i class="fas fa-arrow-down" style="color:green"></i>
-                <%end%>-->
-                <%= task.description %>
-             </p>
-          </div>
+          <% end %>
         <% end %>
 
       </div>

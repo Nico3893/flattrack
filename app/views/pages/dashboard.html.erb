@@ -18,93 +18,117 @@
     <div class="task-feed-container">
       <h3 style="border-bottom: thin solid red;">High Priority</h3>
       <%@top_prio.each do |task|%>
-        <div class="task-card-feed">
-          <div class="row">
-            <div class="card-top">
-            <p class="lighter grey-out">
-              <%if task.category.name.downcase =="repair"%>
-                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="maintenance"%>
-                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="restocking"%>
-                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="furnishing"%>
-                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <%else%>
-                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <%end%>
-                 &nbsp; <%=task.category.name%></p>
-              <h3>
-                <%=task.title%>
-
-                </h3>
-
-
+        <%= link_to edit_flat_task_path(task.flat, task) do %>
+          <div class="task-card-feed">
+            <div class="row">
+              <div>
+                <p class="lighter grey-out">
+                  <%if task.category.name.downcase =="repair"%>
+                    <img src="icon_task_category_repair.png" alt="" class="category-icon" style="rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="maintenance"%>
+                    <img src="icon_task_category_maintenance.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="restocking"%>
+                    <img src="icon_task_category_restocking.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="furnishing"%>
+                    <img src="icon_task_category_furnishing.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <%else%>
+                    <img src="icon_task_category_general.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <%end%>
+                     &nbsp; <%=task.category.name%>
+                </p>
               </div>
-              <div class="task-avatar">
-                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+              <div class="avatar-list">
+                <% task.users.each do |user| %>
+                  <%= cl_image_tag user.photo, crop: :thumb, class: "avatar" %>
+                <% end %>
+              </div>
+            </div>
+            <div class="row align-items-end mt-3">
+              <div>
+                <h3><%=task.title%></h3>
+              </div>
+              <div>
                 <p><%=task.created_at.strftime("%e %b")%></p>
-           </div>
-        </div>
-        </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <%end%>
-      <h3 style="border-bottom: thin solid #ffe919;">Medium Priority</h3>
-            <%@med_prio.each do |task|%>
-        <div class="task-card-feed">
-          <div class="row">
-            <div class="card-top" style="display:grid; flex-direction:column;">
-            <p class="lighter grey-out">
-              <%if task.category.name.downcase =="repair"%>
-                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="maintenance"%>
-                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="restocking"%>
-                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="furnishing"%>
-                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <%else%>
-                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <%end%>
-                 &nbsp; <%=task.category.name%></p>
-              <h3>
-              <%=task.title%>
-                </h3>
+      <h3 style="border-bottom: thin solid orange;">Medium Priority</h3>
+      <%@med_prio.each do |task|%>
+        <%= link_to edit_flat_task_path(task.flat, task) do %>
+          <div class="task-card-feed">
+            <div class="row">
+              <div>
+                <p class="lighter grey-out">
+                  <%if task.category.name.downcase =="repair"%>
+                    <img src="icon_task_category_repair.png" alt="" class="category-icon" style="rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="maintenance"%>
+                    <img src="icon_task_category_maintenance.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="restocking"%>
+                    <img src="icon_task_category_restocking.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="furnishing"%>
+                    <img src="icon_task_category_furnishing.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <%else%>
+                    <img src="icon_task_category_general.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <%end%>
+                     &nbsp; <%=task.category.name%>
+                </p>
               </div>
-              <div class="task-avatar">
-                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+              <div class="avatar-list">
+                <% task.users.each do |user| %>
+                  <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                <% end %>
+              </div>
+            </div>
+            <div class="row align-items-end mt-3">
+              <div>
+                <h3><%=task.title%></h3>
+              </div>
+              <div>
                 <p><%=task.created_at.strftime("%e %b")%></p>
-           </div>
-        </div>
-        </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <%end%>
       <h3 style="border-bottom: thin solid green;">Low Priority</h3>
       <%@low_prio.each do |task|%>
-        <div class="task-card-feed">
-          <div class="row">
-            <div class="card-top" style="display:grid; flex-direction:column;">
-            <p class="lighter grey-out">
-              <%if task.category.name.downcase =="repair"%>
-                <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="maintenance"%>
-                <img src="icon_task_category_maintenance.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="restocking"%>
-                <img src="icon_task_category_restocking.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <% elsif task.category.name.downcase =="furnishing"%>
-                <img src="icon_task_category_furnishing.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <%else%>
-                <img src="icon_task_category_general.png" alt="" style="color:rgba(0,0,0,0.7)">
-              <%end%>
-                 &nbsp; <%=task.category.name%></p>
-              <h3>
-                <%=task.title.capitalize%>
-                </h3>
+        <%= link_to edit_flat_task_path(task.flat, task) do %>
+          <div class="task-card-feed">
+            <div class="row">
+              <div>
+                <p class="lighter grey-out">
+                  <%if task.category.name.downcase =="repair"%>
+                    <img src="icon_task_category_repair.png" alt="" class="category-icon" style="rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="maintenance"%>
+                    <img src="icon_task_category_maintenance.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="restocking"%>
+                    <img src="icon_task_category_restocking.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <% elsif task.category.name.downcase =="furnishing"%>
+                    <img src="icon_task_category_furnishing.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <%else%>
+                    <img src="icon_task_category_general.png" alt="" class="category-icon" style="color:rgba(0,0,0,0.7)">
+                  <%end%>
+                     &nbsp; <%=task.category.name%>
+                </p>
               </div>
-              <div class="task-avatar">
-                <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+              <div class="avatar-list">
+                <% task.users.each do |user| %>
+                  <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                <% end %>
+              </div>
+            </div>
+            <div class="row align-items-end mt-3">
+              <div>
+                <h3><%=task.title%></h3>
+              </div>
+              <div>
                 <p><%=task.created_at.strftime("%e %b")%></p>
-           </div>
-        </div>
-        </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <%end%>
     </div>
 

@@ -52,7 +52,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @flat = Flat.find(params[:flat_id])
     @categories = TaskCategory.all
-    @task.update( category_id: task_params[:category_id][0].to_i )
+    unless @task.category.id == task_params[:category_id][0].to_i
+      @task.update( category_id: task_params[:category_id][0].to_i )
+    end
     @task.update(task_params)
     authorize @task
     if @task.save
@@ -77,7 +79,7 @@ class TasksController < ApplicationController
         end
       redirect_to flat_path(@flat)
     else
-      render :new
+      render :edit
     end
   end
 
