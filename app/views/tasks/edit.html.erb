@@ -1,7 +1,7 @@
 <div class="container">
   <div class="form-task">
     <h1> <%= "#{@task.title} - Edit mode" %></h1>
-    <%= simple_form_for(@task, as: :task, method: :post, url: flat_tasks_path) do |f| %>
+    <%= simple_form_for(@task, as: :task, method: :patch, url: flat_task_path) do |f| %>
       <div class="row">
         <div class="col-6">
             <%= f.input :title, input_html: { value: @task.title } %>
@@ -22,7 +22,7 @@
               <% end %>
             </div>
             <div class="comments">
-              <% @task.comments.each do |comment|%>
+              <% @task.comments.reverse_each do |comment|%>
                 <div class="comment row">
                   <div class="col-10"><%= comment.text %></div>
                   <div class="col-2 username"><%= comment.user.name %></div>
