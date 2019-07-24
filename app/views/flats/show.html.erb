@@ -39,7 +39,7 @@
           <%= @flat.address %>
         </p>
         <div class="d-flex justify-content-between">
-          <%= link_to :back, class: "button-dark" do %>
+          <%= link_to flats_path, class: "button-dark" do %>
             <span class="my-3"><i class="fas fa-arrow-left"></i> &nbsp; Back</span>
           <% end %>
           <%= link_to flat_inventories_path(@flat), class: "button-dark" do%>

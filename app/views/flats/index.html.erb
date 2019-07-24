@@ -14,17 +14,26 @@
       <% @flats_geocoded.each do |flat| %>
         <%= link_to flat_path(flat) do%>
           <div class="flatitem">
-            <% if flat.tasks.where(status: "open").count == 0 %>
-              <div class="task-count green">
+            <% if flat.tasks.where(status: "open").count > 0 %>
+              <!-- <div class="task-count green">
                 <p><%= flat.tasks.where(status: "open").count %></p>
-              </div>
-            <% else %>
+              </div> -->
               <div class="task-count red">
                 <p><%= flat.tasks.where(status: "open").count %></p>
+                <span class="tooltiptext"><%= pluralize flat.tasks.where(status: "open").count, "open task" %></span>
               </div>
             <% end %>
             <div class="flex-grow-1">
-              <h3 class="address-header"><%=flat.address%></h3>
+              <h3 class="address-header">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <%=flat.address.split(',')[0]%>
+                  </div>
+                  <div class="mr-3">
+                    <%= flat.address.split(',')[1] if flat.address.split(',').length == 2 %>
+                  </div>
+                </div>
+              </h3>
               <div>
                 <%if flat.address_specification.nil?%>
                 <%else%>
