@@ -77,7 +77,7 @@
               </div>
               <div class="avatar-list">
                 <% task.users.each do |user| %>
-                  <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                  <%= cl_image_tag user.photo, crop: :thumb, class: "avatar" %>
                 <% end %>
               </div>
             </div>
@@ -115,7 +115,7 @@
               </div>
               <div class="avatar-list">
                 <% task.users.each do |user| %>
-                  <%= cl_image_tag task.user.photo, crop: :thumb, class: "avatar" %>
+                  <%= cl_image_tag user.photo, crop: :thumb, class: "avatar" %>
                 <% end %>
               </div>
             </div>
