@@ -34,8 +34,6 @@ class TasksController < ApplicationController
             participation.save
           end
         end
-      else
-        render :new
       end
       redirect_to flat_path(@flat)
     else
@@ -51,15 +49,35 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.new(task_params)
-    @task.company = current_user.company
+    @task = Task.find(params[:id])
     @flat = Flat.find(params[:flat_id])
-    @task.flat = @flat
+    @categories = TaskCategory.all
+    @task.update( category_id: task_params[:category_id][0].to_i )
+    @task.update(task_params)
     authorize @task
     if @task.save
+      # create comment
+      unless comment_params[:text].empty?
+        @comment = Comment.new(comment_params)
+        @comment.task = @task
+        @comment.user = @task.user
+        authorize @comment
+        @comment.save
+      end
+        # update participations
+        @user_ids = participation_params[:user_ids]
+        @user_ids.each do |id|
+          if @task.users.ids.include?(id)
+            part = Participation.find_by task: @task, user_id: id
+            part.destroy
+          elsif User.exists?(id)
+            participation = Participation.new(user_id: id, task: @task)
+            participation.save
+          end
+        end
       redirect_to flat_path(@flat)
     else
-      render :edit
+      render :new
     end
   end
 
