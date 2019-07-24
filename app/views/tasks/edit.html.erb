@@ -7,7 +7,33 @@
             <%= f.input :title, input_html: { value: @task.title } %>
         </div>
         <div class="col-6">
-            <%= f.input :urgency, prompt: "Indicate priority" %>
+          <fieldset class="form-group radio_buttons required task_urgency form-group-valid">
+            <legend class="col-form-label pt-0">
+              Urgency <abbr title="required">*</abbr>
+            </legend>
+            <input type="hidden" name="task[urgency]" value="">
+
+            <div class="urgency-choices">
+              <div class="form-check">
+                <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="1" name="task[urgency]" id="task_urgency_1">
+                <label class="collection_radio_buttons urgency-choice <%= "active" if @task.urgency == 1 %>" for="task_urgency_1">
+                  low
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="2" name="task[urgency]" id="task_urgency_2">
+                <label class="collection_radio_buttons urgency-choice <%= "active" if @task.urgency == 2 %>" for="task_urgency_2">
+                  medium
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="3" checked="checked" name="task[urgency]" id="task_urgency_3">
+                <label class="collection_radio_buttons urgency-choice <%= "active" if @task.urgency == 3 %>" for="task_urgency_3">
+                  high
+                </label>
+              </div>
+            </div>
+          </fieldset>
         </div>
       </div>
       <div class="row">
