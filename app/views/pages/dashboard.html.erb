@@ -9,10 +9,10 @@
 
     <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
     <button style="position:sticky; bottom:10px; right:80px;" type="button" class="button-dark-dashboard">
-     <i class="fas fa-plus"></i> &nbsp;New Task 
+     <i class="fas fa-plus"></i> &nbsp;New Task
       </button>
     </span>
-           
+
   </div>
   <div class="dashboard-container">
     <div class="task-feed-container">
@@ -20,7 +20,7 @@
       <%@top_prio.each do |task|%>
         <div class="task-card-feed">
           <div class="row">
-            <div class="card-top" style="display:grid; flex-direction:column;">
+            <div class="card-top">
             <p class="lighter grey-out">
               <%if task.category.name.downcase =="repair"%>
                 <img src="icon_task_category_repair.png" alt="" style="rgba(0,0,0,0.7)">
