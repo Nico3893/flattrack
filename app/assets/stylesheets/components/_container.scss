@@ -216,7 +216,6 @@
 }
 .flat-info-important{
     grid-area: 2 / 1;
-    display:grid;
     justify-items: center;
     justify-content:center;
 }
@@ -233,7 +232,6 @@
 /*right side column in flat-info-container*/
 .flat-info-column-b{
     grid-area: 1 / 2;
-    display:grid;
     grid-template-rows: 1fr 1fr 2fr 2fr 2fr;
     grid-template-columns: 2;
     justify-content:stretch;
