@@ -6,13 +6,15 @@
     // flex-direction: column;
     text-align: center;
     padding:4px;
-    margin:10px;
+    margin: 16px 0 16px 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     color: black;
     text-decoration:none;
     padding: 16px;
+    position: relative;
     &:hover{
         color:black;
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,0.3);
     }
 }
 
@@ -55,13 +57,17 @@ a:hover{
   color: white;
   // background: $red;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
   text-align: center;
-  margin-right: 16px;
-  margin-top: 8px;
-  opacity: 0.5;
+  // margin-right: 16px;
+  // margin-top: 8px;
+  // opacity: 0.5;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }
 
 .task-count.red {
@@ -70,4 +76,24 @@ a:hover{
 
 .task-count.green {
   background: $green;
+}
+
+.task-count .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+  color: rgb(72,72,72);
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  right: 35px;
+  top: -5px;
+}
+
+.task-count:hover .tooltiptext {
+  visibility: visible;
 }
