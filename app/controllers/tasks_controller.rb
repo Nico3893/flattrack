@@ -43,6 +43,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @original_category = @task.category.id
     @task.company = current_user.company
     @categories = TaskCategory.all
     authorize @task
@@ -50,12 +51,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @flat = Flat.find(params[:flat_id])
+    @original_category = @task.category.id
     @categories = TaskCategory.all
-    unless @task.category.id == task_params[:category_id][0].to_i
+    if @original_category == task_params[:category_id][0].to_i
+      @task.update(task_params)
+      @task.update( category_id: @original_category)
+    else
+      @task.update(task_params)
       @task.update( category_id: task_params[:category_id][0].to_i )
     end
-    @task.update(task_params)
     authorize @task
     if @task.save
       # create comment
@@ -69,7 +73,7 @@ class TasksController < ApplicationController
         # update participations
         @user_ids = participation_params[:user_ids]
         @user_ids.each do |id|
-          if @task.users.ids.include?(id)
+          if @task.users.ids.include?(id.to_i)
             part = Participation.find_by task: @task, user_id: id
             part.destroy
           elsif User.exists?(id)
@@ -77,7 +81,7 @@ class TasksController < ApplicationController
             participation.save
           end
         end
-      redirect_to flat_path(@flat)
+      redirect_to flat_path(@task.flat)
     else
       render :edit
     end
