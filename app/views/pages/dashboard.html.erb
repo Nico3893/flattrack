@@ -108,7 +108,14 @@
       <%end%>
     </div>
 
+    <%series_a = {"Jul 24 '19" =>5, "Jul 25 '19"=>9,"Jul 26 '19"=>6,"Jul 29 '19"=>4,"Jul 30 '19"=>3, "Jul 31 '19"=>2, "Aug 01 '19"=>5}
 
+series_b = {"Jul 24 '19" =>3, "Jul 25 '19"=>4,"Jul 26 '19"=>2,"Jul 29 '19"=>5,"Jul 30 '19"=>2, "Jul 31 '19"=>6, "Aug 01 '19"=>3}
+
+series_c = {"Jul 24 '19" =>2, "Jul 25 '19"=>3,"Jul 26 '19"=>8,"Jul 29 '19"=>3,"Jul 30 '19"=>2, "Jul 31 '19"=>3, "Aug 01 '19"=>1}
+
+series_d = {"Jul 24 '19" =>5, "Jul 25 '19"=>6,"Jul 26 '19"=>7,"Jul 29 '19"=>4,"Jul 30 '19"=>2, "Jul 31 '19"=>4, "Aug 01 '19"=>3}%>
+<!--
     <div class="item-a item-padding">
       <div class="dashboard-card-regular">
         <h3 class="dashboard-kpis"><%= @area %>m²</h3>
@@ -120,7 +127,7 @@
         <h3 class="dashboard-kpis"><%= @rent * Flat.count / @area %>€/m²</h3>
         <h3 class="title subheader">Rent</h3>
       </div>
-    </div>
+    </div>-->
     <div class="item-c item-padding">
       <div class="dashboard-card-regular">
         <h3 class="dashboard-kpis utilities"><%= @utilities %>€</h3>
@@ -136,17 +143,23 @@
     <div class="item-e item-padding">
       <div class="dashboard-card-regular">
        <h3 class="title subheader">Workload</h3>
-        <%= pie_chart(@users, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px") %>
+        <%= line_chart [
+         { name: "CB", data: series_a},
+         { name: "CH", data: series_b},
+         { name: "CG", data: series_c},
+         { name: "NE", data: series_d}
+        ], width:"auto", height:"48vh", legend: "right" , colors: ["#113f67", "#00818a", "#9fd3c7", "#e8e8e8"], xtitle: "Date", ytitle:"Tasks", points: false, curve: false %>
 
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
-    <div class="item-f item-padding">
+    <!--<div class="item-f item-padding">
       <div class="dashboard-card-regular">
         <h3 class="title subheader">Urgency of Tasks</h3>
         <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px"  %>
-          <!-- messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px" -->
+           messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px"
       </div>
-    </div>
+    </div>-->
   </div>
 </div>
+
