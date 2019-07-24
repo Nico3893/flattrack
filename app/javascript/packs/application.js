@@ -13,6 +13,13 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+  $(".urgency-choice").click(function(){
+  $(".urgency-choice.active").removeClass("active");
+    $(this).addClass("active");
+  });
+});
+
+$(document).ready(function(){
   $(".category-choice-edit").click(function(){
   $(".category-choice-edit.active").removeClass("active");
     $(this).addClass("active");
