@@ -67,7 +67,7 @@ class TasksController < ApplicationController
       unless comment_params[:text].empty?
         @comment = Comment.new(comment_params)
         @comment.task = @task
-        @comment.user = @task.user
+        @comment.user = current_user
         authorize @comment
         @comment.save
       end
