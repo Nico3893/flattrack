@@ -26,7 +26,7 @@
 .dashboard-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 3fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
     border-radius: 2px;
     padding: 0;
     height: 80vh;
@@ -52,7 +52,7 @@
 }
 
 .item-c {
-    grid-area: 3 / 3;
+    grid-area: 2 / 3;
     background:$background-kpis-dashboard;
 }
 
@@ -61,19 +61,19 @@
 }
 
 .item-d {
-    grid-area: 3 / 2;
+    grid-area: 2 / 2;
     background:$background-kpis-dashboard;
     }
 
 .cashflow{
         color: $green;
         }
-
+// diagramm item
 .item-e {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
     background:$background-kpis-dashboard;
 }
 
