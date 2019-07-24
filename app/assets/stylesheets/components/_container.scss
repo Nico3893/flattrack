@@ -26,7 +26,7 @@
 .dashboard-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
     border-radius: 2px;
     padding: 0;
     height: 80vh;
@@ -52,7 +52,7 @@
 }
 
 .item-c {
-    grid-area: 1 / 3;
+    grid-area: 3 / 3;
     background:$background-kpis-dashboard;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .item-d {
-    grid-area: 1 / 2;
+    grid-area: 3 / 2;
     background:$background-kpis-dashboard;
     }
 
@@ -70,14 +70,17 @@
         }
 
 .item-e {
-    grid-area: 2 / 2 ;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
     background:$background-kpis-dashboard;
 }
 
-.item-f {
-    grid-area: 2 / 3;
-    background:$background-kpis-dashboard;
-}
+//.item-f {
+//    grid-area: 2 / 3;
+//    background:$background-kpis-dashboard;
+//}
 
 
 /*end card items dashboard*/
