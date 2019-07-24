@@ -178,7 +178,7 @@ puts 'Creating task...'
 t8 = Task.create!( category: maintenance, title: "Send painter to close bullet holes in living room wall", description: "coordinate painter and tenant", company: company1, flat: f10, status: "open", urgency: 2, user: u1)
 
 puts 'Creating task...'
-t9 = Task.create!( category: general, title: "whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u1)
+t9 = Task.create!( category: general, title: "Whiskey stain on the sofa", description: "fix, when opportunity arises", company: company1, flat: f14, status: "open", urgency: 1, user: u1)
 
 puts 'Creating task...'
 t10 = Task.create!( category: maintenance, title: "Inquire insurance regarding burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u1 )
