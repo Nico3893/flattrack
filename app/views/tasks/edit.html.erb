@@ -86,8 +86,8 @@
                 <div class="category-choices-edit">
                   <% @categories.each do |category| %>
                     <div class="form-check">
-                      <input class="form-check-input radio_buttons invisible required" type="radio" value=<%= category.id %>" name="task[category_id]" id="task_category_id_<%= category.id %>">
-                      <label class="collection_radio_buttons category-choice-edit <%= "active order-first" if @task.category.id == category.id %> " for="task_category_id_<%= category.id %>">
+                      <input class="form-check-input radio_buttons invisible required" type="radio" value="<%= category.id %>" name="task[category_id]" id="task_category_id_<%= category.id %>">
+                      <label class="collection_radio_buttons category-choice-edit <%= "active order-first" if @original_category == category.id %> " for="task_category_id_<%= category.id %>">
                         <%= category.name %>
                       </label>
                     </div>
