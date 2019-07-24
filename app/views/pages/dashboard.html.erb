@@ -16,7 +16,7 @@
   </div>
   <div class="dashboard-container">
     <div class="task-feed-container">
-      <h3 style="border-bottom: thin solid red;">High Priority</h3>
+      <h3 class="mt-2" style="border-bottom: thin solid red;">High Priority</h3>
       <%@top_prio.each do |task|%>
         <%= link_to edit_flat_task_path(task.flat, task) do %>
           <div class="task-card-feed">
