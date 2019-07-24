@@ -48,7 +48,7 @@
         </div>
         </div>
       <%end%>
-      <h3 style="border-bottom: thin solid orange;">Medium Priority</h3>
+      <h3 style="border-bottom: thin solid #ffe919;">Medium Priority</h3>
             <%@med_prio.each do |task|%>
         <div class="task-card-feed">
           <div class="row">
@@ -96,7 +96,7 @@
               <%end%>
                  &nbsp; <%=task.category.name%></p>
               <h3>
-                <%=task.title%>
+                <%=task.title.capitalize%>
                 </h3>
               </div>
               <div class="task-avatar">
