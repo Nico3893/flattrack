@@ -3,17 +3,6 @@
 <% end %>
 <%= render 'shared/taskModal' %>
 <div class="container">
-  <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
-  <!-- <div class="d-flex justify-content-between px-3">
-    <span>
-
-    <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
-    <button style="position:sticky; bottom:10px; right:80px;" type="button" class="button-dark-dashboard">
-     <i class="fas fa-plus"></i> &nbsp;New Task
-      </button>
-    </span>
-
-  </div> -->
   <div class="show-header">
     <!-- <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2> -->
     <div class="d-flex justify-content-between">
@@ -150,19 +139,6 @@ series_b = {"Jul 18 '19" =>3, "Jul 19 '19"=>4,"Jul 22 '19"=>2,"Jul 23 '19"=>5,"J
 series_c = {"Jul 18 '19" =>2, "Jul 19 '19"=>3,"Jul 22 '19"=>8,"Jul 23 '19"=>3,"Jul 24 '19"=>2, "Jul 25 '19"=>3, "Jul 26 '19"=>1}
 
 series_d = {"Jul 18 '19" =>5, "Jul 19 '19"=>6,"Jul 22 '19"=>7,"Jul 23 '19"=>4,"Jul 24 '19"=>2, "Jul 25 '19"=>4, "Jul 26 '19"=>3}%>
-<!--
-    <div class="item-a item-padding">
-      <div class="dashboard-card-regular">
-        <h3 class="dashboard-kpis"><%= @area %>m²</h3>
-        <h3 class="title subheader">Area</h3>
-      </div>
-    </div>
-    <div class="item-b item-padding">
-      <div class="dashboard-card-regular">
-        <h3 class="dashboard-kpis"><%= @rent * Flat.count / @area %>€/m²</h3>
-        <h3 class="title subheader">Rent</h3>
-      </div>
-    </div>-->
     <div class="item-c item-padding">
       <div class="dashboard-card-regular">
         <h3 class="dashboard-kpis utilities"><%= @utilities %>€</h3>
@@ -188,13 +164,6 @@ series_d = {"Jul 18 '19" =>5, "Jul 19 '19"=>6,"Jul 22 '19"=>7,"Jul 23 '19"=>4,"J
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
     </div>
-    <!--<div class="item-f item-padding">
-      <div class="dashboard-card-regular">
-        <h3 class="title subheader">Urgency of Tasks</h3>
-        <%= pie_chart Task.group(:urgency).count, messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "250px", height: "230px"  %>
-           messages: {empty: "No data"}, library:{backgroundColor: "#FFFFFF"},width: "300px", height: "230px"
-      </div>
-    </div>-->
   </div>
 </div>
 
