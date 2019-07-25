@@ -22,7 +22,8 @@ class InventoriesController < ApplicationController
       Participation.create!(user: current_user, task: task)
       inventory.replaced = true
       inventory.save
-      redirect_to flat_inventories_path(flat), notice: "Inventory is marked as 'to be replaced' and task was created"
+      sleep 1
+      redirect_to flat_inventories_path(flat)
     else
       redirect_to flat_inventories_path(flat), alert: "Inventory was not marked as 'to be replaced and task not created"
     end
