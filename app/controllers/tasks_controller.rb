@@ -82,7 +82,7 @@ class TasksController < ApplicationController
             participation.save
           end
         end
-      redirect_to flat_path(@task.flat)
+      render :edit
     else
       render :edit
     end

@@ -4,104 +4,104 @@
 
 <div class="container">
   <div class="form-task">
-    <h1> <%= "#{@task.title} - Edit mode" %></h1>
     <%= simple_form_for(@task, as: :task, method: :patch, url: flat_task_path) do |f| %>
       <div class="row">
-        <div class="col-6">
-            <%= f.input :title, input_html: { value: @task.title } %>
-        </div>
-        <div class="col-6">
-          <fieldset class="form-group radio_buttons required task_urgency form-group-valid">
-            <legend class="col-form-label pt-0">
-              Urgency <abbr title="required">*</abbr>
-            </legend>
-            <input type="hidden" name="task[urgency]" value="">
-
-            <div class="urgency-choices">
-              <div class="form-check">
-                <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="1" name="task[urgency]" id="task_urgency_1">
-                <label class="collection_radio_buttons urgency-choice <%= "active" if @task.urgency == 1 %>" for="task_urgency_1">
-                  low
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="2" name="task[urgency]" id="task_urgency_2">
-                <label class="collection_radio_buttons urgency-choice <%= "active" if @task.urgency == 2 %>" for="task_urgency_2">
-                  medium
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="3" checked="checked" name="task[urgency]" id="task_urgency_3">
-                <label class="collection_radio_buttons urgency-choice <%= "active" if @task.urgency == 3 %>" for="task_urgency_3">
-                  high
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-      <div class="row">
         <div class="col-9">
-          <div class="description">
+          <div class="row">
+
+            <div class="col-9">
+              <%= f.input :title, input_html: { value: @task.title } %>
+
+            </div>
+            <div class="col-3">
+              <%= f.input :status, as: :select, collection: ['open', 'pending', 'resolved'] %>
+            </div>
+          </div>
+        <div class="description">
             <%= f.input :description, as: :text, placeholder: "This task is about..." %>
           </div>
           <div class="comment-section">
-            <div class="comment-entry">
               <%= f.simple_fields_for :comment do |c| %>
                 <%= c.input :text, label: "Add comment" %>
               <% end %>
-            </div>
-            <div class="comments">
               <% @task.comments.reverse_each do |comment|%>
-                <div class="comment row">
-                  <div class="col-10"><%= comment.text %></div>
-                  <div class="col-2 username"><%= comment.user.name %></div>
+                <div class="row ">
+                  <div class="col-1">
+                    <%= cl_image_tag comment.user.photo, crop: :thumb, class: "avatar" %>
+                  </div>
+                  <div class="col-11">
+                    <div class="row arrow_box">
+                      <div class="comment-text">
+                        <%= comment.text %>
+                      </div>
+                      <div class= 'comment-date grey-out'>
+                        <%= (comment.created_at).strftime("%b, %d") %>
+                        <!-- grey in -->
+                      </div>
+                    </div>
+                  </div>
                 </div>
               <% end %>
-            </div>
           </div>
         </div>
         <div class="col-3">
-          <div class="participants">
-            <fieldset class="form-group check_boxes optional task_users">
-              <legend class="col-form-label pt-0">
-                Participants
-              </legend>
-              <input type="hidden" name="task[user_ids][]" value="">
+          <div class="form-column-right">
 
-              <div class="participant-boxes">
-                <% @task.company.users.each do |user| %>
-                  <div class="form-check">
-                    <input class="form-check-input check_boxes optional invisible" type="checkbox" value="<%= "#{user.id}" %>" name="task[user_ids][]" id="<%= "task_user_ids_#{user.id}" %>">
-                    <label class="collection_check_boxes participant-box <%= "active" if @task.users.ids.include?(user.id) %>" for= "<%= "task_user_ids_#{user.id}" %>">
-                      <%= cl_image_tag user.photo, crop: :thumb, class: "avatar" %>
-                    </label>
-                  </div>
-                <% end %>
+            <fieldset class="form-group radio_buttons required task_urgency form-group-valid">
+              <legend class="col-form-label pt-0">
+                Priority
+              </legend>
+
+              <input type="hidden" name="task[urgency]" value="">
+
+              <div class="urgency-choices">
+                <div class="form-check">
+                  <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="1" name="task[urgency]" id="task_urgency_1">
+                  <label class="collection_radio_buttons urgency-choice low <%= "active" if @task.urgency == 1 %>" for="task_urgency_1">
+                    low
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="2" name="task[urgency]" id="task_urgency_2">
+                  <label class="collection_radio_buttons urgency-choice medium <%= "active" if @task.urgency == 2 %>" for="task_urgency_2">
+                    medium
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input is-valid radio_buttons invisible required " type="radio" value="3" checked="checked" name="task[urgency]" id="task_urgency_3">
+                  <label class="collection_radio_buttons urgency-choice high <%= "active" if @task.urgency == 3 %>" for="task_urgency_3">
+                    high
+                  </label>
+                </div>
               </div>
             </fieldset>
-          </div>
-          <div class= "category-container">
-            <fieldset class="form-group radio_buttons required task_category">
-              <legend class="col-form-label pt-0">
-                Category<abbr title="required">*</abbr>
-              </legend>
-              <input type="hidden" name="task[category_id]" value="">
-                <div class="category-choices-edit">
-                  <% @categories.each do |category| %>
+            <div class="participants">
+              <fieldset class="form-group check_boxes optional task_users">
+                <legend class="col-form-label pt-0">
+                  Participants
+                </legend>
+                <input type="hidden" name="task[user_ids][]" value="">
+
+                <div class="participant-boxes">
+                  <% @task.company.users.each do |user| %>
                     <div class="form-check">
-                      <input class="form-check-input radio_buttons invisible required" type="radio" value="<%= category.id %>" name="task[category_id]" id="task_category_id_<%= category.id %>">
-                      <label class="collection_radio_buttons category-choice-edit <%= "active order-first" if @original_category == category.id %> " for="task_category_id_<%= category.id %>">
-                        <%= category.name %>
+                      <input class="form-check-input check_boxes optional invisible" type="checkbox" value="<%= "#{user.id}" %>" name="task[user_ids][]" id="<%= "task_user_ids_#{user.id}" %>">
+                      <label class="collection_check_boxes participant-box <%= "active" if @task.users.ids.include?(user.id) %>" for= "<%= "task_user_ids_#{user.id}" %>">
+                        <%= cl_image_tag user.photo, crop: :thumb, class: "avatar" %>
                       </label>
                     </div>
                   <% end %>
                 </div>
-            </fieldset>
+              </fieldset>
+            </div>
+
           </div>
-        </div>
       </div>
-      <div class="row justify-content-end">
+      </div>
+      <div class="row justify-content-end mt-5">
+        <%= link_to flat_path(@task.flat), class: "button-dark" do %>
+          Go to flat
+        <% end %>
         <%= f.submit "Save", class: "button-dark mr-5" %>
       </div>
     <% end %>
