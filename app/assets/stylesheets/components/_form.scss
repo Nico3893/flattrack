@@ -16,6 +16,10 @@
   margin-left: 3vh;
 }
 
+.was-validated .form-control:valid, .form-control.is-valid {
+  background-image: none;
+}
+
 .task-form {
   display: grid;
   grid-template-columns: 3fr 1fr;
