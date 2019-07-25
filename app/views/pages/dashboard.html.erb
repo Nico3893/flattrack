@@ -154,12 +154,13 @@ series_d = {"Jul 18 '19" =>5, "Jul 19 '19"=>6,"Jul 22 '19"=>7,"Jul 23 '19"=>4,"J
     <div class="item-e item-padding">
       <div class="dashboard-card-regular">
        <h3 class="title subheader" style="margin-bottom:0;">Workload</h3>
+         <div class="legend"> <span class="dot color-a"></span>&nbsp; <p>Chris</p> &nbsp;&nbsp;&nbsp;&nbsp;<span class="dot color-b"></span>&nbsp;<p>Christina</p> &nbsp;&nbsp;&nbsp;&nbsp;<span class="dot color-c"></span>&nbsp;<p>Christoph</p>&nbsp;&nbsp;&nbsp;&nbsp; <span class="dot color-d"></span>&nbsp;<p>Nicolas</p>   </div>
         <%= line_chart [
-         { name: "Bob", data: series_a},
-         { name: "Tina", data: series_b},
-         { name: "Joe", data: series_c},
-         { name: "Kris", data: series_d}
-        ], width:"auto", height:"48vh", legend: "right" , colors: ["#113f67", "#00818a", "#9fd3c7", "#e8e8e8"], xtitle: "Date", ytitle:"Tasks", points: false, discrete: true %>
+         { name:"CH", data: series_a},
+         { name: "CG", data: series_b},
+         { name: "CB", data: series_c},
+         { name: "NE", data: series_d}
+        ], width:"auto", height:"48vh", legend: "right" , colors: ["#113f67", "#00818a", "#9fd3c7", "#e8e8e8"], xtitle: "Date", ytitle:"Tasks", points: false,  legend: false %>
 
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
