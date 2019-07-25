@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home]
 
 
+  def landing
+  end
+  
   def dashboard
     @tasks = Task.where(company: current_user.company).where(status: 'open')
     @utilities = utilities
