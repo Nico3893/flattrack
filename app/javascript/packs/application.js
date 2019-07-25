@@ -39,4 +39,9 @@ initSweetalert('#sweet-alert-demo', {
   icon: "success"
 });
 
+initSweetalert('#inventory-alert', {
+  title: "Task to replace item has been created",
+  icon: "success"
+});
+
 initMapbox();
