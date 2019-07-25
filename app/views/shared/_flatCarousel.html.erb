@@ -8,17 +8,17 @@
   <div class="carousel-inner">
     <% if @flat.flat_photos.empty? %>
       <div class="carousel-item active">
-        <img src="http://artmusings.net/wp-content/uploads/2017/07/600px-No_image_available.svg_.png" alt="no picture" style="height: 300px; width:700px">
+        <img src="http://artmusings.net/wp-content/uploads/2017/07/600px-No_image_available.svg_.png" alt="no picture" style="height: 250px; width:450px">
       </div>
     <% else %>
       <% @flat.flat_photos.each_with_index do |flatphoto, index| %>
         <% if index == 0 %>
           <div class="carousel-item active">
-            <%= cl_image_tag flatphoto.photo, height: 300, width: 500, crop: :fill %>
+            <%= cl_image_tag flatphoto.photo, height: 250, width: 450, crop: :fill %>
           </div>
         <% else %>
           <div class="carousel-item">
-            <%= cl_image_tag flatphoto.photo, height: 300, width: 500, crop: :fill %>
+            <%= cl_image_tag flatphoto.photo, height: 250, width: 450, crop: :fill %>
           </div>
         <% end %>
       <% end %>
