@@ -155,10 +155,10 @@ series_d = {"Jul 18 '19" =>5, "Jul 19 '19"=>6,"Jul 22 '19"=>7,"Jul 23 '19"=>4,"J
       <div class="dashboard-card-regular">
        <h3 class="title subheader" style="margin-bottom:0;">Workload</h3>
         <%= line_chart [
-         { name: "CB", data: series_a},
-         { name: "CH", data: series_b},
-         { name: "CG", data: series_c},
-         { name: "NE", data: series_d}
+         { name: "Bob", data: series_a},
+         { name: "Tina", data: series_b},
+         { name: "Joe", data: series_c},
+         { name: "Kris", data: series_d}
         ], width:"auto", height:"48vh", legend: "right" , colors: ["#113f67", "#00818a", "#9fd3c7", "#e8e8e8"], xtitle: "Date", ytitle:"Tasks", points: false, discrete: true %>
 
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
