@@ -4,25 +4,25 @@
     background-color: $background-kpis-dashboard;
     height: 2.5rem;
     color: rgb(72,72,72);
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
     font-weight: bold;
     border:none;
-    //border-top-left-radius:2px;
-    //border-top-right-radius:2px;
     font-size: 20px;
     font-family: $headers-font;
     text-decoration:none;
     transition: 0.2s;
-    margin: 4px;
-    margin-bottom:0;
+    margin: auto 0;
     opacity: 1;
-    //border-right: 1px solid rgba(72,72,72,0.4);
-    //border-left: 1px solid rgba(72,72,72,0.4);
-   // border-top: 1px solid rgba(72,72,72,0.4);
     &:hover{
         text-decoration: none;
         color: rgba(72,72,72, 0.808);
     }
+    // &.show-page {
+    //   top: 5px;
+    //   right: 5px;
+    // }
 }
+
 /*light buttons for dark backgrounds*/
 .button-light{
     padding: 8px 30px;

@@ -4,7 +4,7 @@
 <%= render 'shared/taskModal' %>
 <div class="container">
   <!--<h2 class="header">Good Morning, <%= current_user.name %>!</h2>-->
-  <div class="d-flex justify-content-between px-3">
+  <!-- <div class="d-flex justify-content-between px-3">
     <span>
 
     <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
@@ -13,6 +13,17 @@
       </button>
     </span>
 
+  </div> -->
+  <div class="show-header">
+    <!-- <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2> -->
+    <div class="d-flex justify-content-between">
+      <h2 class="header">Tasks for today (<%= @tasks.count %>)</h2>
+      <%=link_to new_flat_task_path(@flat), style: "align-self: center; margin-right: 8px" do%>
+        <button type="button" class="button-dark-dashboard">
+          New Task &nbsp; <i class="fas fa-plus"></i>
+        </button>
+      <%end%>
+    </div>
   </div>
   <div class="dashboard-container">
     <div class="task-feed-container">

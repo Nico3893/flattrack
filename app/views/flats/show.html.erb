@@ -4,17 +4,24 @@
 
 <div class="container">
   <div class="show-header">
-    <h2 class="header" style="margin-bottom:0"><%=@flat.address.split(',')[0]%></h2>
-    <h2 class="header"style="margin-left: 30px; margin-bottom:0">Tasks
-      <%if @tasks.count==0%>
-      <%elsif @tasks.count==1%>
-        (<%=@tasks.count%>)
-      <%else%>
-        (<%=@tasks.count%>)
+    <h2 class="header"><%=@flat.address.split(',')[0]%></h2>
+    <div class="d-flex justify-content-between">
+      <h2 class="header"style="margin-left: 30px">Tasks
+        <%if @tasks.count==0%>
+        <%elsif @tasks.count==1%>
+          (<%=@tasks.count%>)
+        <%else%>
+          (<%=@tasks.count%>)
+        <%end%>
+      </h2>
+      <%=link_to new_flat_task_path(@flat), style: "align-self: center;" do%>
+        <button type="button" class="button-dark-dashboard">
+          New Task &nbsp; <i class="fas fa-plus"></i>
+        </button>
       <%end%>
-    </h2>
+    </div>
   </div>
-  <div class="show-header">
+  <!-- <div class="show-header">
     <div style="grid-column-start:2;margin-top:16px;justify-self:end;margin-right:32px;">
       <%=link_to new_flat_task_path(@flat) do%>
         <button type="button" class="button-dark-dashboard">
@@ -22,7 +29,7 @@
         </button>
       <%end%>
     </div>
-  </div>
+  </div> -->
   <div class="flat-info-container">
   <!-- left-side-container in flat-info -->
     <div class="flat-info-column-a">
@@ -38,7 +45,6 @@
             <i class="fas fa-couch"></i> &nbsp; Inventory
           <%end%>
         </div>
-        <br>
         <div class="task-card-small-a">
           <div class="row justify-content-around my-3">
             <div class="icon-pair">

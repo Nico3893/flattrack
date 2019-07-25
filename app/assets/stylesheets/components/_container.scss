@@ -196,11 +196,12 @@
 .flat-info-column-a{
     grid-area: 1 / 1;
     display:grid;
-    grid-template-rows: 340px 1fr;
+    grid-template-rows: 325px 1fr;
     grid-template-columns: 1fr;
     justify-content:center;
     background: #FAFAFA;
     padding: 10px 30px;
+    max-height: 90vh;
 }
 
 .flat-info-foto-display{
@@ -240,6 +241,7 @@
     padding: 10px 30px;
     overflow-y: auto;
     max-height: 90vh;
+    position: relative;
     a {
       color: #484848;
     }
