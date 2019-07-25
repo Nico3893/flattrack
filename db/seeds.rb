@@ -154,8 +154,9 @@ repair = TaskCategory.create!( name: "Repair" )
 #Fancy Seed Task  # add restocking task and more furnishing tasks
 #1
 puts 'Creating task...'
-t1 = Task.create!( category: repair, title: " Send plumber to fix Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
+# t1 = Task.create!( category: repair, title: " Send plumber to fix Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f1, status: "open", urgency: 3, user: u1 )
 #2
+t1  = Task.create!( category: furnishing, title: "Carpet ruined by Pipe Burst", description: "Send plumber, appointment needs to be coordinated with tenant", company: company1, flat: f7, status: "open", urgency: 2, user: u1 )
 puts 'Creating task...'
 t2 = Task.create!( category: furnishing, title: "Check necessity to replace Sofa", description: "Check necessity, coordinate appointment with tenant ", company: company1, flat: f1, status: "resolved", urgency: 1, user: u1 )
 #3
@@ -214,8 +215,8 @@ t25 = Task.create!( category: maintenance, title: "Change light bulb in uplight"
 t26 = Task.create!( category: maintenance, title: "Check plants", description: "", company: company1, flat: f11, status: "open", urgency: 2, user: u1 )
 t27 = Task.create!( category: repair, title: "Fix window in kitchen", description: "", company: company1, flat: f12, status: "open", urgency: 2, user: u1 )
 
-# t28 = Task.create!( category: restocking, title: "", description: "", company: company1, flat: f, status: "open", urgency: 2, user: u1 )
-# t29 = Task.create!( category: restocking, title: "", description: "", company: company1, flat: f, status: "open", urgency: 2, user: u1 )
+t28 = Task.create!( category: maintenance, title: "Coordinate Chimney Sweep", description: "Deadline in October. Fix appointment with tenants and chimney sweeper.", company: company1, flat: f7, status: "open", urgency: 1, user: u2 )
+t29 = Task.create!( category: maintenance, title: "Make appointment with slater", description: "Roof needs to be overhauled next year. What is the scope and possible date?", company: company1, flat: f7, status: "open", urgency:1, user: u3 )
 # t30 = Task.create!( category: restocking, title: "", description: "", company: company1, flat: f, status: "open", urgency: 2, user: u1 )
 
 # t31 = Task.create!( category: restocking, title: "", description: "", company: company1, flat: f, status: "open", urgency: 2, user: u1 )
@@ -280,6 +281,10 @@ Participation.create!(user: u3, task: t19)
 Participation.create!(user: u4, task: t20)
 Participation.create!(user: u4, task: t21)
 Participation.create!(user: u4, task: t22)
+
+# f7 for pitch
+Participation.create!(user: u2, task: t28)
+Participation.create!(user: u3, task: t29)
 
 puts "participation created"
 
@@ -397,4 +402,27 @@ Inventory.create!(category: kitchen, name: "Malise", historic_value: 2300, book_
 Inventory.create!(category: livingroom, name: "KHAMAMA", historic_value: 200, book_value: 180, description: "KHAMAMA box", condition: "used", flat: f14, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884691/flattrack/inventory_photos/KHAMAMA_box_adbo1m.jpg", replaced: false, deleted: false)
 Inventory.create!(category: kitchen, name: "WEICH Alpaca Kissen", historic_value: 40, book_value: 30, description: "alpaca pillow in apricot colour", condition: "used", flat: f11, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884690/flattrack/inventory_photos/alpaca_pillow_kzmfeq.jpg", replaced: false, deleted: false)
 Inventory.create!(category: livingroom, name: "WEICH Alpaca Teppich", historic_value: 300, book_value: 200, description: "alpaca rug in apricot colour", condition: "used", flat: f14, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884691/flattrack/inventory_photos/alpaca_rug_ulhtif.jpg", replaced: false, deleted: false)
+
+# for the pitch f7 Inventory
+Inventory.create!(category: kitchen, name: "TEFAL FV 4680 E3", historic_value: 33.99, book_value: 22.66, description: "flat iron", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876118/flattrack/inventory_photos/flatiron_iil8x4.jpg", replaced: false, deleted: false)
+Inventory.create!(category: bathroom, name: "PHILIPS HP8230/00 Haartrockner Schwarz (2100 Watt)", historic_value: 17.99, book_value: 11.99, description: "hair dryer", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876118/flattrack/inventory_photos/hairdryer_zpwt6n.png", replaced: false, deleted: false)
+Inventory.create!(category: kitchen, name: "PHILIPS SENSEO® HD 6556/00", historic_value: 77.99, book_value: 77.99 , description: "Coffee Maker", condition: "new", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876116/flattrack/inventory_photos/coffeemaker_exa9kf.jpg", replaced: true, deleted: false)
+Inventory.create!(category: bathroom, name: "VILEDA 09470 VIVA EXPRESS ECO BLAU Bügelbrett", historic_value: 39.99, book_value: 29.99 , description: "Ironing Board", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876119/flattrack/inventory_photos/ironboard_jbgwfu.jpg", replaced: false, deleted: false)
+Inventory.create!(category: bedroom, name: "SONGESAND", historic_value: 179.00, book_value: 119.00 , description: "white wardrobe", condition: "scratces at the feet from vacuum cleaning", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876118/flattrack/inventory_photos/songesand.JPG_edvevm.jpg", replaced: false, deleted: false)
+Inventory.create!(category: livingroom, name: "NOT", historic_value: 13.99, book_value: 13.99 , description: "uplight", condition: "new", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876118/flattrack/inventory_photos/NOTlight_llskxh.jpg", replaced: true, deleted: false)
+Inventory.create!(category: bathroom, name: "VÅGSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath Towel", condition: "replace", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876117/flattrack/inventory_photos/bathtowels_bdiyzu.jpg", replaced: false, deleted: false)
+Inventory.create!(category: bedroom, name: "DVALA", historic_value: 24.99, book_value: 24.99 , description: "bedclothes, 3 pieces", condition: "new", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876118/flattrack/inventory_photos/bedclothes_m2dzvx.jpg", replaced: true, deleted: false)
+Inventory.create!(category: kitchen, name: "MARTIN", historic_value: 21.99, book_value: 16.74, description: "chair", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876116/flattrack/inventory_photos/chair_mi7aau.jpg", replaced: false, deleted: false)
+Inventory.create!(category: kitchen, name: "MARTORP", historic_value: 29.99, book_value: 29.99, description: "cutlery, 30 pieces", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876117/flattrack/inventory_photos/cutlery_ts8ite.jpg", replaced: false, deleted: false)
+Inventory.create!(category: kitchen, name: "KARCHER 125440 Jana 4-tlg. Kochgeschirr-Set (Edelstahl 18/8)", historic_value: 74.99, book_value: 59.99 , description: "cookware", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876116/flattrack/inventory_photos/cookware_woowqn.jpg", replaced: false, deleted: false)
+Inventory.create!(category: bathroom, name: "SHARP ES-GFB7164W3-DE Waschmaschine (7 kg, 1600 U/Min., A+++)", historic_value: 268, book_value: 238, description: "washing machine", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876117/flattrack/inventory_photos/wahingmachine_yg0pu7.jpg", replaced: false, deleted: false)
+Inventory.create!(category: livingroom, name: "FORSÅ", historic_value: 12.99, book_value: 7.49, description: "lamp", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876118/flattrack/inventory_photos/forsa_lamp_blmmum.jpg", replaced: false, deleted: false)
+Inventory.create!(category: bathroom, name: "BLANKSJÖN", historic_value: 6.99, book_value: 0.00, description: "bath mat", condition: "replace", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876116/flattrack/inventory_photos/bath_mat_wgynca.jpg", replaced: false, deleted: false)
+Inventory.create!(category: livingroom, name: "KNIPPE", historic_value: 17.99, book_value: 11.99, description: "coat rack", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876119/flattrack/inventory_photos/coat_rack_xgvv5a.jpg", replaced: false, deleted: false)
+Inventory.create!(category: kitchen, name: "SVALKA", historic_value: 4.99, book_value: 2.49, description: "white wine glass", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876116/flattrack/inventory_photos/white_wine_glass_n3qb0t.jpg", replaced: false, deleted: false)
+Inventory.create!(category: livingroom, name: "DYNAN", historic_value: 59.80, book_value: 47.60, description: "white wardrobe with door", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563876116/flattrack/inventory_photos/white_wardrobe_hgrcgo.jpg", replaced: false, deleted: false)
+Inventory.create!(category: kitchen, name: "Malise", historic_value: 2300, book_value: 2000, description: "desk by Holzgespür", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884690/flattrack/inventory_photos/holzgesp%C3%BCr_desk_m2jy3w.jpg", replaced: false, deleted: false)
+Inventory.create!(category: livingroom, name: "KHAMAMA", historic_value: 200, book_value: 180, description: "KHAMAMA box", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884691/flattrack/inventory_photos/KHAMAMA_box_adbo1m.jpg", replaced: false, deleted: false)
+Inventory.create!(category: kitchen, name: "WEICH Alpaca Kissen", historic_value: 40, book_value: 30, description: "alpaca pillow in apricot colour", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884690/flattrack/inventory_photos/alpaca_pillow_kzmfeq.jpg", replaced: false, deleted: false)
+Inventory.create!(category: livingroom, name: "WEICH Alpaca Teppich", historic_value: 300, book_value: 200, description: "alpaca rug in apricot colour", condition: "used", flat: f7, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563884691/flattrack/inventory_photos/alpaca_rug_ulhtif.jpg", replaced: false, deleted: false)
 
