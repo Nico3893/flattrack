@@ -82,6 +82,7 @@ class TasksController < ApplicationController
             participation.save
           end
         end
+      flash[:notice] = "Task was saved"
       render :edit
     else
       render :edit
