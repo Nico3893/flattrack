@@ -1,0 +1,29 @@
+.dot {
+    height: 16px;
+    width: 16px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    top: 4px;
+  }
+
+  .color-a{
+     background-color:#113f67; 
+  }
+  .color-b{
+    background-color:#00818a; 
+  }
+  .color-c{
+    background-color:#9fd3c7; 
+  }
+  .color-d{
+    background-color:#e8e8e8; 
+  }
+
+.legend{
+    display:flex;
+      position:absolute;
+      top: 180px;
+      left:720px;
+      z-index: 1000;
+  }
