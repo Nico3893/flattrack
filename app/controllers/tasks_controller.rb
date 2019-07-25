@@ -82,6 +82,7 @@ class TasksController < ApplicationController
             participation.save
           end
         end
+      sleep(5)
       render :edit
     else
       render :edit
