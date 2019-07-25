@@ -47,6 +47,8 @@
         <div class="col-3">
           <div class="form-column-right">
 
+            <%= f.association :category, as: :select, collection: @categories %>
+
             <fieldset class="form-group radio_buttons required task_urgency form-group-valid">
               <legend class="col-form-label pt-0">
                 Priority
