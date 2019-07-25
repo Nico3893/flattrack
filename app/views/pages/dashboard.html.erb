@@ -159,7 +159,7 @@ series_d = {"Jul 18 '19" =>5, "Jul 19 '19"=>6,"Jul 22 '19"=>7,"Jul 23 '19"=>4,"J
          { name: "CH", data: series_b},
          { name: "CG", data: series_c},
          { name: "NE", data: series_d}
-        ], width:"auto", height:"48vh", legend: "right" , colors: ["#113f67", "#00818a", "#9fd3c7", "#e8e8e8"], xtitle: "Date", ytitle:"Tasks", points: false, curve: false %>
+        ], width:"auto", height:"48vh", legend: "right" , colors: ["#113f67", "#00818a", "#9fd3c7", "#e8e8e8"], xtitle: "Date", ytitle:"Tasks", points: false%>
 
         <!--<%= pie_chart User.where(company:current_user.company).map { |user| {name: user.name, data: user.tasks.length}}%>-->
       </div>
