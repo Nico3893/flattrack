@@ -68,7 +68,7 @@ image19 = FlatPhoto.create!( flat: f5, photo: "https://res.cloudinary.com/djn5kh
 image20 = FlatPhoto.create!( flat: f5, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563379957/flattrack/f5_newgirl_floorplan_gsk1aq.jpg" )
 # 6 Gossip Girl: The Humphrey's loft
 puts 'Creating flat...'
-f6 = Flat.create!( address: "Charlottenstraße 77-80, 10117 Berlin", area: 120, rooms: 4, parking_space: 1, company: company1, monthly_rent: 1300, comment: "Brooklyn Artsy Loft, brick stone walls, visible steal beams, fire escape stairs, 3 bedrooms flat share or family home", address_specification: "3rd floor, first entrace to the right of elevator 304" )
+f6 = Flat.create!( address: "Charlottenstraße 40, 10117 Berlin", area: 120, rooms: 4, parking_space: 1, company: company1, monthly_rent: 1300, comment: "Brooklyn Artsy Loft, brick stone walls, visible steal beams, fire escape stairs, 3 bedrooms flat share or family home", address_specification: "3rd floor, first entrace to the right of elevator 304" )
 image21 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563381855/flattrack/f6_gg_entrance_dmawly.jpg" )
 image22 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563381855/flattrack/f6_gg_hallway_qeb9ku.jpg" )
 image23 = FlatPhoto.create!( flat: f6, photo: "https://res.cloudinary.com/djn5khfwt/image/upload/v1563381855/flattrack/f6_gg_dining_room_wso8vi.jpg" )
@@ -184,8 +184,8 @@ t9 = Task.create!( category: general, title: "Whiskey stain on the sofa", descri
 puts 'Creating task...'
 t10 = Task.create!( category: maintenance, title: "Inquire insurance regarding burn hole in zebra fur", description: "coordinate insurance and tenant", company: company1, flat: f13, status: "in progress", urgency: 2, user: u1 )
 
-puts 'Creating task...'
-t11 = Task.create!( category: maintenance, title: "Coordinate Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
+# puts 'Creating task...'
+# t11 = Task.create!( category: maintenance, title: "Coordinate Chimney Sweep", description: "Coordinate with tenant and chimney sweeper", company: company1, flat: f9, status: "open", urgency: 2, user: u2 )
 
 puts 'Creating task...'
 t12 = Task.create!( category: repair, title: "Send care taker to look into broken heating, follow up", description: "send caretaker to inspect, if serious problem, coordinate craftsmen", company: company1, flat: f3, status: "in progress", urgency: 3, user: u1 )
@@ -242,7 +242,7 @@ Participation.create!(user: u1, task: t6)
 Participation.create!(user: u1, task: t7)
 Participation.create!(user: u1, task: t9)
 Participation.create!(user: u1, task: t10)
-Participation.create!(user: u2, task: t11)
+# Participation.create!(user: u2, task: t11)
 Participation.create!(user: u1, task: t12)
 Participation.create!(user: u1, task: t13)
 Participation.create!(user: u1, task: t14)
