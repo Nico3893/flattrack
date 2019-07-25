@@ -2,7 +2,7 @@
     background-size: cover;
     background-position: center;
     padding: 150px 0;
-    height: 80vh;
+    height: 100vh;
   }
   
   .banner h1 {
@@ -11,13 +11,23 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 32px;
     font-weight: bold;
+    margin-top:8vh;
   }
   
   .banner p {
     font-size: 20px;
     color: white;
     opacity: .8;
-    margin-top: 11px;
+    margin-top: 2vh;
     //text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
+
+a:hover > *:hover{
+    transform: scale(1.025);
+  }
+
+
+/*  .a:hover>:focus:not:(:hover){
+    transform: scale(1.05);
+  }*/
   
