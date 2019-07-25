@@ -2,7 +2,7 @@
   Flattrack | Edit tasks
 <% end %>
 
-<div class="container">
+<div class="container" style="overflow: hidden;">
   <div class="form-task">
     <%= simple_form_for(@task, as: :task, method: :patch, url: flat_task_path) do |f| %>
       <div class="row">
@@ -26,7 +26,7 @@
               <% end %>
                 <div class="comment-box">
                   <% @task.comments.reverse_each do |comment|%>
-                    <div class="row ">
+                    <div class="row mr-0">
                       <div class="col-1">
                         <%= cl_image_tag comment.user.photo, crop: :thumb, class: "avatar" %>
                       </div>
@@ -82,7 +82,7 @@
             <div class="participants">
               <fieldset class="form-group check_boxes optional task_users">
                 <legend class="col-form-label pt-0">
-                  Participants
+                  Assigned to:
                 </legend>
                 <input type="hidden" name="task[user_ids][]" value="">
 
