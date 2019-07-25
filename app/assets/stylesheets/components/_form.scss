@@ -40,9 +40,10 @@
 // Form design
 .form-task {
   background: white;
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 20px;
   border-radius: 5px;
+  height: 85vh;
   h1 {
     text-align: center;
     font-weight: bold;
@@ -166,6 +167,11 @@
   border-right-color: #EDF3F9;
   border-width: 18px;
   margin-top: -20px;
+}
+
+.comment-box {
+  height: 200px;
+  overflow-y:auto;
 }
 
 .comment-text {

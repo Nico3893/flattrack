@@ -24,24 +24,26 @@
               <%= f.simple_fields_for :comment do |c| %>
                 <%= c.input :text, label: "Add comment" %>
               <% end %>
-              <% @task.comments.reverse_each do |comment|%>
-                <div class="row ">
-                  <div class="col-1">
-                    <%= cl_image_tag comment.user.photo, crop: :thumb, class: "avatar" %>
-                  </div>
-                  <div class="col-11">
-                    <div class="row arrow_box">
-                      <div class="comment-text">
-                        <%= comment.text %>
+                <div class="comment-box">
+                  <% @task.comments.reverse_each do |comment|%>
+                    <div class="row ">
+                      <div class="col-1">
+                        <%= cl_image_tag comment.user.photo, crop: :thumb, class: "avatar" %>
                       </div>
-                      <div class= 'comment-date grey-out'>
-                        <%= (comment.created_at).strftime("%b, %d") %>
-                        <!-- grey in -->
+                      <div class="col-11">
+                        <div class="row arrow_box">
+                          <div class="comment-text">
+                            <%= comment.text %>
+                          </div>
+                          <div class= 'comment-date grey-out'>
+                            <%= (comment.created_at).strftime("%b, %d") %>
+                            <!-- grey in -->
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
-              <% end %>
           </div>
         </div>
         <div class="col-3">
@@ -100,11 +102,11 @@
           </div>
       </div>
       </div>
-      <div class="row justify-content-end mt-5">
+      <div class="row justify-content-end mt-3">
         <%= link_to flat_path(@task.flat), class: "button-dark" do %>
           Go to flat
         <% end %>
-        <%= f.submit "Save", class: "button-dark mr-5" %>
+        <%= f.submit "Save", class: "button-dark" %>
       </div>
     <% end %>
   </div>
