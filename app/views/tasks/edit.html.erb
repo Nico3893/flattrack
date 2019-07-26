@@ -2,7 +2,7 @@
   Flattrack | Edit tasks
 <% end %>
 
-<div class="container" style="overflow: hidden;">
+<div class="container" style="overflow: hidden; position: relative;">
   <div class="form-task">
     <%= simple_form_for(@task, as: :task, method: :patch, url: flat_task_path) do |f| %>
       <div class="row">
@@ -103,10 +103,10 @@
       </div>
       </div>
       <div class="row justify-content-end mt-3">
-        <%= link_to flat_path(@task.flat), class: "button-dark", style:"position:absolute;bottom:2vh;right:10vw" do %>
+        <%= link_to flat_path(@task.flat), class: "button-dark", style:"position:absolute;bottom:16px;right:120px;" do %>
           Go to flat
         <% end %>
-        <%= f.submit "Save", class: "button-dark", id: "sweet-alert-demo", style: "position:absolute;bottom:2vh;right:20vw"  %>
+        <%= f.submit "Save", class: "button-dark", id: "sweet-alert-demo", style: "position:absolute;bottom:16px;right:31px"  %>
       </div>
     <% end %>
   </div>
